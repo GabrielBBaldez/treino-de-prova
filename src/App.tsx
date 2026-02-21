@@ -6,6 +6,7 @@ import { QuizPlayerPage } from './pages/QuizPlayer/QuizPlayerPage';
 import { ResultsPage } from './pages/Results/ResultsPage';
 import { ConsultPage } from './pages/Consult/ConsultPage';
 import { HistoryPage } from './pages/History/HistoryPage';
+import HelpPage from './pages/Help/HelpPage';
 import { NotFoundPage } from './pages/NotFound/NotFoundPage';
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
         <Route path="results" element={<ResultsPage />} />
         <Route path="consult/:quizId" element={<ConsultPage />} />
         <Route path="history" element={<HistoryPage />} />
+        <Route path="help" element={<HelpPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

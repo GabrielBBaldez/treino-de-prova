@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treino de Prova - Seu app de estudo para concursos</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0f172a;
+      --bg-card: #1e293b;
+      --bg-card-hover: #263548;
+      --text: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --success: #34d399;
+      --gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 40%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 60%, rgba(139,92,246,0.1) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-2%, 2%); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-icon {
+      width: 100px;
+      height: 100px;
+      background: var(--gradient);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 3rem;
+      box-shadow: 0 20px 60px rgba(99,102,241,0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 8px 30px rgba(99,102,241,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(99,102,241,0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid rgba(99,102,241,0.3);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ========== FEATURES ========== */
+    .features {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99,102,241,0.2);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature-icon.purple { background: rgba(99,102,241,0.15); }
+    .feature-icon.green { background: rgba(52,211,153,0.15); }
+    .feature-icon.blue { background: rgba(96,165,250,0.15); }
+    .feature-icon.orange { background: rgba(251,191,36,0.15); }
+    .feature-icon.pink { background: rgba(244,114,182,0.15); }
+    .feature-icon.cyan { background: rgba(34,211,238,0.15); }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ========== MODES ========== */
+    .modes {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, transparent, rgba(99,102,241,0.03), transparent);
+    }
+
+    .modes-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .modes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mode-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .mode-number {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .mode-info h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .mode-info p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .mode-tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .mode-tag.sim { background: rgba(96,165,250,0.15); color: #60a5fa; }
+    .mode-tag.est { background: rgba(52,211,153,0.15); color: #34d399; }
+    .mode-tag.rev { background: rgba(251,191,36,0.15); color: #fbbf24; }
+
+    /* ========== HOW IT WORKS ========== */
+    .how-it-works {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 48px;
+      bottom: 48px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), rgba(99,102,241,0.1));
+    }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem 0;
+    }
+
+    .step-dot {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-text h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-text p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ========== PLATFORMS ========== */
+    .platforms {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(99,102,241,0.05), transparent);
+    }
+
+    .platforms-grid {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .platform-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .platform-card .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .platform-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .platform-card p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    /* ========== CTA ========== */
+    .cta {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 3rem;
+      border: 1px solid rgba(99,102,241,0.2);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .cta-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-box p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .cta-features {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .cta-features span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 640px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .mode-item { flex-direction: column; gap: 1rem; }
+      .step { gap: 1rem; }
+      .cta-box { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-icon">&#128218;</div>
+      <h1>Treino de Prova</h1>
+      <p>Seu app gratuito para estudar para concursos, residencia medica, ENEM e qualquer tipo de prova. Crie bancos de questoes, treine e acompanhe sua evolucao.</p>
+      <div class="hero-buttons">
+        <a href="https://gabrielbbaldez.github.io/treino-de-prova/" class="btn btn-primary">
+          Comecar agora &#8594;
+        </a>
+        <a href="#funcionalidades" class="btn btn-secondary">
+          Conhecer mais
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint">&#8595; Role para saber mais</div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="funcionalidades">
+    <div class="section-title">
+      <h2>Tudo que voce precisa para estudar</h2>
+      <p>Funcionalidades pensadas para quem leva estudo a serio</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon purple">&#128221;</div>
+        <h3>3 Tipos de Questao</h3>
+        <p>Multipla escolha, Verdadeiro/Falso e Assertivas com combinacoes — os formatos mais usados em concursos e provas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon green">&#9989;</div>
+        <h3>Explicacao por Alternativa</h3>
+        <p>Cada alternativa pode ter sua propria explicacao, mostrando por que esta certa ou errada. Ideal para revisao profunda.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon blue">&#128256;</div>
+        <h3>Embaralhar Tudo</h3>
+        <p>Embaralhe questoes e alternativas aleatoriamente para nao viciar na ordem. Cada treino e diferente.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange">&#127991;</div>
+        <h3>Tags e Filtros</h3>
+        <p>Organize questoes por topico com tags. Filtre e busque facilmente por assunto, enunciado ou alternativa.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon pink">&#128202;</div>
+        <h3>Historico e Evolucao</h3>
+        <p>Acompanhe seu desempenho ao longo do tempo com graficos, estatisticas e filtros por prova e modo.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon cyan">&#128228;</div>
+        <h3>Importar e Exportar</h3>
+        <p>Compartilhe bancos de questoes com colegas via arquivo JSON. Importe provas prontas com um clique.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section class="modes">
+    <div class="modes-inner">
+      <div class="section-title">
+        <h2>3 Modos de Treino</h2>
+        <p>Escolha como quer estudar de acordo com sua necessidade</p>
+      </div>
+      <div class="modes-list">
+        <div class="mode-item">
+          <div class="mode-number">1</div>
+          <div class="mode-info">
+            <h3>Simulado</h3>
+            <p>Simule a prova real: responda todas as questoes e veja o resultado so no final. Pode voltar e mudar respostas. Perfeito para testar seu nivel.</p>
+            <span class="mode-tag sim">Resultado no final</span>
+          </div>
+        </div>
+        <div class="mode-item">
+          <div class="mode-number">2</div>
+          <div class="mode-info">
+            <h3>Estudo</h3>
+            <p>Feedback instantaneo apos cada questao: veja na hora se acertou ou errou. Otimo para fixar conteudo no dia a dia.</p>
+            <span class="mode-tag est">Feedback imediato</span>
+          </div>
+        </div>
+        <div class="mode-item">
+          <div class="mode-number">3</div>
+          <div class="mode-info">
+            <h3>Revisao</h3>
+            <p>Alem do feedback, mostra a explicacao de cada alternativa. Entenda por que errou e aprenda com cada questao.</p>
+            <span class="mode-tag rev">Feedback + explicacao</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="section-title">
+      <h2>Como funciona</h2>
+      <p>Em 4 passos simples</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot">&#128203;</div>
+        <div class="step-text">
+          <h3>Crie ou importe um banco de questoes</h3>
+          <p>Monte suas questoes manualmente ou importe um arquivo JSON pronto com centenas de questoes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">&#9881;</div>
+        <div class="step-text">
+          <h3>Configure seu treino</h3>
+          <p>Escolha o modo (simulado, estudo ou revisao), ative o embaralhamento e defina quantas questoes quer fazer.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">&#9997;</div>
+        <div class="step-text">
+          <h3>Responda as questoes</h3>
+          <p>Interface limpa e focada. Sem distracao, so voce e as questoes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-dot">&#128200;</div>
+        <div class="step-text">
+          <h3>Acompanhe sua evolucao</h3>
+          <p>Veja seu resultado, revise os erros e acompanhe seu progresso no historico com graficos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section class="platforms">
+    <div class="section-title">
+      <h2>Use em qualquer lugar</h2>
+      <p>Funciona como app em todos os seus dispositivos</p>
+    </div>
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div class="emoji">&#128187;</div>
+        <h3>Computador</h3>
+        <p>Abra no navegador ou instale como app no desktop</p>
+      </div>
+      <div class="platform-card">
+        <div class="emoji">&#128241;</div>
+        <h3>Celular</h3>
+        <p>Instale no Android ou iPhone e estude em qualquer lugar</p>
+      </div>
+      <div class="platform-card">
+        <div class="emoji">&#128218;</div>
+        <h3>Tablet</h3>
+        <p>Tela maior para estudar com conforto. Instale e use offline</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-box">
+      <h2>Pronto para comecar?</h2>
+      <p>100% gratuito, sem cadastro, sem anuncios. Seus dados ficam no seu dispositivo.</p>
+      <div class="cta-features">
+        <span>&#10003; Gratuito</span>
+        <span>&#10003; Sem login</span>
+        <span>&#10003; Offline</span>
+        <span>&#10003; Privado</span>
+      </div>
+      <a href="https://gabrielbbaldez.github.io/treino-de-prova/" class="btn btn-primary">
+        Abrir o app &#8594;
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Treino de Prova &mdash; Feito por <a href="https://github.com/GabrielBBaldez" target="_blank">Gabriel Baldez</a></p>
+  </footer>
+
+</body>
+</html>
