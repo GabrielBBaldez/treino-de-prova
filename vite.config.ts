@@ -18,8 +18,8 @@ export default defineConfig({
         background_color: '#0f172a',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        scope: '/treino-de-prova/',
+        start_url: '/treino-de-prova/',
         icons: [
           {
             src: 'icon.svg',
