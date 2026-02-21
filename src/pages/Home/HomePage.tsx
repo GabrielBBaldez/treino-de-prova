@@ -1,0 +1,68 @@
+import { useState } from 'react';
+import { Link } from 'react-router';
+import { PlusCircle } from 'lucide-react';
+import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { QuizCard } from '../../components/QuizCard/QuizCard';
+import { ImportButton } from '../../components/ImportExport/ImportButton';
+import { EmptyState } from '../../components/EmptyState/EmptyState';
+import { ConfirmDialog } from '../../components/ConfirmDialog/ConfirmDialog';
+import type { Quiz } from '../../types/quiz';
+import styles from './HomePage.module.css';
+
+export function HomePage() {
+  const { quizzes, addQuiz, deleteQuiz } = useQuizStorage();
+  const [deleteId, setDeleteId] = useState<string | null>(null);
+
+  const handleImport = (quiz: Quiz) => {
+    addQuiz(quiz);
+  };
+
+  const handleDelete = () => {
+    if (deleteId) {
+      deleteQuiz(deleteId);
+      setDeleteId(null);
+    }
+  };
+
+  return (
+    <div>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Meus Bancos de Questoes</h1>
+        <div className={styles.headerActions}>
+          <ImportButton onImport={handleImport} />
+          <Link to="/create" className={styles.createBtn}>
+            <PlusCircle size={18} />
+            Criar Novo
+          </Link>
+        </div>
+      </div>
+
+      {quizzes.length === 0 ? (
+        <EmptyState
+          title="Nenhum banco de questoes"
+          description="Crie um novo banco de questoes ou importe um arquivo JSON para comecar a treinar."
+        />
+      ) : (
+        <div className={styles.grid}>
+          {quizzes.map((quiz) => (
+            <QuizCard
+              key={quiz.id}
+              quiz={quiz}
+              onDelete={setDeleteId}
+            />
+          ))}
+        </div>
+      )}
+
+      {deleteId && (
+        <ConfirmDialog
+          title="Excluir banco"
+          message="Tem certeza que deseja excluir este banco de questoes? Essa acao nao pode ser desfeita."
+          confirmLabel="Excluir"
+          onConfirm={handleDelete}
+          onCancel={() => setDeleteId(null)}
+        />
+      )}
+    </div>
+  );
+}

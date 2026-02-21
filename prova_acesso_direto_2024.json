@@ -1,0 +1,3101 @@
+{
+  "id": "d56bb4e9-b175-40d7-ac94-49e724df0560",
+  "title": "Residencia Medica - Acesso Direto AMB/AMRIGS 2024",
+  "description": "Prova de Acesso Direto e Autoavaliacao - AMB, AMRIGS, ACM e AMMS 01/2024. 97 questoes (3 anuladas). Gabarito definitivo.",
+  "subject": "Residencia Medica",
+  "questions": [
+    {
+      "id": "bb503d4f-f720-48f1-aef2-1a207dffd3e6",
+      "type": "assertion",
+      "text": "Sobre a hipertensao arterial sistemica, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Para diagnostico, indica-se a medicao anual de pressao arterial se a pressao arterial aferida for inferior a 140/90 mmHg.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "O diagnostico da hipertensao arterial sistemica deve ser baseado na medicao da pressao fora do consultorio com monitorizacao ambulatorial da pressao arterial, desde que seja viavel sua realizacao.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Historia previa de pre-eclampsia em mulheres e fator de risco para hipertensao arterial sistemica.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "28336bb6-7fe0-430b-be82-eeb1bdc1b3f1",
+      "type": "assertion",
+      "text": "Sobre a dengue, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "B",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Existem tecnicas laboratoriais para identificacao do virus (ate o 5o dia de inicio da doenca) e pesquisa de anticorpos (a partir do 6o dia de inicio da doenca).",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "O tratamento inclui medidas de suporte, hidratacao, repouso e antibioticoterapia.",
+          "correct": false
+        },
+        {
+          "id": "III",
+          "text": "O controle do vetor Aedes aegypti e o principal metodo para a prevencao.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "1a8ab23d-80ae-44d5-bc1f-8639407c4096",
+      "type": "assertion",
+      "text": "Em relacao ao colesterol, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "A",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Niveis elevados de HDL-C costumam estar relacionados a menor risco cardiovascular.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Altos niveis de HDL-C decorrentes de algumas doencas geneticas podem nao proteger de doenca cardiovascular, provavelmente em razao das alteracoes metabolicas e lipidicas concomitantes.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Causas secundarias de HDL-C elevado incluem cirrose biliar primaria, hipertireoidismo e alcoolismo sem cirrose.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "70ed9f68-678c-42d5-8f80-ba7df4759812",
+      "type": "assertion",
+      "text": "Em relacao a leptospirose, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "C",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "A penetracao do Leptospira ocorre apenas a partir de lesoes de pele imersa por longos periodos em agua contaminada.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "O periodo de incubacao pode variar de 1 a 30 dias e normalmente ocorre entre 7 e 14 dias apos a exposicao a situacoes de risco.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "A antibioticoterapia esta indicada em qualquer periodo da doenca, mas sua eficacia costuma ser maior na 1a semana do inicio dos sintomas.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "03fad9ee-8787-435d-81ef-095496b662e9",
+      "type": "assertion",
+      "text": "Em relacao ao rastreio para o cancer de prostata, analise as assertivas a seguir e assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Todas as assertivas estao corretas."
+        },
+        {
+          "id": "B",
+          "text": "Todas as assertivas estao incorretas."
+        },
+        {
+          "id": "C",
+          "text": "Apenas a assertiva II esta correta."
+        },
+        {
+          "id": "D",
+          "text": "Apenas a assertiva III esta correta."
+        }
+      ],
+      "correctAnswer": "B",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Homens a partir de 45 anos, mesmo sem apresentar sintomas, devem procurar o medico para avaliacao individualizada, tendo como objetivo o diagnostico precoce do cancer de prostata.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "Homens que integram o grupo de risco (raca negra ou com parentes de primeiro grau com cancer de prostata) devem comecar seus exames mais precocemente, a partir dos 40 anos.",
+          "correct": false
+        },
+        {
+          "id": "III",
+          "text": "Apos os 70 anos, somente homens com perspectiva de vida maior do que 10 anos poderao fazer essa avaliacao.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "aad325c8-5f7e-4a8f-8025-f0646cb3d3e0",
+      "type": "multiple_choice",
+      "text": "O escore de Wells e um modelo de predicao clinica amplamente utilizado para auxilio no diagnostico de Trombose Venosa Profunda (TVP). Qual das alternativas abaixo apresenta um achado clinico que NAO aumenta a suspeicao de diagnostico de TVP?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Edema de toda a extremidade."
+        },
+        {
+          "id": "B",
+          "text": "Presenca de celulite."
+        },
+        {
+          "id": "C",
+          "text": "Veias colaterais superficiais nao varicosas."
+        },
+        {
+          "id": "D",
+          "text": "Palpacao dolorosa ao longo do trajeto de veias do sistema profundo."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "2dfcf63c-062f-4c3f-b921-505db9c840e3",
+      "type": "multiple_choice",
+      "text": "Dor cronica difusa, subjetividade dos sintomas, preponderancia em mulheres e falta de dados objetivos de imagem e de exames laboratoriais fazem com que a principal suspeita clinica seja de:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Artrite reumatoide."
+        },
+        {
+          "id": "B",
+          "text": "Polimialgia reumatica."
+        },
+        {
+          "id": "C",
+          "text": "Fibromialgia."
+        },
+        {
+          "id": "D",
+          "text": "Depressao."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "4fbb85d2-63bf-4c87-9b9b-fc1616a453b3",
+      "type": "multiple_choice",
+      "text": "A presenca de bandas oligoclonais no liquor sugere fortemente o diagnostico de:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Alzheimer."
+        },
+        {
+          "id": "B",
+          "text": "Esclerose multipla."
+        },
+        {
+          "id": "C",
+          "text": "Linfoma de celulas B."
+        },
+        {
+          "id": "D",
+          "text": "Meningite viral."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "bd249254-3dd6-4eda-b174-2859cd187163",
+      "type": "assertion",
+      "text": "Em relacao ao hipotireoidismo, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "C",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Pode-se comecar o tratamento de hipotireoidismo com a reposicao de levotiroxina sodica na dose de 2 g/kg/dia no adulto jovem e 1,5 g/kg/dia total no idoso (sem antecedentes de cardiopatia).",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "A medida do TSH serico em pacientes jovens hipotireoideos so deve ser solicitada para avaliar a reposicao hormonal apos seis semanas de inicio do tratamento regular.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Drogas como anticonvulsivantes, rifampicina e sertralina podem acelerar o metabolismo da levotiroxina e, neste caso, a dose precisa ser ajustada.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "47942a30-cd94-4c99-a191-686ddcbb328c",
+      "type": "assertion",
+      "text": "Sobre o diabetes melito, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "C",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "A taxa de glicacao da fracao A1c da hemoglobina A (HbA1c) e expressa em porcentagem e se relaciona com a media das glicemias diarias nas ultimas 3 semanas.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "E recomendada a meta de HbA1c <7,0% para individuos com qualquer tipo de diabetes, para prevencao de complicacoes macrovasculares em longo prazo, desde que nao incorra em hipoglicemias graves e frequentes, exceto em idosos.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Em idosos com diabetes melito, com objetivo de evitar hipoglicemia, uma meta de HbA1c <8,0% deve ser considerada quando houver status funcional comprometido, sindrome de fragilidade, presenca de comorbidades que limitem a expectativa de vida e/ou alteracao da funcao cognitiva.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "dfbf004b-adf4-4436-919e-412a53dc64c9",
+      "type": "assertion",
+      "text": "Em relacao a retocolite ulcerativa, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Os surtos agudos de retocolite ulcerativa podem ser controlados com derivados do acido 5-aminossalicilico.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Os que nao responderem ao tratamento com derivados do acido 5-aminossalicilico devem receber corticosteroides para inducao da remissao da retocolite ulcerativa.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Pacientes com retocolite ulcerativa grave sem resposta ao uso de corticosteroide sao candidatos ao uso de ciclosporina.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "ae59ae23-a278-44c1-8d0e-d97c8de9b51d",
+      "type": "multiple_choice",
+      "text": "A Sindrome da Resposta Inflamatoria Sistemica (SIRS) e uma resposta complexa do organismo a uma serie de insultos. Em relacao aos criterios diagnosticos e caracteristicas fisiopatologicas de SIRS, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "A presenca de pelo menos um criterio da SIRS e suficiente para diagnostico de sepse, independentemente da causa subjacente."
+        },
+        {
+          "id": "B",
+          "text": "O diagnostico da SIRS pode ser confirmado pela elevacao de biomarcadores especificos, como a troponina e a creatinina."
+        },
+        {
+          "id": "C",
+          "text": "A SIRS e caracterizada por uma resposta inflamatoria que pode ocorrer na ausencia de infeccao, como em casos de pancreatite aguda ou queimaduras extensas."
+        },
+        {
+          "id": "D",
+          "text": "SIRS resulta em hipotensao arterial que nao responde a reposicao volemica."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "993d71c3-ff1b-4e32-a820-89a2362f26c7",
+      "type": "assertion",
+      "text": "Em relacao a malaria, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "O diagnostico confirmatorio da malaria baseia-se no encontro de parasitos no sangue. O metodo mais utilizado e a microscopia de gota espessa de sangue, colhida por puncao digital e corada pelo metodo de Walker.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "A sorologia para pesquisa de anticorpos antiplasmodium nao deve ser realizada no caso de suspeita de malaria. Seu resultado e relacionado a exposicao previa e e restrito apenas a estudos cientificos.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Pessoas com deficiencia suspeita ou confirmada de glicose-6-fosfato-desidrogenase (G6PD), atividade abaixo de 30%, nao deverao fazer uso de primaquina.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "8f9ec0ff-df97-4160-b77c-8a675f9328ab",
+      "type": "assertion",
+      "text": "Em relacao a osteoporose, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "A",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "O raloxifeno esta aprovado para prevencao e tratamento da osteoporose da coluna vertebral em mulheres na pos-menopausa, sem sintomas climatericos, promovendo reducao significante de fraturas vertebrais, sem impacto na reducao de outras fraturas.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Pacientes com T-score igual ou menor do que -2,5 DP na coluna lombar, colo femoral, femur total ou radio 33% devem ser considerados para terapia farmacologica.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "O tratamento com altas doses de vitamina D (dose superior a 50.000 UI por semana) e recomendado para todas as mulheres em pos-menopausa, independentemente do nivel serico de vitamina D e do historico de fraturas.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "1a441268-36a4-41fe-b816-4c61bb8ca1a3",
+      "type": "assertion",
+      "text": "Em relacao a doenca pulmonar obstrutiva cronica, analise as assertivas a seguir:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "C",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "O diagnostico funcional de obstrucao ao fluxo aereo se baseia na relacao entre volume expiratorio forcado no primeiro segundo e capacidade vital forcada (VEF1 e CVF), considerando-se anormal um valor inferior a 80%.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "A dosagem do nivel serico de alfa-1-antitripsina deve ser considerada para casos de enfisema pulmonar panlobular com predominio basal de inicio precoce (antes da 4a decada), especialmente em nao fumantes.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "A teofilina e eficaz na reducao de dispneia em estudos clinicos randomizados, mas o risco de toxicidade e a necessidade de monitorizacao do nivel serico limitam sua utilidade clinica.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "e75be6b4-4820-4216-8063-c69db60839cd",
+      "type": "multiple_choice",
+      "text": "Um dos desafios no cuidado ao paciente idoso e reconhecer as particularidades que essa faixa etaria apresenta em relacao a outras. Qual das alternativas a seguir apresenta uma particularidade comum nos pacientes idosos e que requer atencao especial?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O metabolismo dos medicamentos e mais rapido, exigindo doses mais altas."
+        },
+        {
+          "id": "B",
+          "text": "A sensibilidade a dor diminui, tornando desnecessario o uso de analgesicos."
+        },
+        {
+          "id": "C",
+          "text": "A polifarmacia, devido ao risco aumentado de interacoes medicamentosas."
+        },
+        {
+          "id": "D",
+          "text": "A capacidade cognitiva melhora, facilitando a adesao ao tratamento."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "3708701d-f270-4e4c-a3a7-c7d4698b6267",
+      "type": "multiple_choice",
+      "text": "O angioedema e uma condicao potencialmente grave, caracterizada pelo edema subito de tecidos subcutaneos e submucosos. Em relacao a fisiopatologia, diagnostico e manejo do angioedema, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O angioedema hereditario e causado por uma deficiencia de C3, resultando em uma producao excessiva de bradicinina."
+        },
+        {
+          "id": "B",
+          "text": "Os Inibidores da Enzima Conversora de Angiotensina (IECA) sao a causa mais comum de angioedema adquirido, com boa resposta a anti-histaminicos."
+        },
+        {
+          "id": "C",
+          "text": "O angioedema mediado por bradicinina responde bem ao tratamento com anti-histaminicos e corticosteroides."
+        },
+        {
+          "id": "D",
+          "text": "A dosagem de C1-inibidor e fundamental para o diagnostico de angioedema hereditario."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Clinica Medica"
+      ]
+    },
+    {
+      "id": "bd0689ff-6dd3-48df-af7b-80fec8b5ff07",
+      "type": "multiple_choice",
+      "text": "Homem, 21 anos, com quadro de alucinacoes auditivas e delirios persecutorios e levado a emergencia. Como estava desconfiado e com comportamento desafiador, optou-se por administrar 1 ampola de haloperidol IM para buscar acalma-lo. Em 30 minutos, necessitou mais uma dose. Duas horas apos ter recebido a medicacao, passou a ter sensacao de desconforto, angustia e desassossego, mexendo o tronco, mantendo pes e bracos agitados, e ficando mais ansioso e irritado. Referia nao conseguir ficar parado, pedindo por socorro. Considerando o caso apresentado, qual e a possivel hipotese diagnostica e a conduta a ser tomada, respectivamente?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Crise de panico — administracao de benzodiazepínico."
+        },
+        {
+          "id": "B",
+          "text": "Acatisia — administracao de benzodiazepínico/propranolol."
+        },
+        {
+          "id": "C",
+          "text": "Agitacao psicotica — administracao de antipsicotico."
+        },
+        {
+          "id": "D",
+          "text": "Delirium hiperativo — administracao de antipsicotico."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Clinica Medica",
+        "Psiquiatria"
+      ]
+    },
+    {
+      "id": "872b4969-9c27-473c-9600-d3181ee970c5",
+      "type": "multiple_choice",
+      "text": "Mulher, 78 anos, estava em tratamento para hipertensao arterial, diabetes tipo 2, dislipidemia e incontinencia urinaria. Realizou cirurgia de revascularizacao miocardica. No terceiro dia de pos-operatorio, a paciente achava que estava em sua casa, referindo aguardar seu marido chegar do trabalho, nao demonstrando ter ciencia de que ele ja era falecido. Em alguns momentos, parecia mais calma e lucida, mas alternava esse comportamento com outros de desorganizacao e discurso incoerente. Durante o dia, tendia a ficar mais sonolenta. Na avaliacao, a paciente nao colaborava com o exame fisico. Mostrava-se perplexa, assustando-se com sons do ambiente, via cachorros caminhando no quarto. Distraia-se com facilidade, nao focando sua atencao nas perguntas feitas pelo medico. Durante a noite, ficou agitada, desorganizada, agressiva com a equipe, com tentativas de arrancar os cateteres. Paciente foi diagnosticada com delirium. Em relacao ao quadro diagnostico apresentado, assinale a alternativa INCORRETA.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O processo de identificacao e tratamento de possiveis causas clinicas associadas deve ser rapido."
+        },
+        {
+          "id": "B",
+          "text": "Estrategias como reorientacao, otimizacao do sono, exercicios e mobilizacao do paciente, hidratacao oral, auxilio visual e auditivo sao medidas preventivas importantes, demonstrando reducao da prevalencia dessa condicao."
+        },
+        {
+          "id": "C",
+          "text": "Deve-se evitar o uso de benzodiazepínico, sendo reservado a casos especificos, como de delirium secundario a abstinencia de alcool ou de sedativos/hipnoticos."
+        },
+        {
+          "id": "D",
+          "text": "O uso de antipsicoticos esta indicado tanto para prevencao como para o tratamento do delirium hiperativo."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Clinica Medica",
+        "Psiquiatria"
+      ]
+    },
+    {
+      "id": "dca4b4a7-586a-4a2f-8b03-195497f02bf3",
+      "type": "multiple_choice",
+      "text": "Paciente em NPO em pos-operatorio necessita receber volume adequado de liquidos e quantidade adequada de eletrolitos. Quais sao os valores corretos das necessidades basicas (mEq/quilo/dia) de sodio e de potassio, respectivamente?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "1,3 e 3,4."
+        },
+        {
+          "id": "B",
+          "text": "2,0 e 1,0."
+        },
+        {
+          "id": "C",
+          "text": "3,4 e 1,3."
+        },
+        {
+          "id": "D",
+          "text": "19,0 e 22,9."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "d5dfdee6-e4d3-4aca-82b6-6d996f675a78",
+      "type": "multiple_choice",
+      "text": "A doenca de Crohn e caracterizada por um processo inflamatorio que compromete o intestino e pode causar dor abdominal, diarreia e perda de peso. Sobre a doenca de Crohn, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O processo inflamatorio limita-se a mucosa da parede intestinal."
+        },
+        {
+          "id": "B",
+          "text": "A etiologia esta sempre associada a agentes infecciosos."
+        },
+        {
+          "id": "C",
+          "text": "Todas as camadas da parede intestinal sao comprometidas pela inflamacao."
+        },
+        {
+          "id": "D",
+          "text": "Compromete unicamente o ileo terminal."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "ec47e1ab-7802-49c3-b740-c3bab9abf98e",
+      "type": "multiple_choice",
+      "text": "Paciente adulto, em pos-operatorio de grande cirurgia, apresenta edema generalizado em membro inferior direito e dor na panturrilha, mais acentuada a flexao do pe direito. Considerando o caso apresentado, a hipotese diagnostica mais provavel e:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Traumatismo por mobilizacao excessiva."
+        },
+        {
+          "id": "B",
+          "text": "Oclusao arterial aguda."
+        },
+        {
+          "id": "C",
+          "text": "Trombose venosa profunda."
+        },
+        {
+          "id": "D",
+          "text": "Tromboangelte obliterante."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "df5ba52e-59fd-4fa4-8bb2-3d263c88f5b8",
+      "type": "multiple_choice",
+      "text": "Em pacientes adultos, obstrucoes intestinais em colon causadas por doenca neoplasica sao mais comuns no:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Angulo hepatico."
+        },
+        {
+          "id": "B",
+          "text": "Angulo esplenico."
+        },
+        {
+          "id": "C",
+          "text": "Colon transverso."
+        },
+        {
+          "id": "D",
+          "text": "Colon esquerdo."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "fba4fb0d-7adf-4190-b097-9f99a0e9021a",
+      "type": "multiple_choice",
+      "text": "Paciente adulto, sexo masculino, apresenta quadro de estenose pilorica. Considerando o quadro, assinale a alternativa que apresenta o diagnostico mais provavel.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Carcinoma gastrico."
+        },
+        {
+          "id": "B",
+          "text": "Ulcera peptica duodenal."
+        },
+        {
+          "id": "C",
+          "text": "Polipos gastricos."
+        },
+        {
+          "id": "D",
+          "text": "Fitobezoar gastrico."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "dfff24ba-3686-4f14-840d-7b30bf78067f",
+      "type": "multiple_choice",
+      "text": "Paciente com fibrilacao atrial, com quadro de dor abdominal e historia de colecistectomia previa. A dor iniciou em epigastrio e irradiou para a regiao umbilical e fossa iliaca direita. Apresenta temperatura axilar 37,5C, acompanhada de nauseas e vomitos. Ao exame fisico, apresentou dor a palpacao abdominal e presenca de sinal de Blumberg. Qual e a hipotese diagnostica mais provavel no caso?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Sindrome intestinal inflamatoria."
+        },
+        {
+          "id": "B",
+          "text": "Doenca de Crohn."
+        },
+        {
+          "id": "C",
+          "text": "Trombose mesenterica."
+        },
+        {
+          "id": "D",
+          "text": "Apendicite aguda."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "ecc97356-75a9-4c83-afd1-3e3d2f49f3f4",
+      "type": "multiple_choice",
+      "text": "Polipos de vesicula biliar sao achados comuns em ecografias. Assinale a alternativa que apresenta uma indicacao para tratamento cirurgico nesse caso.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Historia familiar de neoplasia de via biliar."
+        },
+        {
+          "id": "B",
+          "text": "Medida do polipo acima de 8 milimetros."
+        },
+        {
+          "id": "C",
+          "text": "Presenca de polipos em colon."
+        },
+        {
+          "id": "D",
+          "text": "Polipos multiplos."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "0e652200-fca2-4ff4-a598-4cab39d22dcc",
+      "type": "multiple_choice",
+      "text": "Sobre as hernias de hiato, e INCORRETO afirmar que:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Qualquer tipo de hernia pode gerar sintomas classicos de refluxo."
+        },
+        {
+          "id": "B",
+          "text": "A membrana frenoesofagica e uma continuacao da fascia endoabdominal que se ancora no esofago."
+        },
+        {
+          "id": "C",
+          "text": "As hernias paraesofagicas podem estar associadas a doenca do refluxo gastroesofagico (DRGE)."
+        },
+        {
+          "id": "D",
+          "text": "A pressao relativamente positiva dentro do torax facilita a migracao visceral."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "cacbffad-7fed-48b4-a02d-f49d6519fe2a",
+      "type": "multiple_choice",
+      "text": "Sobre o tratamento da DRGE, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Endoscopia Digestiva Alta (EDA), manometria, monitoramento do pH, esofagograma e cintilografia sao exames essenciais para avaliacao pre-operatoria."
+        },
+        {
+          "id": "B",
+          "text": "O Inibidor de Bomba de Protons (IBP) age ligando-se de forma reversivel as celulas parietais do estomago."
+        },
+        {
+          "id": "C",
+          "text": "O padrao-ouro para o diagnostico da DRGE e a pHmetria de 24 horas."
+        },
+        {
+          "id": "D",
+          "text": "A dose minima de IBP e o padrao-ouro para o manejo dos sintomas de refluxo."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "acf71ca2-450a-4f58-a6df-d584582b9c9f",
+      "type": "assertion",
+      "text": "Homem, 72 anos, apresenta quadro de dor epigastrica ha cerca de 90 dias. Na ultima semana, apresentou quadro de hemorragia digestiva baixa. EDA mostra lesao submucosa, com area de ulceracao central, com cerca de 4 cm na regiao do corpo do estomago. Biopsia endoscopica nao revela tumor. TC de abdome sugere diagnostico de tumor do estroma gastrointestinal (GIST) de 8 cm no maior diametro. Analise as assertivas:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas III."
+        },
+        {
+          "id": "D",
+          "text": "Apenas II e III."
+        }
+      ],
+      "correctAnswer": "B",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Biopsia percutanea guiada por tomografia computadorizada e o melhor metodo para definir o diagnostico dessa lesao.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "O exame imunoistoquimico e fundamental para o diagnostico desses tumores.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "A profundidade da invasao na parede gastrica e a presenca de linfonodos comprometidos sao os principais fatores prognosticos para definir a sobrevida.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "c67b7950-d017-4a2e-9a92-48d8ffbb5def",
+      "type": "assertion",
+      "text": "Apos sofrer acidente automobilistico, homem, 50 anos, necessita realizar esplenectomia. Esta preocupado com o risco de complicacoes infecciosas tardias. Analise as assertivas:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas III."
+        },
+        {
+          "id": "D",
+          "text": "Apenas I e III."
+        }
+      ],
+      "correctAnswer": "A",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "O micro-organismo mais frequentemente envolvido e o S. pneumoniae.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "O periodo de maior risco para desenvolvimento da sepse pos-esplenectomia e durante os primeiros 12 meses apos a retirada do baco, sendo muito rara apos esse periodo.",
+          "correct": false
+        },
+        {
+          "id": "III",
+          "text": "A mortalidade por sepse pos-esplenectomia e maior nos individuos que fizeram a esplenectomia por trauma do que naqueles que realizaram a operacao por doencas hematologicas.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "b46c0739-abe7-4dfe-b7af-72c5c29574a0",
+      "type": "multiple_choice",
+      "text": "Mulher, 18 anos, apresenta nodulo isolado em lobo direito da tireoide diagnosticado ha 30 dias. Provas de funcao da tireoide normais. Ecografia demonstra lesao solida com 2,5 cm de diametro. Assinale a alternativa que apresenta a melhor conduta para avaliacao diagnostica desse nodulo.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Cintilografia de tireoide."
+        },
+        {
+          "id": "B",
+          "text": "Tomografia computadorizada com contraste endovenoso."
+        },
+        {
+          "id": "C",
+          "text": "Puncao aspirativa com agulha fina."
+        },
+        {
+          "id": "D",
+          "text": "Cirurgia com congelacao do nodulo."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "0a6b5377-3efb-402e-9f19-be753ef569bf",
+      "type": "assertion",
+      "text": "Mulher, 78 anos, assintomatica, ecografia abdominal detecta lesao de 12 mm na cabeca do pancreas. TC revela nodulo hipervascularizado sugestivo de tumor neuroendocrino nao funcionante. Analise as assertivas:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas III."
+        },
+        {
+          "id": "D",
+          "text": "Apenas I e II."
+        }
+      ],
+      "correctAnswer": "B",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Esse tipo de tumor se apresenta mais frequentemente associado a sindromes geneticas do que de maneira esporadica.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "A dosagem da cromogranina A e de auxilio diagnostico nesses casos.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Indicacao de resseccao cirurgica esta sempre indicada por tratar-se de um tumor invariavelmente maligno, com alto risco de desenvolver metastases.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "511dacbc-a6fb-4a25-89bc-800a92b91494",
+      "type": "multiple_choice",
+      "text": "Sobre o esofago de Barrett, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Ablacao por radiofrequencia (RFA) pode erradicar displasia de alto grau."
+        },
+        {
+          "id": "B",
+          "text": "Esofagectomia esta indicada diante do achado de adenocarcinoma."
+        },
+        {
+          "id": "C",
+          "text": "Uso de crioterapia esta associado a elevado risco de estenose esofagica."
+        },
+        {
+          "id": "D",
+          "text": "Os pacientes possuem elevado risco absoluto de desenvolvimento de cancer."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "ee511510-039d-4674-bf22-74d0f0f0afcb",
+      "type": "multiple_choice",
+      "text": "Sobre o atendimento a vitima de ingestao acidental de soda caustica, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O exame fisico e pouco revelador, e o diagnostico ocorre pela endoscopia digestiva alta."
+        },
+        {
+          "id": "B",
+          "text": "A avaliacao por meio de endoscopia digestiva alta e mais segura apos 48 horas do acidente."
+        },
+        {
+          "id": "C",
+          "text": "A prescricao rotineira de corticosteroides nao esta recomendada para reducao do risco de estenose."
+        },
+        {
+          "id": "D",
+          "text": "A esofagectomia e o tratamento de escolha nos casos de lesoes ulceradas ou circunferenciais."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "e4e73391-037c-4838-80f3-4c27a7f4ad2b",
+      "type": "multiple_choice",
+      "text": "Sobre as hernias hiatais paraesofagicas, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Os sintomas mais frequentes sao saciedade precoce, disfagia, odinofagia e dor toracica."
+        },
+        {
+          "id": "B",
+          "text": "A decisao pelo reparo cirurgico ou tratamento conservador esta baseada nos sintomas."
+        },
+        {
+          "id": "C",
+          "text": "Na hernia hiatal tipo II, a juncao esofagogastrica esta situada acima do diafragma."
+        },
+        {
+          "id": "D",
+          "text": "Na hernia hiatal tipo III, ocorre migracao do estomago e outras visceras acima do hiato."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "380bd312-4969-4764-a20f-650f2031279a",
+      "type": "multiple_choice",
+      "text": "Sobre a hemorragia digestiva alta por ulcera peptica, assinale a alternativa que apresenta risco elevado de ressangramento.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Ulcera Forrest IIc."
+        },
+        {
+          "id": "B",
+          "text": "Ulcera na grande curvatura gastrica."
+        },
+        {
+          "id": "C",
+          "text": "Ulcera na parede posterior do bulbo."
+        },
+        {
+          "id": "D",
+          "text": "Necessidade de transfusao de 3U de concentrado de hemacias."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "1304cf93-3000-4092-b708-04fb3fd24323",
+      "type": "multiple_choice",
+      "text": "Sobre os hormonios dos eixos enteroencefalico e enteroinsular e a cirurgia bariatrica, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "A grelina e produzida pelas celulas parietais do corpo gastrico."
+        },
+        {
+          "id": "B",
+          "text": "GLP-1 promove reducao do esvaziamento gastrico."
+        },
+        {
+          "id": "C",
+          "text": "Apos bypass gastrico, ocorre reducao da expressao de PYY."
+        },
+        {
+          "id": "D",
+          "text": "A liberacao de NPY nao e influenciada pela grelina circulante."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "f7c4c3f6-fc8f-4650-b9da-e6a994876862",
+      "type": "multiple_choice",
+      "text": "Sobre as obstrucoes intestinais, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Na obstrucao intestinal por doenca de Crohn agudizada, o tratamento cirurgico esta indicado."
+        },
+        {
+          "id": "B",
+          "text": "No atendimento inicial, a hidratacao deve ocorrer sem excesso, para evitar sindrome compartimental."
+        },
+        {
+          "id": "C",
+          "text": "Drenagem percutanea de abscesso intra-abdominal pode ser indicada para resolver quadro obstrutivo."
+        },
+        {
+          "id": "D",
+          "text": "Na obstrucao intestinal por enterite actinica, o tratamento cirurgico e a opcao de escolha."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "c51e799d-6e3b-4770-a14b-94f66e57eae6",
+      "type": "multiple_choice",
+      "text": "A parede abdominal e formada por nove camadas de tecido que, dispostas da camada mais externa para a mais interna, apresentam a seguinte sequencia: pele, tecido subcutaneo, fascia superficial, musculo ______, musculo ______, musculo ______, fascia transversalis, tecido adiposo pre-peritoneal e peritonio. Assinale a alternativa que preenche, correta e respectivamente, as lacunas.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "obliquo externo — obliquo interno — transverso do abdome"
+        },
+        {
+          "id": "B",
+          "text": "obliquo interno — obliquo externo — transverso do abdome"
+        },
+        {
+          "id": "C",
+          "text": "transverso — obliquo interno — obliquo externo"
+        },
+        {
+          "id": "D",
+          "text": "obliquo externo — transverso do abdome — obliquo interno"
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Cirurgia"
+      ]
+    },
+    {
+      "id": "46d55335-5d2d-44e5-acd7-6c5ba5355e37",
+      "type": "multiple_choice",
+      "text": "Em relacao ao sangramento uterino anormal em uma mulher na menacme, e correto afirmar que:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Sempre se deve descartar um caso de gravidez."
+        },
+        {
+          "id": "B",
+          "text": "O encaminhamento para especialista deve ser feito se nao houver resposta ao tratamento clinico otimizado por 3 semanas."
+        },
+        {
+          "id": "C",
+          "text": "E irrelevante verificar o indice de massa corporal da paciente."
+        },
+        {
+          "id": "D",
+          "text": "A espessura endometrial, verificada por ecografia pelvica transvaginal, faz parte da investigacao em qualquer fase do ciclo menstrual."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "62703f3a-e349-4642-af14-08e7c1b843c2",
+      "type": "multiple_choice",
+      "text": "Paciente de 34 anos vem a consulta por sangramento uterino anormal ha 2 meses. No exame fisico especular, foi identificada uma lesao polipoide, friavel, extruindo pelo colo uterino. Progesterona de 4 ng/ml. A hipotese diagnostica mais provavel e a conduta adequada sao, respectivamente:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Cancer de colo uterino — realizar citopatologico."
+        },
+        {
+          "id": "B",
+          "text": "Polipos cervicais prolapsados — encaminhar para ginecologista."
+        },
+        {
+          "id": "C",
+          "text": "Abortamento em curso — encaminhar para uma emergencia obstetrica."
+        },
+        {
+          "id": "D",
+          "text": "Mola hidatiforme — iniciar tratamento com metotrexato."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "5a6bf6bf-9b5d-468c-b99b-5d6cadbf8dcd",
+      "type": "multiple_choice",
+      "text": "Uma paciente de 60 anos, pos-menopausica, traz uma mamografia convencional de rotina que revela um novo agrupamento de microcalcificacoes pleomorficas numa pequena area da mama direita. Nega cirurgias previas. A conduta mais adequada no caso consiste em:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Repetir a mamografia em 6 meses para verificar se ha evolucao das microcalcificacoes."
+        },
+        {
+          "id": "B",
+          "text": "Solicitar calcio serico com correcao da albumina para verificar risco de aterosclerose."
+        },
+        {
+          "id": "C",
+          "text": "Encaminhar para centro de referencia para realizar biopsia da lesao."
+        },
+        {
+          "id": "D",
+          "text": "Solicitar mamografia digital com incidencias adicionais de Eklund."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "b231e2c5-f67c-426a-bd10-174a42877f7d",
+      "type": "assertion",
+      "text": "Sao opcoes terapeuticas para os sintomas vasomotores da sindrome climaterica:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Modificacoes de estilo de vida: roupas leves, temperatura ambiente mais baixa e nao fumar.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Terapia de reposicao hormonal sistemica.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Uso de inibidores seletivos da recaptacao de serotonina e inibidores seletivos de recaptacao da serotonina e noradrenalina.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "f9e6eb8d-0a97-4ae9-8676-71aa72f9945d",
+      "type": "multiple_choice",
+      "text": "Mulher de 31 anos esta sendo investigada por amenorreia secundaria. Exame de gravidez negativo, nao faz uso de medicamentos, nega alteracoes de peso ou neurologicas. Prolactina, tireoide e FSH normais. Apos 10 mg de acetato de medroxiprogesterona por 10 dias, teve sangramento de 1 dia. A hipotese diagnostica mais provavel e:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Sindrome dos ovarios policisticos."
+        },
+        {
+          "id": "B",
+          "text": "Sindrome de Kallmann."
+        },
+        {
+          "id": "C",
+          "text": "Insuficiencia ovariana prematura."
+        },
+        {
+          "id": "D",
+          "text": "Insensibilidade aos androgenios."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "eb324243-e01d-4aab-99b1-c2d3d8ac6ae0",
+      "type": "multiple_choice",
+      "text": "Na colocacao do dispositivo intrauterino de cobre, qual dos instrumentais abaixo e o mais utilizado para a apreensao do colo uterino de acordo com a tecnica preconizada?\n[Questao com imagens dos instrumentais - nao disponiveis na versao texto]",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Instrumental A (pinça de Pozzi)."
+        },
+        {
+          "id": "B",
+          "text": "Instrumental B."
+        },
+        {
+          "id": "C",
+          "text": "Instrumental C."
+        },
+        {
+          "id": "D",
+          "text": "Instrumental D."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "99415d75-3da1-4def-b77c-717f24bce96a",
+      "type": "multiple_choice",
+      "text": "Na Figura 1 abaixo, a seta indica o(s):\n[Questao com imagem anatomica - nao disponivel na versao texto]",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Prepucio."
+        },
+        {
+          "id": "B",
+          "text": "Grandes labios."
+        },
+        {
+          "id": "C",
+          "text": "Pequenos labios."
+        },
+        {
+          "id": "D",
+          "text": "Clitoris."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "57c66c90-3e22-4b2a-901f-7aaf0c2ee392",
+      "type": "multiple_choice",
+      "text": "Sobre o tratamento para o condiloma vulvar acuminado, que pode ser realizado na unidade de saude, e correto afirmar que:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O acido tricloroacetico (ATA) a 10% pode ser feito em 3 aplicacoes."
+        },
+        {
+          "id": "B",
+          "text": "O ATA a 80%-90% pode ser aplicado semanalmente por 8 a 10 semanas."
+        },
+        {
+          "id": "C",
+          "text": "O ATA nao pode ser aplicado na gestacao."
+        },
+        {
+          "id": "D",
+          "text": "O imiquimod 5% creme so pode ser aplicado depois do segundo trimestre."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "0ca78b09-95fa-41b1-9039-85ebbd431e8b",
+      "type": "multiple_choice",
+      "text": "Durante o parto, no momento em que o feto desprende o ombro anterior, o medico deve:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Solicitar que seja administrado 10 UI de ocitocina por via intramuscular para prevenir a hemorragia pos-parto."
+        },
+        {
+          "id": "B",
+          "text": "Realizar a massagem uterina para evitar a retencao da placenta."
+        },
+        {
+          "id": "C",
+          "text": "Solicitar a administracao de 5 UI de ocitocina e metilergonovina por via intravenosa como conduta ativa no secundamento."
+        },
+        {
+          "id": "D",
+          "text": "Aguardar a saida completa do feto e realizar a ligadura precoce do cordao umbilical."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "18180516-e98d-42b5-9e74-e80378ef8103",
+      "type": "multiple_choice",
+      "text": "Uma gestante de 10 semanas e 6 dias vem a consulta de pre-natal. Ela nao apresenta fatores de risco ou queixas. Apos a consulta, o medico agenda uma ultrassonografia para ser realizada em 1 semana. O tipo de ultrassonografia que ela devera realizar e:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Obstetrica transvaginal com doppler das arterias ovarianas para ver a funcao do corpo luteo."
+        },
+        {
+          "id": "B",
+          "text": "Morfologica de primeiro trimestre (medir a translucencia nucal)."
+        },
+        {
+          "id": "C",
+          "text": "Morfologica do segundo trimestre."
+        },
+        {
+          "id": "D",
+          "text": "Obstetrica para ver o fenomeno de centralizacao."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "a6843a36-7cbb-4d7b-a338-268007e894be",
+      "type": "multiple_choice",
+      "text": "Considerando a Figura 2, o diagnostico mais provavel e a conduta mais adequada sao, respectivamente:\n[Questao com imagem clinica - nao disponivel na versao texto]",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Retocele — cirurgia de Burch."
+        },
+        {
+          "id": "B",
+          "text": "Retocele — cirurgia de colpocleise (Le Fort)."
+        },
+        {
+          "id": "C",
+          "text": "Cisto de Bartholin — marsupializacao."
+        },
+        {
+          "id": "D",
+          "text": "Cistocele — encaminhar para centro especializado, se a paciente for sintomatica."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "e281a8d4-9482-4f83-afe5-99d12aba169f",
+      "type": "multiple_choice",
+      "text": "Uma mulher de 24 anos foi submetida a parto cesareo, ha tres dias, por parada do trabalho de parto. Apos a cesarea, permaneceu 10 horas com sondagem vesical de demora. Hoje, apresenta febre de 38,8C. Nega tosse ou disuria. Mamas com saida espontanea de leite. Nao ha dor na regiao costovertebral ou na incisao cutanea. O fundo uterino esta acima da cicatriz umbilical e e doloroso. O diagnostico mais provavel e a conduta sao, respectivamente:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Endometrite — antibioticoterapia."
+        },
+        {
+          "id": "B",
+          "text": "Pielonefrite — antibioticoterapia."
+        },
+        {
+          "id": "C",
+          "text": "Ingurgitamento mamario — analgesicos orais."
+        },
+        {
+          "id": "D",
+          "text": "Hematoma supra-aponevrotico — drenagem com agulha grossa."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "391f57ee-8119-4d58-ae71-1397a69cc7e8",
+      "type": "assertion",
+      "text": "O transporte de substancias por meio da placenta ocorre por meio dos seguintes mecanismos:\nQuais estao corretos?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Difusao simples.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Transporte ativo.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Pinocitose.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "c7a52ff8-b4b6-4d8c-838b-8cb12f10ec93",
+      "type": "multiple_choice",
+      "text": "Paciente com 13 semanas de gestacao gemelar, dicorionica e diamniotica, vem para o pre-natal de rotina. Nao apresenta queixas. Nesse caso, o medico deve:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Prescrever acido acetilsalicilico e carbonato de calcio ate 36 semanas para a prevencao da pre-eclampsia."
+        },
+        {
+          "id": "B",
+          "text": "Recomendar a vacinacao para febre amarela."
+        },
+        {
+          "id": "C",
+          "text": "Solicitar o teste de tolerancia a glicose com 75 g, pois esta indicado nessa idade gestacional."
+        },
+        {
+          "id": "D",
+          "text": "Manter o pre-natal no posto de saude, por nao ser uma gestacao de alto risco."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "edfbeeed-66e0-4f51-8f3b-853f8acf10c7",
+      "type": "multiple_choice",
+      "text": "A Figura 3 mostra um embriao. Considerando a imagem apresentada, o diagnostico mais provavel e:\n[Questao com imagem - nao disponivel na versao texto]",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Descolamento prematuro de placenta."
+        },
+        {
+          "id": "B",
+          "text": "Placenta previa."
+        },
+        {
+          "id": "C",
+          "text": "Aborto incompleto."
+        },
+        {
+          "id": "D",
+          "text": "Aborto inevitavel."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "19512799-4e80-449d-abca-ade13d742c30",
+      "type": "multiple_choice",
+      "text": "Mulher, 22 anos, com diagnostico de esquizofrenia paranoide teve alta de unidade psiquiatrica com resolucao dos sintomas psicoticos. Com o tempo, comecou a apresentar perda da libido, oligomenorreia, aumento das mamas e galactorreia. Exames indicaram aumento de prolactina. Entre os antipsicoticos abaixo, qual seria o causador mais provavel?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Risperidona."
+        },
+        {
+          "id": "B",
+          "text": "Olanzapina."
+        },
+        {
+          "id": "C",
+          "text": "Clorpromazina."
+        },
+        {
+          "id": "D",
+          "text": "Quetiapina."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia",
+        "Psiquiatria"
+      ]
+    },
+    {
+      "id": "ce54d96d-68d1-4a07-abf2-dbd99abc3d02",
+      "type": "assertion",
+      "text": "Analise as seguintes assertivas a respeito da depressao pos-parto:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I, II e III."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I, II e IV."
+        },
+        {
+          "id": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "id": "D",
+          "text": "Apenas II, III e IV."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Gravidez nao planejada ou nao desejada, complicacoes medicas ao longo da gestacao, percepcao de falta de suporte social e condicoes socioeconomicas desfavoraveis nao sao considerados fatores de risco para a condicao.",
+          "correct": false
+        },
+        {
+          "id": "II",
+          "text": "Entre os diagnosticos diferenciais, o blues, definido por disforia e sintomas depressivos leves, transitorios e autolimitados, e geralmente considerado um fenomeno normal, nao requerendo nenhum tratamento alem de validacao, psicoeducacao e suporte psicossocial.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Escalas de autoavaliacao, como PDSS e EPDS, para triagem de mulheres com depressao pos-parto em servicos de atendimento primario mostram-se bastante uteis, aumentando a possibilidade de deteccao.",
+          "correct": true
+        },
+        {
+          "id": "IV",
+          "text": "Sertralina e paroxetina sao considerados antidepressivos seguros para o periodo de amamentacao.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Ginecologia e Obstetricia",
+        "Psiquiatria"
+      ]
+    },
+    {
+      "id": "e195d0f0-ff44-4290-ba21-e6fa6292ae07",
+      "type": "multiple_choice",
+      "text": "A Figura 4 representa as deciduas, os corions e o embriao. Assinale a alternativa correspondente corretamente a estrutura indicada na imagem.\n[Questao com imagem - nao disponivel na versao texto]",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Cavidade corionica."
+        },
+        {
+          "id": "B",
+          "text": "Cavidade uterina."
+        },
+        {
+          "id": "C",
+          "text": "Corion frondoso."
+        },
+        {
+          "id": "D",
+          "text": "Cavidade amniotica."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "d577005c-33ad-4953-9289-b7c1f4c0e3c9",
+      "type": "multiple_choice",
+      "text": "Gestante de 24 anos, com 8 semanas de gravidez, quer saber como se prevenir contra a dengue. De acordo com o Manual de Prevencao da Dengue na Gestacao (MS, 2024), assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O uso de repelentes a base de Icaridina pode ser feito durante toda a gestacao."
+        },
+        {
+          "id": "B",
+          "text": "Os repelentes a base de DEET nao devem ser utilizados na gestacao, pelo risco teratogenico."
+        },
+        {
+          "id": "C",
+          "text": "A vacina da dengue tem uso amplo durante a gravidez, sendo a medida de escolha para a prevencao."
+        },
+        {
+          "id": "D",
+          "text": "A medida que mais impacta positivamente a reducao de casos de dengue na gestacao e o uso de telas no domicilio, visto que o Aedes aegypti tem habitos preferencialmente noturnos."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "aebe2fca-ab2f-4e5d-afc1-72b4b44571b5",
+      "type": "multiple_choice",
+      "text": "A idade gestacional do embriao e do feto pode ser verificada atraves da ultrassonografia. Assinale a alternativa que indica o grafico que melhor representa o erro na avaliacao da idade gestacional.\n[Questao com graficos - nao disponiveis na versao texto]",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Grafico A."
+        },
+        {
+          "id": "B",
+          "text": "Grafico B."
+        },
+        {
+          "id": "C",
+          "text": "Grafico C."
+        },
+        {
+          "id": "D",
+          "text": "Grafico D."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Ginecologia e Obstetricia"
+      ]
+    },
+    {
+      "id": "694918c5-364d-4e92-9cc2-6397dc24861b",
+      "type": "multiple_choice",
+      "text": "Considere o nascimento, via parto vaginal, de um neonato com 38 semanas de idade gestacional. Teste rapido positivo para sifilis na admissao. O RN e posicionado sobre o ventre materno, apresenta-se cianotico, com choro forte e tonus adequado. Qual e a melhor conduta?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Realizar estimulo tatil no dorso, seguido de clampeamento imediato do cordao umbilical."
+        },
+        {
+          "id": "B",
+          "text": "Solicitar o clampeamento imediato do cordao umbilical e leva-lo para berco aquecido para monitorizacao e manobras iniciais de reanimacao."
+        },
+        {
+          "id": "C",
+          "text": "Solicitar o clampeamento do cordao umbilical apos 30 segundos de vida, manter no contato pele a pele e estimular a amamentacao."
+        },
+        {
+          "id": "D",
+          "text": "Solicitar o clampeamento do cordao umbilical apos 60 segundos de vida, manter no contato pele a pele, com avaliacao continua da vitalidade."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "b8c69198-0770-4439-ac40-563866b6a2cd",
+      "type": "multiple_choice",
+      "text": "Ao nascimento, RN apresenta falo de 2,3 cm com fusao de saliencias labioescrotais e gonadas impalpaveis. Qual e o diagnostico de Anormalidade de Diferenciacao Sexual (ADS) mais comum em RNs com genitalia atipica?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "ADS XX ovotesticular."
+        },
+        {
+          "id": "B",
+          "text": "ADS XX hiperplasia adrenal congenita."
+        },
+        {
+          "id": "C",
+          "text": "ADS XY hiperplasia adrenal congenita."
+        },
+        {
+          "id": "D",
+          "text": "ADS XY/X disgenesia gonadal mista."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "6facdddb-0225-4983-b953-1eb9c105ff22",
+      "type": "multiple_choice",
+      "text": "O seguimento ambulatorial do RN prematuro e uma extensao dos cuidados iniciados na UTI neonatal. Em relacao a esse acompanhamento, assinale a alternativa INCORRETA.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O programa de seguimento do RN de risco se inicia ainda durante a internacao hospitalar, antes da alta."
+        },
+        {
+          "id": "B",
+          "text": "Um crescimento exagerado do perimetro cefalico nos primeiros meses de vida pode estar relacionado com pior prognostico neurologico."
+        },
+        {
+          "id": "C",
+          "text": "RNs que apresentam maior catch-up nos primeiros anos terao maior risco de desenvolverem doenca cardiovascular na adolescencia."
+        },
+        {
+          "id": "D",
+          "text": "O calendario vacinal do prematuro e realizado de acordo com a sua idade corrigida."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "0b40aee9-248f-4118-9a90-be4cc27511fc",
+      "type": "multiple_choice",
+      "text": "A enfermagem comunica ao medico que o teste do coracaozinho de um RN com 37 semanas fora feito com 26 horas de vida. Resultado: 89% no membro superior direito e 92% no membro inferior esquerdo. Qual e a melhor conduta?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Solicitar ecocardiograma imediatamente para descartar cardiopatia congenita cianotica."
+        },
+        {
+          "id": "B",
+          "text": "Solicitar eletrocardiograma imediatamente para descartar alteracoes do ritmo cardiaco."
+        },
+        {
+          "id": "C",
+          "text": "Repetir o teste do coracaozinho em 1 hora e reavaliar resultado."
+        },
+        {
+          "id": "D",
+          "text": "Nao e necessaria conduta adicional, ja que a diferenca de saturacao entre os dois membros e de 3%."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "c5c54bed-36a2-4bd9-b466-4a716f2d9b83",
+      "type": "multiple_choice",
+      "text": "O medico e chamado no alojamento conjunto para avaliar um RN a termo que nasceu ha 20 horas e esta sem diurese. Sobre a conduta nesse caso, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Aguardar, pois o RN normal pode retardar a sua primeira diurese por cerca de 24 a 36 horas."
+        },
+        {
+          "id": "B",
+          "text": "Solicitar a enfermagem a sondagem vesical para monitorizacao da diurese."
+        },
+        {
+          "id": "C",
+          "text": "Aguardar por mais 6 horas e, caso se mantenha sem diurese, solicitar exame comum de urina e urocultura."
+        },
+        {
+          "id": "D",
+          "text": "Realizar ecografia renal com 24 horas de vida para averiguar a presenca de agenesia renal."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "6cd69539-4039-443e-a4aa-be15600ae476",
+      "type": "multiple_choice",
+      "text": "Paulo tem 4 meses e 15 dias, e Carlos tem 10 meses e 15 dias. Paulo localiza som, rola na mesa de exame, faz busca ativa de objetos e os leva a boca, porem nao os transfere de uma mao para outra. Carlos senta-se sem apoio, busca e transfere objetos de uma mao para outra, nao brinca de \"esconde, achou\" e nem consegue duplicar silabas. Como sao avaliados seus desenvolvimentos conforme a Caderneta da Crianca do MS?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Paulo e Carlos apresentam desenvolvimentos normais."
+        },
+        {
+          "id": "B",
+          "text": "Paulo apresenta desenvolvimento normal, e Carlos apresenta provavel atraso no desenvolvimento."
+        },
+        {
+          "id": "C",
+          "text": "Paulo e Carlos apresentam provavel atraso no desenvolvimento."
+        },
+        {
+          "id": "D",
+          "text": "Paulo apresenta atraso no desenvolvimento, e Carlos apresenta desenvolvimento normal."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "6633eeec-7c3a-4cad-9e97-21773fc937b6",
+      "type": "multiple_choice",
+      "text": "Em relacao ao Transtorno do Espectro Autista (TEA), assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Por ser impossivel o diagnostico de TEA em lactentes entre os 18 e 24 meses, na pratica, ele e realizado tardiamente."
+        },
+        {
+          "id": "B",
+          "text": "O diagnostico de TEA e clinico, reservando-se a utilizacao de teste complementar de biomarcador especifico nos casos de duvida diagnostica."
+        },
+        {
+          "id": "C",
+          "text": "Quando o lactente tem irmaos ou pais com TEA ou atraso nos marcos do desenvolvimento, torna-se mandatoria a investigacao diagnostica de TEA."
+        },
+        {
+          "id": "D",
+          "text": "A SBP recomenda complementar a avaliacao da Caderneta da Crianca com a triagem especifica para autismo em todas as criancas nas idades de 36 e 48 meses, por meio do M-CHAT-R/F."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "e3656417-c391-4cfc-9c7c-a20f2869dac9",
+      "type": "multiple_choice",
+      "text": "No lactente com tetralogia de Fallot, as crises hipoxemicas normalmente decorrem de:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Hiperfluxo pulmonar pelo ducto arterioso patente."
+        },
+        {
+          "id": "B",
+          "text": "Hipofluxo pulmonar por estenose infundibular da arteria pulmonar."
+        },
+        {
+          "id": "C",
+          "text": "Shunt E-D pelo defeito de septo interventricular."
+        },
+        {
+          "id": "D",
+          "text": "Reducao do debito cardiaco pela baixa muscularizacao do VD."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "9c0d283f-65a5-49c0-a43a-804386cdd28f",
+      "type": "multiple_choice",
+      "text": "Crianca de 4 anos, no transoperatorio de adenoidectomia, faz hipertermia de 41C e apresenta baixo debito cardiaco. Imediatamente, e administrado dantrolene, pois inferiu-se corretamente que o gatilho foi:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Translocacao bacteriana."
+        },
+        {
+          "id": "B",
+          "text": "Infarto agudo do miocardio."
+        },
+        {
+          "id": "C",
+          "text": "Hipertermia maligna pelo uso de succinilcolina."
+        },
+        {
+          "id": "D",
+          "text": "Sangramento nasal, em decorrencia de CIVD."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "8c6947b5-76a9-46c2-af5e-990a1728bef0",
+      "type": "assertion",
+      "text": "Crianca de 2 anos, 12 kg, ha 4 dias com picos febris, mialgia intensa e cefaleia retro-orbital, apresenta purpuras petequiais em tronco e membros e epistaxe. Sem sinais de hipoperfusao, sonolenta e com recusa alimentar. Analise as assertivas:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "A",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Os sinais e sintomas sao sugestivos de arbovirose tipo dengue ja na fase critica, por existir sangramento.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "O exame laboratorial de eleicao nesse momento para confirmar sua hipotese diagnostica e a verificacao serica do antigeno-NS1.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "O aporte hidrico intravenoso de manutencao deve ter a vazao de 35 mL/h.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "2d2a0705-730e-48c6-ac1b-37ed1fca8adf",
+      "type": "multiple_choice",
+      "text": "Em decorrencia das enchentes que assolaram o Rio Grande do Sul neste ano, o risco para acidentes ofidicos aumentou na populacao pediatrica. O tipo de acidente mais prevalente, nesse caso, e o:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Laquetico."
+        },
+        {
+          "id": "B",
+          "text": "Elapidico."
+        },
+        {
+          "id": "C",
+          "text": "Crotalico."
+        },
+        {
+          "id": "D",
+          "text": "Botropico."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "d6717317-9bbb-4628-afa5-c66286b096cb",
+      "type": "multiple_choice",
+      "text": "Raquel e Teresa tem 3 anos e 6 meses. Raquel pesa 16 kg, e Tereza, 17,5 kg, sendo que ambas estao com 100 cm de altura. Considerando o grafico da OMS, os estados nutricionais de Raquel e Teresa sao classificados como apresentando ______ e ______, respectivamente.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "risco de sobrepeso — sobrepeso"
+        },
+        {
+          "id": "B",
+          "text": "eutrofia — sobrepeso"
+        },
+        {
+          "id": "C",
+          "text": "risco de sobrepeso — risco de sobrepeso"
+        },
+        {
+          "id": "D",
+          "text": "eutrofia — risco de sobrepeso"
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "88c44c64-cf27-4c53-b1e2-d5c1b71b21a6",
+      "type": "multiple_choice",
+      "text": "Crianca, 7 anos, ha 2 semanas em uso de fenitoina oral para epilepsia. Inicia com febre, linfadenopatia e rash pruriginoso com areas de formacao de bolhas, inclusive em mucosas, acometendo cerca de 5% do tegumento cutaneo. A principal hipotese diagnostica e:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Stevens-Johnson."
+        },
+        {
+          "id": "B",
+          "text": "Meningite viral aguda."
+        },
+        {
+          "id": "C",
+          "text": "Penfigo foliaceo."
+        },
+        {
+          "id": "D",
+          "text": "Meningite bacteriana aguda."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "0bcf06cb-b8cd-4043-bc7d-fa9f696b4215",
+      "type": "multiple_choice",
+      "text": "Menina de 3 anos, previamente higida, com quadro clinico compativel com meningite bacteriana aguda e glicemia de 90 mg%. Ao ser submetida a puncao lombar, qual das opcoes de analise do liquor e tipicamente mais compativel?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "3 celulas/mm3, glicose de 70 mg% e proteinas de 20 mg/dL."
+        },
+        {
+          "id": "B",
+          "text": "1.000 celulas/mm3, com predominio de 80% de polimorfonucleares neutrofilos, glicose de 10 mg% e proteinorraquia de 180 mg%."
+        },
+        {
+          "id": "C",
+          "text": "80 celulas/mm3 com predominio de linfocitos, proteinorraquia de 40 mg/dL e glicose de 74 mg%."
+        },
+        {
+          "id": "D",
+          "text": "100 celulas/mm3, proteinorraquia de 80 mg/dL e glicose de 80 mg%."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "87337a6c-c8ad-4d48-8e34-f413ca58a769",
+      "type": "assertion",
+      "text": "Sobre a escala de coma de Glasgow, na avaliacao clinica e acompanhamento do nivel de consciencia do paciente, analise as assertivas:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas III."
+        },
+        {
+          "id": "D",
+          "text": "Apenas I e II."
+        }
+      ],
+      "correctAnswer": "A",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "E utilizada tanto no coma traumatico quanto no nao traumatico.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Avalia quatro parametros: abertura ocular (com notas de 1 a 5), resposta verbal (com notas de 1 a 5), resposta motora (com notas de 0 a 4) e padrao respiratorio (com notas de 0 a 1).",
+          "correct": false
+        },
+        {
+          "id": "III",
+          "text": "O melhor escore e 15 e o pior e 3 (que indica que o paciente esta morto).",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "79aee631-9b67-4c8c-9f60-d9a22e0212ca",
+      "type": "assertion",
+      "text": "Menina de 2 anos, previamente higida, com febre, apresenta uma crise convulsiva. O caso pode ser classificado como convulsao febril simples se tiver as seguintes caracteristicas:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II."
+        },
+        {
+          "id": "C",
+          "text": "Apenas III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Crise generalizada e sem historia de convulsao afebril previa.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Tiver duracao inferior a 15 minutos e sem deficit neurologico previo.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Nao tiver recorrencia dentro de 24h e nao tiver infeccao no sistema nervoso central.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "19b98312-3d87-4b63-82f6-4692b5934861",
+      "type": "assertion",
+      "text": "Analise as assertivas a respeito de episodio depressivo na adolescencia:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas II e IV."
+        },
+        {
+          "id": "C",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "id": "D",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Jovens tendem a apresentar inicialmente queixas fisicas ou comportamentais que podem obscurecer os sintomas depressivos tipicos observados em adultos.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "A apresentacao clinica pode ser semelhante tanto na depressao unipolar como bipolar. A dificuldade diagnostica ocorre em alguns casos, porque o transtorno bipolar geralmente se inicia com quadros depressivos.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Algumas queixas como humor irritavel ou rancoroso, tedio cronico ou perda de interesse, nao querer mais sair com amigos e queda na performance academica devem alertar os clinicos para possivel quadro depressivo.",
+          "correct": true
+        },
+        {
+          "id": "IV",
+          "text": "Na depressao leve ou moderada, geralmente apresentam afeto reativo, ou seja, uma habilidade de se animar momentaneamente em resposta a eventos positivos.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Pediatria"
+      ]
+    },
+    {
+      "id": "4a046b08-c3c0-4e3e-91e6-57e6aa8eb934",
+      "type": "multiple_choice",
+      "text": "Menino de 8 anos atendido por fratura do radio apos cair de arvore. Mae relata que e bastante inquieto, nao consegue ficar parado, e \"barulhento\", conversador e perturba a aula. Recebeu diversos bilhetes da escola. Apresenta deficiencia de aprendizado, comete erros por descuido, atencao se perde constantemente, nao consegue seguir instrucoes. Instrutor do futebol tambem percebeu problemas de concentracao. Esquece materiais, quarto baguncado, perde coisas. QI na faixa normal. Qual e o diagnostico mais provavel?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "TDAH, tipo predominante hiperativo."
+        },
+        {
+          "id": "B",
+          "text": "TDAH, tipo predominante desatento."
+        },
+        {
+          "id": "C",
+          "text": "TDAH, tipo combinado."
+        },
+        {
+          "id": "D",
+          "text": "TDAH com comorbidade de Transtorno de Oposicao Desafiante (TOD)."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Pediatria",
+        "Psiquiatria"
+      ]
+    },
+    {
+      "id": "b2648649-da15-47ba-9bdc-15bad3fe70b7",
+      "type": "multiple_choice",
+      "text": "De acordo com a Politica Nacional de Atencao Basica (Portaria no 2.436/2017), e uma atribuicao especifica do medico de familia e comunidade na ESF:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Implementar e manter atualizados rotinas, protocolos e fluxos relacionados a sua area de competencia na UBS."
+        },
+        {
+          "id": "B",
+          "text": "Responsabilizar-se pelo acompanhamento da populacao adscrita ao longo do tempo no que se refere as multiplas situacoes de doencas e agravos."
+        },
+        {
+          "id": "C",
+          "text": "Indicar a necessidade de internacao hospitalar ou domiciliar, mantendo a responsabilizacao pelo acompanhamento da pessoa."
+        },
+        {
+          "id": "D",
+          "text": "Realizar acoes de educacao em saude a populacao adstrita, conforme planejamento da equipe."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "642530b4-33ad-4511-a5f9-876a41924cce",
+      "type": "multiple_choice",
+      "text": "A Atencao Primaria a Saude (APS) e fundamental para o funcionamento eficaz dos sistemas de saude. Em relacao aos principios, estrategias, caracteristicas, praticas e desafios da APS, assinale a alternativa correta.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Um dos principais desafios da APS e garantir a coordenacao do cuidado, o que implica a integracao efetiva entre diferentes niveis de atencao e setores de saude."
+        },
+        {
+          "id": "B",
+          "text": "A implementacao de ESF na APS visa a reducao dos custos operacionais e a restricao de acesso a servicos especializados."
+        },
+        {
+          "id": "C",
+          "text": "A abordagem centrada na pessoa, caracteristica da APS, envolve a gestao integrada de todos os problemas de saude do paciente, independentemente do seu contexto familiar e comunitario."
+        },
+        {
+          "id": "D",
+          "text": "A APS deve ser organizada de forma hierarquica e centralizada para garantir maior controle e padronizacao dos servicos prestados."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "c8be222f-bf1f-4208-9c2c-207f8ba977ae",
+      "type": "assertion",
+      "text": "Analise as assertivas em relacao aos principios e diretrizes do SUS:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "B",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "A integralidade envolve a prestacao continua e articulada de acoes e servicos preventivos, curativos, de promocao da saude e de reabilitacao em todos os niveis de complexidade.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "A regionalizacao implica a centralizacao dos servicos de saude em grandes centros urbanos, para melhor controle e gestao dos recursos.",
+          "correct": false
+        },
+        {
+          "id": "III",
+          "text": "A participacao social e garantida atraves de mecanismos como os conselhos e conferencias de saude, que permitem a populacao influenciar diretamente as politicas de saude.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "2309179f-26f8-492a-88b0-f0c245c40659",
+      "type": "assertion",
+      "text": "Analise as assertivas em relacao ao territorio na organizacao local dos servicos da APS:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Corresponde a area geografica de abrangencia de uma equipe de saude, sendo um espaco de corresponsabilidade pela saude entre populacao e servico.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Considera-se uma determinada realidade de saude da populacao que nele vive, a qual esta em permanente movimento, por isso denominada de processos saude-doenca.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "E definido com base em criterios administrativos, assistenciais e organizacionais da populacao local, tendo dimensoes economicas, politica, cultural e epidemiologica.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "91fd9dd9-49e1-47c3-b7f5-a70115abe65a",
+      "type": "multiple_choice",
+      "text": "Vilmar, 62 anos, com hipertensao, diabetes e historia de depressao, queixa-se de edema em ambos os tornozelos. Qual das medicacoes de uso continuo e a causa mais provavel do edema perimaleolar?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Losartana."
+        },
+        {
+          "id": "B",
+          "text": "Fluoxetina."
+        },
+        {
+          "id": "C",
+          "text": "Anlodipino."
+        },
+        {
+          "id": "D",
+          "text": "Metformina."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "ba0af040-79cb-42d3-9c80-c11cdd2071ef",
+      "type": "multiple_choice",
+      "text": "Qual dos seguintes achados laboratoriais e mais indicativo de anemia hemolitica?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Aumento da bilirrubina indireta."
+        },
+        {
+          "id": "B",
+          "text": "Diminuicao da contagem de reticulocitos."
+        },
+        {
+          "id": "C",
+          "text": "Presenca de celulas em alvo no esfregaco de sangue periferico."
+        },
+        {
+          "id": "D",
+          "text": "Aumento do nivel de ferritina."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "0a42548a-03e1-48a3-a31c-c915f3094807",
+      "type": "assertion",
+      "text": "Sao vacinas indicadas para gestantes e disponiveis no SUS:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I, III e IV."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II, III e IV."
+        },
+        {
+          "id": "D",
+          "text": "I, II, III e IV."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "DTpa (triplice bacteriana).",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Hepatite B.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Influenza.",
+          "correct": true
+        },
+        {
+          "id": "IV",
+          "text": "Covid-19.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "1e2a55d2-846e-47aa-bd25-08fb4ad959e4",
+      "type": "multiple_choice",
+      "text": "Assinale a alternativa que apresenta doencas ou agravos que se enquadram como situacao de notificacao compulsoria imediata (ate 24 horas) no Brasil.",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Tuberculose e intoxicacao exogena."
+        },
+        {
+          "id": "B",
+          "text": "Esquistossomose e HIV/AIDS."
+        },
+        {
+          "id": "C",
+          "text": "Raiva humana e sindrome da rubeola congenita."
+        },
+        {
+          "id": "D",
+          "text": "Sifilis e casos de dengue."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "cef581cf-74ac-49bb-b6f3-b9094ff5c149",
+      "type": "multiple_choice",
+      "text": "Analise as assertivas em relacao ao Conselho Nacional de Saude (CNS) e assinale V ou F:\n( ) E uma instancia colegiada, deliberativa e permanente do SUS, integrante da estrutura organizacional do Ministerio da Saude.\n( ) Sua missao e fiscalizar, acompanhar e monitorar as politicas publicas de saude nas suas mais diferentes areas.\n( ) Tem por finalidade atuar na formulacao e no controle da execucao da Politica Nacional de Saude.\n( ) E composto por conselheiras e conselheiros titulares e seus respectivos suplentes, que sao representantes dos segmentos de usuarios, trabalhadores, gestores do SUS e prestadores de servicos em saude.\n( ) E responsavel por realizar conferencias e foruns de participacao social, alem de aprovar o orcamento da saude.\nA ordem correta de preenchimento dos parenteses, de cima para baixo, e:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "V — V — F — V — F."
+        },
+        {
+          "id": "B",
+          "text": "F — F — V — F — F."
+        },
+        {
+          "id": "C",
+          "text": "F — F — F — F — V."
+        },
+        {
+          "id": "D",
+          "text": "V — V — V — V — V."
+        }
+      ],
+      "correctAnswer": "D",
+      "tags": [
+        "Saude Coletiva"
+      ]
+    },
+    {
+      "id": "89658256-6f59-4a38-90fc-0a62cdf1f85f",
+      "type": "multiple_choice",
+      "text": "Em um estudo, o Numero Necessario para Tratar (NNT) foi calculado como 12 para prevencao de AVC. Qual e a interpretacao mais correta nesse caso?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "12 pacientes precisam ser tratados para garantir que nenhum deles tenha um AVC."
+        },
+        {
+          "id": "B",
+          "text": "12 pacientes precisam ser tratados para prevenir um AVC em um paciente."
+        },
+        {
+          "id": "C",
+          "text": "O tratamento e eficaz para prevenir AVC em 12% dos pacientes."
+        },
+        {
+          "id": "D",
+          "text": "O tratamento reduzira em 12% o risco de AVC para cada paciente tratado."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "572540c2-8154-413e-890e-9f4f5d2a2c0f",
+      "type": "assertion",
+      "text": "Analise as situacoes abaixo:\nQuais sao erros comuns na interpretacao do valor-p?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "D",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "Assumir que um valor-p pequeno implica em relevancia clinica significativa.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "Acreditar que o valor-p pode medir a magnitude do efeito observado.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "Pensar que o valor-p de um estudo determina a probabilidade da hipotese nula ser verdadeira.",
+          "correct": true
+        }
+      ],
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "445d9a1b-4a67-4461-ab32-6819c8ba4561",
+      "type": "multiple_choice",
+      "text": "Em um forest plot, um estudo individual apresenta um quadrado pequeno com um intervalo de confianca amplo. Isso sugere que o estudo:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Tem um grande peso na estimativa combinada."
+        },
+        {
+          "id": "B",
+          "text": "Tem uma amostra pequena e baixa precisao."
+        },
+        {
+          "id": "C",
+          "text": "E o mais significativo estatisticamente."
+        },
+        {
+          "id": "D",
+          "text": "Apresenta um efeito de grande magnitude."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "15e6a759-e363-4793-93b7-c83ec962a472",
+      "type": "multiple_choice",
+      "text": "Em um estudo de caso-controle, qual e o maior desafio para evitar o vies de selecao?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Garantir que o grupo controle seja representativo da populacao que deu origem aos casos."
+        },
+        {
+          "id": "B",
+          "text": "Selecionar controles de uma populacao com alta prevalencia da doenca."
+        },
+        {
+          "id": "C",
+          "text": "Utilizar apenas um unico criterio de exposicao."
+        },
+        {
+          "id": "D",
+          "text": "Excluir participantes com exposicao anterior ao desfecho."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "ce77e35f-d598-4917-a645-870bbd578d92",
+      "type": "assertion",
+      "text": "Uma Razao de Verossimilhanca Positiva (RVP) de 1 significa que:\nQuais estao corretas?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Apenas I e II."
+        },
+        {
+          "id": "B",
+          "text": "Apenas I e III."
+        },
+        {
+          "id": "C",
+          "text": "Apenas II e III."
+        },
+        {
+          "id": "D",
+          "text": "I, II e III."
+        }
+      ],
+      "correctAnswer": "A",
+      "assertions": [
+        {
+          "id": "I",
+          "text": "O teste nao altera a probabilidade pre-teste da doenca.",
+          "correct": true
+        },
+        {
+          "id": "II",
+          "text": "O teste e inutil para confirmar a presenca da doenca.",
+          "correct": true
+        },
+        {
+          "id": "III",
+          "text": "A sensibilidade e a especificidade do teste sao iguais.",
+          "correct": false
+        }
+      ],
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "afa9d754-20bc-40e5-ab28-6095de6800d8",
+      "type": "multiple_choice",
+      "text": "Qual das seguintes caracteristicas distingue uma coorte historica de um estudo de caso-controle quando ambos estao investigando a mesma doenca?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "A coorte historica estuda doencas raras de forma mais eficiente do que o caso-controle."
+        },
+        {
+          "id": "B",
+          "text": "A coorte historica permite calcular a razao de odds, enquanto o caso-controle calcula o risco relativo."
+        },
+        {
+          "id": "C",
+          "text": "A coorte historica utiliza dados de exposicao previamente coletados, enquanto o caso-controle baseia-se em dados de desfecho."
+        },
+        {
+          "id": "D",
+          "text": "Ambos os estudos usam os mesmos metodos para selecionar casos e controles."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "62f3b21a-97e0-4669-ab50-bfc2ddf8c22a",
+      "type": "multiple_choice",
+      "text": "Um paciente e suspeito de ter uma infeccao bacteriana grave. Dois testes rapidos, aplicados em paralelo, mostraram-se contraditorios: o primeiro deu positivo, e o segundo, negativo. Como interpretar esse resultado?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O paciente deve ser considerado negativo, pois um dos testes foi negativo."
+        },
+        {
+          "id": "B",
+          "text": "O paciente deve ser considerado positivo, ja que apenas um resultado positivo e necessario em testes em paralelo."
+        },
+        {
+          "id": "C",
+          "text": "O paciente deve ser retestado com um terceiro teste para maior certeza."
+        },
+        {
+          "id": "D",
+          "text": "O paciente esta livre de infeccao, ja que nao ha concordancia entre os testes."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "83f67c8b-5dfb-4bbb-845a-f53518a25fb9",
+      "type": "multiple_choice",
+      "text": "O que e um teste \"padrao-ouro\"?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Um teste com 100% de sensibilidade."
+        },
+        {
+          "id": "B",
+          "text": "Um teste com 100% de especificidade."
+        },
+        {
+          "id": "C",
+          "text": "Um teste usado como referencia para avaliar outros testes."
+        },
+        {
+          "id": "D",
+          "text": "Um teste com 100% de acuracia."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "00c525b0-6672-481f-bfa7-fb98d6e0e7ea",
+      "type": "multiple_choice",
+      "text": "Em um estudo sobre a eficacia de um novo teste de triagem para cancer de bexiga, apesar de a mortalidade permanecer constante, os pacientes diagnosticados precocemente tiveram sobrevida media de 5 anos, enquanto os diagnosticados apos sintomas tiveram sobrevida de 2 anos. Qual e a explicacao mais provavel?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "O novo metodo de rastreamento precoce parece ser a unica explicacao para o aumento da sobrevida observada."
+        },
+        {
+          "id": "B",
+          "text": "Um vies pode estar distorcendo os resultados, ja que o diagnostico precoce apenas aumenta o tempo entre o diagnostico e a morte."
+        },
+        {
+          "id": "C",
+          "text": "O estudo prova que o rastreamento de cancer de bexiga e eficaz para prolongar a vida dos pacientes."
+        },
+        {
+          "id": "D",
+          "text": "Pacientes diagnosticados precocemente sempre apresentam resultados melhores do que os que sao diagnosticados apos sintomas."
+        }
+      ],
+      "correctAnswer": "B",
+      "tags": [
+        "Saude Coletiva",
+        "Epidemiologia"
+      ]
+    },
+    {
+      "id": "9e2551f8-304b-4daf-93f8-cbe37cfc8742",
+      "type": "multiple_choice",
+      "text": "No atendimento a vitimas de catastrofes, violencias ou acidentes, algumas abordagens podem ser adotadas para auxiliar na prevencao do TEPT. Sao abordagens recomendadas as mencionadas a seguir, EXCETO:",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Evitar a retraumatizacao, nao induzindo o paciente a descrever o evento traumatico, priorizando anamnese objetiva com familiares ou terceiros."
+        },
+        {
+          "id": "B",
+          "text": "Fazer o reasseguramento, reforcando a condicao atual de estabilidade clinica e seguranca do paciente."
+        },
+        {
+          "id": "C",
+          "text": "Administrar benzodiazepinicos na maioria dos casos, com objetivo de reduzir o sofrimento agudo relacionado ao trauma."
+        },
+        {
+          "id": "D",
+          "text": "Evitar a vitimizacao, procurando nao valorizar o impacto destruidor do trauma, nao patologizar e nao se referir a sintomas reacionais como doenca mental."
+        }
+      ],
+      "correctAnswer": "C",
+      "tags": [
+        "Saude Coletiva",
+        "Psiquiatria"
+      ]
+    },
+    {
+      "id": "8891f329-cd2b-4528-80f7-a005adf426a3",
+      "type": "multiple_choice",
+      "text": "O uso de litio e a terapia mais eficaz nos transtornos do humor. No entanto, a medicacao apresenta janela terapeutica estreita. Qual das medicacoes abaixo NAO causa elevacao dos niveis sericos de litio?",
+      "alternatives": [
+        {
+          "id": "A",
+          "text": "Propranolol."
+        },
+        {
+          "id": "B",
+          "text": "Enalapril."
+        },
+        {
+          "id": "C",
+          "text": "Nimesulida."
+        },
+        {
+          "id": "D",
+          "text": "Hidroclorotiazida."
+        }
+      ],
+      "correctAnswer": "A",
+      "tags": [
+        "Saude Coletiva",
+        "Psiquiatria"
+      ]
+    }
+  ],
+  "createdAt": "2026-02-21T19:53:41.144Z"
+}

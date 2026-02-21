@@ -1,0 +1,202 @@
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router';
+import { Plus } from 'lucide-react';
+import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { QuestionForm } from '../../components/QuestionForm/QuestionForm';
+import { generateId } from '../../utils/generateId';
+import type { Question, Quiz } from '../../types/quiz';
+import styles from './CreateQuizPage.module.css';
+
+function createBlankQuestion(): Question {
+  return {
+    id: generateId(),
+    type: 'multiple_choice',
+    text: '',
+    image: null,
+    alternatives: [
+      { id: 'A', text: '' },
+      { id: 'B', text: '' },
+      { id: 'C', text: '' },
+      { id: 'D', text: '' },
+    ],
+    correctAnswer: 'A',
+  };
+}
+
+export function CreateQuizPage() {
+  const navigate = useNavigate();
+  const { quizId } = useParams();
+  const { getQuiz, addQuiz, updateQuiz } = useQuizStorage();
+
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [subject, setSubject] = useState('');
+  const [questions, setQuestions] = useState<Question[]>([createBlankQuestion()]);
+  const [errors, setErrors] = useState<string[]>([]);
+
+  const isEditing = !!quizId;
+
+  useEffect(() => {
+    if (quizId) {
+      const quiz = getQuiz(quizId);
+      if (quiz) {
+        setTitle(quiz.title);
+        setDescription(quiz.description);
+        setSubject(quiz.subject);
+        setQuestions(quiz.questions);
+      } else {
+        navigate('/');
+      }
+    }
+  }, [quizId]);
+
+  const handleQuestionChange = (index: number, updated: Question) => {
+    setQuestions((prev) => prev.map((q, i) => (i === index ? updated : q)));
+  };
+
+  const handleRemoveQuestion = (index: number) => {
+    if (questions.length <= 1) return;
+    setQuestions((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleMoveUp = (index: number) => {
+    if (index === 0) return;
+    setQuestions((prev) => {
+      const arr = [...prev];
+      [arr[index - 1], arr[index]] = [arr[index], arr[index - 1]];
+      return arr;
+    });
+  };
+
+  const handleMoveDown = (index: number) => {
+    if (index === questions.length - 1) return;
+    setQuestions((prev) => {
+      const arr = [...prev];
+      [arr[index], arr[index + 1]] = [arr[index + 1], arr[index]];
+      return arr;
+    });
+  };
+
+  const validate = (): boolean => {
+    const errs: string[] = [];
+    if (!title.trim()) errs.push('Titulo obrigatorio');
+    if (questions.length === 0) errs.push('Adicione pelo menos 1 questao');
+
+    questions.forEach((q, i) => {
+      if (!q.text.trim()) errs.push(`Questao ${i + 1}: enunciado vazio`);
+      if (q.type !== 'true_false') {
+        q.alternatives.forEach((alt) => {
+          if (!alt.text.trim()) errs.push(`Questao ${i + 1}: alternativa ${alt.id} vazia`);
+        });
+      }
+      if (q.type === 'assertion') {
+        const assertions = (q as any).assertions || [];
+        assertions.forEach((a: any, ai: number) => {
+          if (!a.text.trim()) errs.push(`Questao ${i + 1}: assertiva ${ai + 1} vazia`);
+        });
+      }
+    });
+
+    setErrors(errs);
+    return errs.length === 0;
+  };
+
+  const handleSave = () => {
+    if (!validate()) return;
+
+    const quiz: Quiz = {
+      id: quizId || generateId(),
+      title: title.trim(),
+      description: description.trim(),
+      subject,
+      questions,
+      createdAt: isEditing ? getQuiz(quizId!)?.createdAt || new Date().toISOString() : new Date().toISOString(),
+    };
+
+    if (isEditing) {
+      updateQuiz(quiz);
+    } else {
+      addQuiz(quiz);
+    }
+
+    navigate('/');
+  };
+
+  return (
+    <div>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{isEditing ? 'Editar Banco' : 'Criar Banco de Questoes'}</h1>
+        <p className={styles.subtitle}>Preencha os dados e adicione as questoes</p>
+      </div>
+
+      {errors.length > 0 && (
+        <div className={styles.errorMsg}>
+          {errors.map((err, i) => (
+            <div key={i}>{err}</div>
+          ))}
+        </div>
+      )}
+
+      <div className={styles.metaSection}>
+        <div className={styles.fieldFull}>
+          <label className={styles.label}>Titulo</label>
+          <input
+            className={`${styles.input} ${errors.some((e) => e.includes('Titulo')) ? styles.inputError : ''}`}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Ex: Banco de Java - OCA/OCP"
+          />
+        </div>
+        <div className={styles.field}>
+          <label className={styles.label}>Materia</label>
+          <input
+            className={styles.input}
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            placeholder="Ex: Cardiologia, Java, Direito Civil..."
+          />
+        </div>
+        <div className={styles.field}>
+          <label className={styles.label}>Descricao (opcional)</label>
+          <textarea
+            className={styles.textarea}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Uma breve descricao do banco..."
+          />
+        </div>
+      </div>
+
+      <div className={styles.questionsHeader}>
+        <h2 className={styles.questionsTitle}>Questoes ({questions.length})</h2>
+      </div>
+
+      <div className={styles.questionsList}>
+        {questions.map((q, i) => (
+          <QuestionForm
+            key={q.id}
+            question={q}
+            index={i}
+            total={questions.length}
+            onChange={(updated) => handleQuestionChange(i, updated)}
+            onRemove={() => handleRemoveQuestion(i)}
+            onMoveUp={() => handleMoveUp(i)}
+            onMoveDown={() => handleMoveDown(i)}
+          />
+        ))}
+      </div>
+
+      <button className={styles.addQuestionBtn} onClick={() => setQuestions([...questions, createBlankQuestion()])}>
+        <Plus size={20} />
+        Adicionar Questao
+      </button>
+
+      <div className={styles.footer}>
+        <button className={styles.cancelBtn} onClick={() => navigate('/')}>Cancelar</button>
+        <button className={styles.saveBtn} onClick={handleSave}>
+          {isEditing ? 'Salvar Alteracoes' : 'Criar Banco'}
+        </button>
+      </div>
+    </div>
+  );
+}

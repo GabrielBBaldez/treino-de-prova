@@ -1,0 +1,111 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) 0;
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+  background-color: var(--color-bg-card);
+}
+
+.optionLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.optionName {
+  font-weight: 500;
+}
+
+.optionDesc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: var(--color-border);
+  position: relative;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.toggleActive {
+  background-color: var(--color-accent);
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform var(--transition-fast);
+}
+
+.toggleActive .toggleKnob {
+  transform: translateX(20px);
+}
+
+.limitField {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.limitInput {
+  width: 80px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.limitInput:focus {
+  border-color: var(--color-border-focus);
+  outline: none;
+}
+
+.limitLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.startBtn {
+  display: block;
+  width: 100%;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  transition: background-color var(--transition-fast);
+}
+
+.startBtn:hover {
+  background-color: var(--color-accent-hover);
+}

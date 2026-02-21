@@ -1,0 +1,164 @@
+import { useState } from 'react';
+import { useParams, useNavigate, Link } from 'react-router';
+import { Home } from 'lucide-react';
+import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { useTimer } from '../../hooks/useTimer';
+import { ModeSelector } from '../../components/ModeSelector/ModeSelector';
+import { TrainSettings } from '../../components/TrainSettings/TrainSettings';
+import { QuestionDisplay } from '../../components/QuestionDisplay/QuestionDisplay';
+import { ProgressBar } from '../../components/ProgressBar/ProgressBar';
+import { shuffle } from '../../utils/shuffle';
+import { generateId } from '../../utils/generateId';
+import type { QuizMode, TrainSettings as TrainSettingsType, Question, QuizResult } from '../../types/quiz';
+import styles from './QuizPlayerPage.module.css';
+
+type Phase = 'mode' | 'settings' | 'playing';
+
+function shuffleAlternatives(question: Question): Question {
+  if (question.type === 'true_false') return question;
+  const shuffled = shuffle(question.alternatives);
+  return { ...question, alternatives: shuffled };
+}
+
+export function QuizPlayerPage() {
+  const { quizId } = useParams();
+  const navigate = useNavigate();
+  const { getQuiz } = useQuizStorage();
+  const { seconds, start, stop } = useTimer();
+
+  const quiz = getQuiz(quizId || '');
+
+  const [phase, setPhase] = useState<Phase>('mode');
+  const [settings, setSettings] = useState<TrainSettingsType>({
+    mode: 'simulado',
+    shuffleQuestions: false,
+    shuffleAlternatives: false,
+    questionLimit: null,
+  });
+  const [preparedQuestions, setPreparedQuestions] = useState<Question[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+
+  if (!quiz) {
+    return (
+      <div className={styles.notFound}>
+        <p>Banco de questoes nao encontrado.</p>
+        <Link to="/" className={styles.notFoundLink}>
+          <Home size={18} />
+          Voltar ao inicio
+        </Link>
+      </div>
+    );
+  }
+
+  const handleModeSelect = (mode: QuizMode) => {
+    setSettings((prev) => ({ ...prev, mode }));
+    setPhase('settings');
+  };
+
+  const handleStart = () => {
+    let questions = [...quiz.questions];
+
+    if (settings.shuffleQuestions) {
+      questions = shuffle(questions);
+    }
+
+    if (settings.questionLimit && settings.questionLimit < questions.length) {
+      questions = questions.slice(0, settings.questionLimit);
+    }
+
+    if (settings.shuffleAlternatives) {
+      questions = questions.map(shuffleAlternatives);
+    }
+
+    setPreparedQuestions(questions);
+    setCurrentIndex(0);
+    setAnswers({});
+    setPhase('playing');
+    start();
+  };
+
+  const handleSelectAnswer = (altId: string) => {
+    const qId = preparedQuestions[currentIndex].id;
+    setAnswers((prev) => ({ ...prev, [qId]: altId }));
+  };
+
+  const handleNext = () => {
+    if (currentIndex < preparedQuestions.length - 1) {
+      setCurrentIndex((i) => i + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((i) => i - 1);
+    }
+  };
+
+  const handleFinish = () => {
+    stop();
+
+    let correctCount = 0;
+    preparedQuestions.forEach((q) => {
+      if (answers[q.id] === q.correctAnswer) {
+        correctCount++;
+      }
+    });
+
+    const result: QuizResult = {
+      id: generateId(),
+      quizId: quiz.id,
+      quizTitle: quiz.title,
+      mode: settings.mode,
+      answers,
+      correctCount,
+      totalQuestions: preparedQuestions.length,
+      percentage: Math.round((correctCount / preparedQuestions.length) * 100),
+      timeTakenSeconds: seconds,
+      completedAt: new Date().toISOString(),
+    };
+
+    navigate('/results', { state: { result, questions: preparedQuestions } });
+  };
+
+  const currentQuestion = preparedQuestions[currentIndex];
+  const canGoPrev = settings.mode === 'simulado' && currentIndex > 0;
+
+  return (
+    <div>
+      <h1 className={styles.quizTitle}>{quiz.title}</h1>
+      <p className={styles.quizMeta}>{quiz.subject} - {quiz.questions.length} questoes</p>
+
+      {phase === 'mode' && (
+        <ModeSelector selected={settings.mode} onSelect={handleModeSelect} />
+      )}
+
+      {phase === 'settings' && (
+        <TrainSettings
+          settings={settings}
+          totalQuestions={quiz.questions.length}
+          onChange={setSettings}
+          onStart={handleStart}
+        />
+      )}
+
+      {phase === 'playing' && currentQuestion && (
+        <>
+          <ProgressBar current={currentIndex} total={preparedQuestions.length} seconds={seconds} />
+          <QuestionDisplay
+            question={currentQuestion}
+            questionNumber={currentIndex + 1}
+            selectedAnswer={answers[currentQuestion.id] || null}
+            mode={settings.mode}
+            onSelectAnswer={handleSelectAnswer}
+            onPrev={handlePrev}
+            onNext={handleNext}
+            onFinish={handleFinish}
+            canGoPrev={canGoPrev}
+            isLast={currentIndex === preparedQuestions.length - 1}
+          />
+        </>
+      )}
+    </div>
+  );
+}
