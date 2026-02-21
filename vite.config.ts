@@ -4,22 +4,22 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/treino-de-prova/',
+  base: '/questify/',
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
       manifest: {
-        name: 'Treino de Prova',
-        short_name: 'Treino',
+        name: 'Questify',
+        short_name: 'Questify',
         description: 'App de treino para concursos, residencia e provas. Crie bancos de questoes, estude e acompanhe sua evolucao.',
         theme_color: '#6366f1',
         background_color: '#0f172a',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/treino-de-prova/',
-        start_url: '/treino-de-prova/',
+        scope: '/questify/',
+        start_url: '/questify/',
         icons: [
           {
             src: 'icon.svg',

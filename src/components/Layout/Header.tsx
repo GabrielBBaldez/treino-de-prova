@@ -11,7 +11,7 @@ export function Header() {
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
         <BookOpen size={24} className={styles.logoIcon} />
-        <span>Treino de Prova</span>
+        <span>Questify</span>
       </NavLink>
 
       <nav className={styles.nav}>

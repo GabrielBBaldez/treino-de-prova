@@ -30,9 +30,9 @@ interface HelpSection {
 const sections: HelpSection[] = [
   {
     icon: <BookOpen size={24} />,
-    title: 'O que e o Treino de Prova?',
+    title: 'O que e o Questify?',
     content:
-      'O Treino de Prova e um aplicativo gratuito para estudar para concursos, residencia medica, ENEM, certificacoes e qualquer tipo de prova. Voce cria bancos de questoes, treina nos diferentes modos e acompanha sua evolucao ao longo do tempo.',
+      'O Questify e um aplicativo gratuito para estudar para concursos, residencia medica, ENEM, certificacoes e qualquer tipo de prova. Voce cria bancos de questoes, treina nos diferentes modos e acompanha sua evolucao ao longo do tempo.',
     tips: [
       'Funciona 100% offline apos o primeiro acesso',
       'Seus dados ficam salvos no seu dispositivo',
@@ -145,7 +145,7 @@ const sections: HelpSection[] = [
     icon: <Smartphone size={24} />,
     title: 'Instalar no Celular',
     content:
-      'O Treino de Prova e um PWA (Progressive Web App) — funciona como app nativo no seu celular:',
+      'O Questify e um PWA (Progressive Web App) — funciona como app nativo no seu celular:',
     tips: [
       'Android: Abra no Chrome, toque nos 3 pontinhos e depois em "Instalar aplicativo"',
       'iPhone: Abra no Safari, toque em Compartilhar e depois em "Adicionar a Tela de Inicio"',
@@ -185,7 +185,7 @@ export default function HelpPage() {
       <div className={styles.header}>
         <HelpCircle size={36} />
         <div>
-          <h1>Como usar o Treino de Prova</h1>
+          <h1>Como usar o Questify</h1>
           <p>Tudo que voce precisa saber para aproveitar o app ao maximo</p>
         </div>
       </div>
@@ -195,7 +195,15 @@ export default function HelpPage() {
         <ul>
           {sections.map((section, i) => (
             <li key={i}>
-              <a href={`#section-${i}`}>{section.title}</a>
+              <button
+                type="button"
+                className={styles.tocLink}
+                onClick={() => {
+                  document.getElementById(`section-${i}`)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                {section.title}
+              </button>
             </li>
           ))}
         </ul>
