@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router';
-import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle } from 'lucide-react';
+import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle, Sparkles } from 'lucide-react';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 import styles from './Header.module.css';
 
@@ -26,6 +26,10 @@ export function Header() {
         <NavLink to="/history" className={linkClass}>
           <BarChart3 size={18} />
           <span>Historico</span>
+        </NavLink>
+        <NavLink to="/generate" className={linkClass}>
+          <Sparkles size={18} />
+          <span>Gerar IA</span>
         </NavLink>
         <NavLink to="/help" className={linkClass}>
           <HelpCircle size={18} />
