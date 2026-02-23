@@ -507,6 +507,117 @@
       gap: 0.3rem;
     }
 
+    /* ========== PRICING ========== */
+    .pricing {
+      padding: 6rem 2rem;
+    }
+
+    .pricing-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+
+    .pricing-card.popular {
+      border-color: rgba(99,102,241,0.4);
+      box-shadow: 0 0 30px rgba(99,102,241,0.1);
+      position: relative;
+    }
+
+    .pricing-popular-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gradient);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price {
+      margin: 1.2rem 0;
+    }
+
+    .pricing-price .amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .pricing-price .period {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .pricing-price .savings {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--success);
+      font-weight: 600;
+      margin-top: 0.3rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .pricing-card li {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pricing-card li::before {
+      content: '\2713';
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .pricing-free {
+      text-align: center;
+      margin-top: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+
     /* ========== FOOTER ========== */
     footer {
       text-align: center;
@@ -825,6 +936,51 @@
           Conhecer o Pro
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pro">
+    <div class="pricing-inner">
+      <div class="section-title">
+        <h2>Questify Pro</h2>
+        <p>Escolha o plano ideal para seus estudos</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Mensal</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Flexibilidade total</p>
+          <div class="pricing-price">
+            <span class="amount">R$ 9,90</span>
+            <span class="period">/mes</span>
+          </div>
+          <ul>
+            <li>Sincronizacao entre dispositivos</li>
+            <li>Backup automatico no servidor</li>
+            <li>Bancos e historico na nuvem</li>
+            <li>Cancele quando quiser</li>
+          </ul>
+          <a href="https://gabrielbbaldez.github.io/questify/#/auth" class="btn btn-secondary" style="width:100%; justify-content:center;">Assinar mensal</a>
+        </div>
+        <div class="pricing-card popular">
+          <span class="pricing-popular-tag">Mais popular</span>
+          <h3>Anual</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Melhor custo-beneficio</p>
+          <div class="pricing-price">
+            <span class="amount">R$ 79,90</span>
+            <span class="period">/ano</span>
+            <span class="savings">Economia de 33% (R$ 6,66/mes)</span>
+          </div>
+          <ul>
+            <li>Tudo do plano mensal</li>
+            <li>Sincronizacao entre dispositivos</li>
+            <li>Backup automatico no servidor</li>
+            <li>Melhor preco por mes</li>
+          </ul>
+          <a href="https://gabrielbbaldez.github.io/questify/#/auth" class="btn btn-primary" style="width:100%; justify-content:center;">Assinar anual</a>
+        </div>
+      </div>
+      <p class="pricing-free">Prefere usar gratis? Sem problema! O Questify funciona 100% sem conta, com dados salvos no seu navegador.</p>
     </div>
   </section>
 
