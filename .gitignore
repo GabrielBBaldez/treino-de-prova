@@ -27,3 +27,8 @@ dist-ssr
 prova_raw.txt
 gabarito_raw.txt
 generate_quiz.mjs
+
+# Backend (Java/Maven)
+backend/target/
+backend/*.iml
+backend/.mvn/wrapper/maven-wrapper.jar
