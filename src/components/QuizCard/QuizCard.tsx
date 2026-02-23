@@ -29,7 +29,7 @@ export function QuizCard({ quiz, onDelete }: QuizCardProps) {
       <div className={styles.meta}>
         <span className={styles.metaItem}>
           <FileText size={14} />
-          {questionCount} {questionCount === 1 ? 'questao' : 'questoes'}
+          {questionCount} {questionCount === 1 ? 'questão' : 'questões'}
         </span>
         <span className={styles.metaItem}>
           <Calendar size={14} />

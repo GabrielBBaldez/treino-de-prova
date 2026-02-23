@@ -16,7 +16,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
       try {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       } catch (e) {
-        console.warn('localStorage cheio ou indisponivel:', e);
+        console.warn('localStorage cheio ou indisponível:', e);
       }
       return valueToStore;
     });

@@ -28,10 +28,10 @@ export function ResultsPage() {
   if (!state?.result || !state?.questions) {
     return (
       <div className={styles.empty}>
-        <p>Nenhum resultado disponivel.</p>
+        <p>Nenhum resultado disponível.</p>
         <button className={`${styles.actionBtn} ${styles.homeBtn}`} onClick={() => navigate('/')} style={{ marginTop: '1rem' }}>
           <Home size={18} />
-          Voltar ao inicio
+          Voltar ao início
         </button>
       </div>
     );
@@ -50,11 +50,11 @@ export function ResultsPage() {
         </button>
         <button className={`${styles.actionBtn} ${styles.homeBtn}`} onClick={() => navigate('/')}>
           <Home size={18} />
-          Inicio
+          Início
         </button>
       </div>
 
-      <h2 className={styles.reviewTitle}>Revisao das Questoes</h2>
+      <h2 className={styles.reviewTitle}>Revisão das Questões</h2>
       {questions.map((q, i) => (
         <QuestionReview
           key={q.id}

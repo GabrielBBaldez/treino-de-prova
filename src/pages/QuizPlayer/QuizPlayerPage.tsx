@@ -42,10 +42,10 @@ export function QuizPlayerPage() {
   if (!quiz) {
     return (
       <div className={styles.notFound}>
-        <p>Banco de questoes nao encontrado.</p>
+        <p>Banco de questões não encontrado.</p>
         <Link to="/" className={styles.notFoundLink}>
           <Home size={18} />
-          Voltar ao inicio
+          Voltar ao início
         </Link>
       </div>
     );
@@ -127,7 +127,7 @@ export function QuizPlayerPage() {
   return (
     <div>
       <h1 className={styles.quizTitle}>{quiz.title}</h1>
-      <p className={styles.quizMeta}>{quiz.subject} - {quiz.questions.length} questoes</p>
+      <p className={styles.quizMeta}>{quiz.subject} - {quiz.questions.length} questões</p>
 
       {phase === 'mode' && (
         <ModeSelector selected={settings.mode} onSelect={handleModeSelect} />

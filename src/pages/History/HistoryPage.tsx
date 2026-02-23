@@ -9,7 +9,7 @@ import styles from './HistoryPage.module.css';
 const MODE_LABELS: Record<string, string> = {
   simulado: 'Simulado',
   estudo: 'Estudo',
-  revisao: 'Revisao',
+  revisao: 'Revisão',
 };
 
 export function HistoryPage() {
@@ -84,9 +84,9 @@ export function HistoryPage() {
         <div>
           <h1 className={styles.title}>
             <BarChart3 size={28} />
-            Historico
+            Histórico
           </h1>
-          <p className={styles.subtitle}>Acompanhe sua evolucao ao longo do tempo</p>
+          <p className={styles.subtitle}>Acompanhe sua evolução ao longo do tempo</p>
         </div>
         {results.length > 0 && (
           <button className={styles.clearBtn} onClick={() => setShowClearConfirm(true)}>
@@ -100,7 +100,7 @@ export function HistoryPage() {
         <div className={styles.empty}>
           <BarChart3 size={48} />
           <p>Nenhum resultado registrado ainda.</p>
-          <p className={styles.emptyHint}>Complete um treino para comecar a acompanhar sua evolucao.</p>
+          <p className={styles.emptyHint}>Complete um treino para começar a acompanhar sua evolução.</p>
         </div>
       ) : (
         <>
@@ -127,7 +127,7 @@ export function HistoryPage() {
               <option value="all">Todos os modos</option>
               <option value="simulado">Simulado</option>
               <option value="estudo">Estudo</option>
-              <option value="revisao">Revisao</option>
+              <option value="revisao">Revisão</option>
             </select>
           </div>
 
@@ -142,7 +142,7 @@ export function HistoryPage() {
               <div className={styles.statCard}>
                 <BarChart3 size={20} className={styles.statIcon} />
                 <div className={styles.statValue}>{stats.avgPercent}%</div>
-                <div className={styles.statLabel}>Media</div>
+                <div className={styles.statLabel}>Média</div>
               </div>
               <div className={styles.statCard}>
                 <Trophy size={20} className={styles.statIcon} />
@@ -152,7 +152,7 @@ export function HistoryPage() {
               <div className={styles.statCard}>
                 <Clock size={20} className={styles.statIcon} />
                 <div className={styles.statValue}>{formatTime(stats.avgTime)}</div>
-                <div className={styles.statLabel}>Tempo medio</div>
+                <div className={styles.statLabel}>Tempo médio</div>
               </div>
             </div>
           )}
@@ -160,7 +160,7 @@ export function HistoryPage() {
           {/* Chart - only when filtering by specific quiz */}
           {chartData.length >= 2 && (
             <div className={styles.chartSection}>
-              <h2 className={styles.chartTitle}>Evolucao de acertos</h2>
+              <h2 className={styles.chartTitle}>Evolução de acertos</h2>
               <ProgressChart data={chartData} />
             </div>
           )}
@@ -201,8 +201,8 @@ export function HistoryPage() {
 
       {showClearConfirm && (
         <ConfirmDialog
-          title="Limpar historico"
-          message="Tem certeza que deseja apagar todo o historico de resultados? Essa acao nao pode ser desfeita."
+          title="Limpar histórico"
+          message="Tem certeza que deseja apagar todo o histórico de resultados? Essa ação não pode ser desfeita."
           onConfirm={() => {
             clearResults();
             setShowClearConfirm(false);

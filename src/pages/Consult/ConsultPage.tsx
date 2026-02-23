@@ -5,7 +5,7 @@ import { useQuizStorage } from '../../hooks/useQuizStorage';
 import styles from './ConsultPage.module.css';
 
 const TYPE_LABELS: Record<string, string> = {
-  multiple_choice: 'Multipla Escolha',
+  multiple_choice: 'Múltipla Escolha',
   true_false: 'V ou F',
   assertion: 'Assertivas',
 };
@@ -38,10 +38,10 @@ export function ConsultPage() {
   if (!quiz) {
     return (
       <div className={styles.notFound}>
-        <p>Banco de questoes nao encontrado.</p>
+        <p>Banco de questões não encontrado.</p>
         <Link to="/" className={styles.backLink}>
           <Home size={18} />
-          Voltar ao inicio
+          Voltar ao início
         </Link>
       </div>
     );
@@ -51,7 +51,7 @@ export function ConsultPage() {
     <div>
       <div className={styles.header}>
         <h1 className={styles.title}>{quiz.title}</h1>
-        <p className={styles.subtitle}>Modo consulta - visualize questoes, respostas e explicacoes</p>
+        <p className={styles.subtitle}>Modo consulta - visualize questões, respostas e explicações</p>
       </div>
 
       <div className={styles.searchBar}>
@@ -59,14 +59,14 @@ export function ConsultPage() {
         <input
           className={styles.searchInput}
           type="text"
-          placeholder="Buscar por palavra-chave (ex: cardiologia, infarto, heranca)..."
+          placeholder="Buscar por palavra-chave (ex: cardiologia, infarto, herança)..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
       <p className={styles.resultCount}>
-        {filteredQuestions.length} de {quiz.questions.length} questoes
+        {filteredQuestions.length} de {quiz.questions.length} questões
         {search && ` para "${search}"`}
       </p>
 
@@ -92,7 +92,7 @@ export function ConsultPage() {
             <p className={styles.questionText}>{q.text}</p>
 
             {q.image && (
-              <img src={q.image} alt="Imagem da questao" className={styles.questionImage} />
+              <img src={q.image} alt="Imagem da questão" className={styles.questionImage} />
             )}
 
             {q.type === 'assertion' && 'assertions' in q && (
@@ -130,7 +130,7 @@ export function ConsultPage() {
 
             {q.explanation && (
               <div className={styles.explanation}>
-                <div className={styles.explanationLabel}>Explicacao:</div>
+                <div className={styles.explanationLabel}>Explicação:</div>
                 {q.explanation}
               </div>
             )}

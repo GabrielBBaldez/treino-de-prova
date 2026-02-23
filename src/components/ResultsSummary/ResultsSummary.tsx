@@ -9,7 +9,7 @@ interface ResultsSummaryProps {
 const MODE_NAMES: Record<string, string> = {
   simulado: 'Simulado',
   estudo: 'Estudo',
-  revisao: 'Revisao',
+  revisao: 'Revisão',
 };
 
 export function ResultsSummary({ result }: ResultsSummaryProps) {

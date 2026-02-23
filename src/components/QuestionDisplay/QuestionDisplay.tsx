@@ -37,11 +37,11 @@ export function QuestionDisplay({
   return (
     <div className={styles.container}>
       <p className={styles.questionText}>
-        <strong>Questao {questionNumber}.</strong> {question.text}
+        <strong>Questão {questionNumber}.</strong> {question.text}
       </p>
 
       {question.image && (
-        <img src={question.image} alt="Imagem da questao" className={styles.questionImage} />
+        <img src={question.image} alt="Imagem da questão" className={styles.questionImage} />
       )}
 
       {question.type === 'assertion' && 'assertions' in question && (
@@ -99,7 +99,7 @@ export function QuestionDisplay({
           </button>
         ) : (
           <button className={`${styles.navBtn} ${styles.nextBtn}`} onClick={onNext}>
-            Proxima
+            Próxima
             <ChevronRight size={18} />
           </button>
         )}

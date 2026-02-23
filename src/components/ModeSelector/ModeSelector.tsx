@@ -17,13 +17,13 @@ const MODES: { id: QuizMode; name: string; desc: string; icon: typeof ClipboardC
   {
     id: 'estudo',
     name: 'Estudo',
-    desc: 'Feedback instantaneo apos cada questao. Saiba na hora se acertou ou errou.',
+    desc: 'Feedback instantâneo após cada questão. Saiba na hora se acertou ou errou.',
     icon: BookOpen,
   },
   {
     id: 'revisao',
-    name: 'Revisao',
-    desc: 'Feedback instantaneo + explicacao do erro quando disponivel.',
+    name: 'Revisão',
+    desc: 'Feedback instantâneo + explicação do erro quando disponível.',
     icon: MessageCircle,
   },
 ];
@@ -32,7 +32,7 @@ export function ModeSelector({ selected, onSelect }: ModeSelectorProps) {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Escolha o modo</h2>
-      <p className={styles.subtitle}>Como voce quer treinar?</p>
+      <p className={styles.subtitle}>Como você quer treinar?</p>
       <div className={styles.modes}>
         {MODES.map((mode) => (
           <button

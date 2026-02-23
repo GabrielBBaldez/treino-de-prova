@@ -15,17 +15,17 @@ export function TrainSettings({ settings, totalQuestions, onChange, onStart }: T
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Configuracoes do treino</h3>
+      <h3 className={styles.title}>Configurações do treino</h3>
 
       <div className={styles.option}>
         <div className={styles.optionLabel}>
-          <span className={styles.optionName}>Embaralhar questoes</span>
-          <span className={styles.optionDesc}>Muda a ordem das questoes aleatoriamente</span>
+          <span className={styles.optionName}>Embaralhar questões</span>
+          <span className={styles.optionDesc}>Muda a ordem das questões aleatoriamente</span>
         </div>
         <button
           className={`${styles.toggle} ${settings.shuffleQuestions ? styles.toggleActive : ''}`}
           onClick={() => update({ shuffleQuestions: !settings.shuffleQuestions })}
-          aria-label="Embaralhar questoes"
+          aria-label="Embaralhar questões"
         >
           <div className={styles.toggleKnob} />
         </button>
@@ -34,7 +34,7 @@ export function TrainSettings({ settings, totalQuestions, onChange, onStart }: T
       <div className={styles.option}>
         <div className={styles.optionLabel}>
           <span className={styles.optionName}>Embaralhar alternativas</span>
-          <span className={styles.optionDesc}>Muda a ordem do gabarito para nao viciar</span>
+          <span className={styles.optionDesc}>Muda a ordem do gabarito para não viciar</span>
         </div>
         <button
           className={`${styles.toggle} ${settings.shuffleAlternatives ? styles.toggleActive : ''}`}
@@ -47,7 +47,7 @@ export function TrainSettings({ settings, totalQuestions, onChange, onStart }: T
 
       <div className={styles.option}>
         <div className={styles.optionLabel}>
-          <span className={styles.optionName}>Limitar questoes</span>
+          <span className={styles.optionName}>Limitar questões</span>
           <span className={styles.optionDesc}>Treinar apenas uma parte do banco ({totalQuestions} total)</span>
         </div>
         <div className={styles.limitField}>
@@ -67,7 +67,7 @@ export function TrainSettings({ settings, totalQuestions, onChange, onStart }: T
       </div>
 
       <button className={styles.startBtn} onClick={onStart}>
-        Comecar Treino
+        Começar Treino
       </button>
     </div>
   );

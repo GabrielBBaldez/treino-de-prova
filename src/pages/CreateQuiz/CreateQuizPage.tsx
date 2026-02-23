@@ -79,20 +79,20 @@ export function CreateQuizPage() {
 
   const validate = (): boolean => {
     const errs: string[] = [];
-    if (!title.trim()) errs.push('Titulo obrigatorio');
-    if (questions.length === 0) errs.push('Adicione pelo menos 1 questao');
+    if (!title.trim()) errs.push('Título obrigatório');
+    if (questions.length === 0) errs.push('Adicione pelo menos 1 questão');
 
     questions.forEach((q, i) => {
-      if (!q.text.trim()) errs.push(`Questao ${i + 1}: enunciado vazio`);
+      if (!q.text.trim()) errs.push(`Questão ${i + 1}: enunciado vazio`);
       if (q.type !== 'true_false') {
         q.alternatives.forEach((alt) => {
-          if (!alt.text.trim()) errs.push(`Questao ${i + 1}: alternativa ${alt.id} vazia`);
+          if (!alt.text.trim()) errs.push(`Questão ${i + 1}: alternativa ${alt.id} vazia`);
         });
       }
       if (q.type === 'assertion') {
         const assertions = (q as any).assertions || [];
         assertions.forEach((a: any, ai: number) => {
-          if (!a.text.trim()) errs.push(`Questao ${i + 1}: assertiva ${ai + 1} vazia`);
+          if (!a.text.trim()) errs.push(`Questão ${i + 1}: assertiva ${ai + 1} vazia`);
         });
       }
     });
@@ -125,8 +125,8 @@ export function CreateQuizPage() {
   return (
     <div>
       <div className={styles.header}>
-        <h1 className={styles.title}>{isEditing ? 'Editar Banco' : 'Criar Banco de Questoes'}</h1>
-        <p className={styles.subtitle}>Preencha os dados e adicione as questoes</p>
+        <h1 className={styles.title}>{isEditing ? 'Editar Banco' : 'Criar Banco de Questões'}</h1>
+        <p className={styles.subtitle}>Preencha os dados e adicione as questões</p>
       </div>
 
       {errors.length > 0 && (
@@ -139,16 +139,16 @@ export function CreateQuizPage() {
 
       <div className={styles.metaSection}>
         <div className={styles.fieldFull}>
-          <label className={styles.label}>Titulo</label>
+          <label className={styles.label}>Título</label>
           <input
-            className={`${styles.input} ${errors.some((e) => e.includes('Titulo')) ? styles.inputError : ''}`}
+            className={`${styles.input} ${errors.some((e) => e.includes('Título')) ? styles.inputError : ''}`}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Ex: Banco de Java - OCA/OCP"
           />
         </div>
         <div className={styles.field}>
-          <label className={styles.label}>Materia</label>
+          <label className={styles.label}>Matéria</label>
           <input
             className={styles.input}
             value={subject}
@@ -157,18 +157,18 @@ export function CreateQuizPage() {
           />
         </div>
         <div className={styles.field}>
-          <label className={styles.label}>Descricao (opcional)</label>
+          <label className={styles.label}>Descrição (opcional)</label>
           <textarea
             className={styles.textarea}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Uma breve descricao do banco..."
+            placeholder="Uma breve descrição do banco..."
           />
         </div>
       </div>
 
       <div className={styles.questionsHeader}>
-        <h2 className={styles.questionsTitle}>Questoes ({questions.length})</h2>
+        <h2 className={styles.questionsTitle}>Questões ({questions.length})</h2>
       </div>
 
       <div className={styles.questionsList}>
@@ -188,13 +188,13 @@ export function CreateQuizPage() {
 
       <button className={styles.addQuestionBtn} onClick={() => setQuestions([...questions, createBlankQuestion()])}>
         <Plus size={20} />
-        Adicionar Questao
+        Adicionar Questão
       </button>
 
       <div className={styles.footer}>
         <button className={styles.cancelBtn} onClick={() => navigate('/')}>Cancelar</button>
         <button className={styles.saveBtn} onClick={handleSave}>
-          {isEditing ? 'Salvar Alteracoes' : 'Criar Banco'}
+          {isEditing ? 'Salvar Alterações' : 'Criar Banco'}
         </button>
       </div>
     </div>

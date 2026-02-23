@@ -31,7 +31,7 @@ export function ImageUpload({ image, onChange }: ImageUploadProps) {
 
       {image ? (
         <div className={styles.preview}>
-          <img src={image} alt="Imagem da questao" className={styles.previewImg} />
+          <img src={image} alt="Imagem da questão" className={styles.previewImg} />
           <button className={styles.removeBtn} onClick={() => onChange(null)} aria-label="Remover imagem">
             <X size={14} />
           </button>

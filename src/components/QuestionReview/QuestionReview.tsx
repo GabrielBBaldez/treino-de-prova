@@ -17,7 +17,7 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
     <div className={styles.card}>
       <div className={styles.header} onClick={() => setOpen(!open)}>
         <div className={styles.headerLeft}>
-          <span className={styles.questionNum}>Questao {questionNumber}</span>
+          <span className={styles.questionNum}>Questão {questionNumber}</span>
           <span className={`${styles.badge} ${isCorrect ? styles.badgeCorrect : styles.badgeWrong}`}>
             {isCorrect ? <><Check size={12} /> Correta</> : <><X size={12} /> Errada</>}
           </span>
@@ -30,7 +30,7 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
           <p className={styles.questionText}>{question.text}</p>
 
           {question.image && (
-            <img src={question.image} alt="Imagem da questao" className={styles.questionImage} />
+            <img src={question.image} alt="Imagem da questão" className={styles.questionImage} />
           )}
 
           <div className={styles.altList}>
@@ -60,7 +60,7 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
 
           {question.explanation && (
             <div className={styles.explanation}>
-              <div className={styles.explanationLabel}>Explicacao:</div>
+              <div className={styles.explanationLabel}>Explicação:</div>
               {question.explanation}
             </div>
           )}

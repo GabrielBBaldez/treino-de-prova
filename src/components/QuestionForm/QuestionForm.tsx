@@ -140,7 +140,7 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <span className={styles.questionNumber}>Questao {index + 1}</span>
+        <span className={styles.questionNumber}>Questão {index + 1}</span>
         <div className={styles.headerActions}>
           <button className={styles.iconBtn} onClick={onMoveUp} disabled={index === 0} aria-label="Mover para cima">
             <ChevronUp size={18} />
@@ -148,7 +148,7 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
           <button className={styles.iconBtn} onClick={onMoveDown} disabled={index === total - 1} aria-label="Mover para baixo">
             <ChevronDown size={18} />
           </button>
-          <button className={`${styles.iconBtn} ${styles.deleteBtn}`} onClick={onRemove} disabled={total <= 1} aria-label="Remover questao">
+          <button className={`${styles.iconBtn} ${styles.deleteBtn}`} onClick={onRemove} disabled={total <= 1} aria-label="Remover questão">
             <Trash2 size={18} />
           </button>
         </div>
@@ -161,7 +161,7 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
           className={`${styles.typeOption} ${question.type === 'multiple_choice' ? styles.typeOptionActive : ''}`}
           onClick={() => handleTypeChange('multiple_choice')}
         >
-          Multipla Escolha
+          Múltipla Escolha
         </button>
         <button
           type="button"
@@ -181,7 +181,7 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
 
       {/* Tags */}
       <div className={styles.field}>
-        <label className={styles.label}>Topicos (opcional)</label>
+        <label className={styles.label}>Tópicos (opcional)</label>
         <div className={styles.tagsContainer}>
           {tags.map((tag) => (
             <span key={tag} className={styles.tag}>
@@ -210,7 +210,7 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
           className={styles.textarea}
           value={question.text}
           onChange={(e) => updateField('text', e.target.value)}
-          placeholder="Digite o enunciado da questao..."
+          placeholder="Digite o enunciado da questão..."
         />
       </div>
 
@@ -287,7 +287,7 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
               className={styles.altExplanation}
               value={alt.explanation || ''}
               onChange={(e) => updateAlternative(altIndex, 'explanation', e.target.value)}
-              placeholder={`Por que ${alt.id} esta ${question.correctAnswer === alt.id ? 'correta' : 'errada'}... (opcional)`}
+              placeholder={`Por que ${alt.id} está ${question.correctAnswer === alt.id ? 'correta' : 'errada'}... (opcional)`}
             />
           </div>
         ))}
@@ -300,12 +300,12 @@ export function QuestionForm({ question, index, total, onChange, onRemove, onMov
 
       {/* General Explanation */}
       <div className={styles.explanationField}>
-        <label className={styles.label}>Explicacao geral (opcional)</label>
+        <label className={styles.label}>Explicação geral (opcional)</label>
         <textarea
           className={styles.textarea}
           value={question.explanation || ''}
           onChange={(e) => updateField('explanation', e.target.value)}
-          placeholder="Explicacao geral da questao..."
+          placeholder="Explicação geral da questão..."
         />
       </div>
     </div>

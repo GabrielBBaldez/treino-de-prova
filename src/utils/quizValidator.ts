@@ -13,7 +13,7 @@ function isObject(val: unknown): val is Record<string, unknown> {
 
 function validateQuestion(q: unknown, index: number): string[] {
   const errors: string[] = [];
-  const prefix = `Questao ${index + 1}`;
+  const prefix = `Questão ${index + 1}`;
 
   if (!isObject(q)) {
     errors.push(`${prefix}: deve ser um objeto`);
@@ -21,12 +21,12 @@ function validateQuestion(q: unknown, index: number): string[] {
   }
 
   if (!q.text || typeof q.text !== 'string') {
-    errors.push(`${prefix}: texto obrigatorio`);
+    errors.push(`${prefix}: texto obrigatório`);
   }
 
   const type = q.type || 'multiple_choice';
   if (!['multiple_choice', 'true_false', 'assertion'].includes(type as string)) {
-    errors.push(`${prefix}: tipo invalido "${type}"`);
+    errors.push(`${prefix}: tipo inválido "${type}"`);
   }
 
   if (!Array.isArray(q.alternatives) || q.alternatives.length < 2) {
@@ -41,12 +41,12 @@ function validateQuestion(q: unknown, index: number): string[] {
   }
 
   if (!q.correctAnswer || typeof q.correctAnswer !== 'string') {
-    errors.push(`${prefix}: resposta correta obrigatoria`);
+    errors.push(`${prefix}: resposta correta obrigatória`);
   }
 
   if (type === 'assertion') {
     if (!Array.isArray(q.assertions) || q.assertions.length === 0) {
-      errors.push(`${prefix}: questao de assertiva precisa de assertivas`);
+      errors.push(`${prefix}: questão de assertiva precisa de assertivas`);
     }
   }
 
@@ -57,15 +57,15 @@ export function validateQuiz(data: unknown): ValidationResult {
   const errors: string[] = [];
 
   if (!isObject(data)) {
-    return { valid: false, errors: ['O arquivo nao contem um objeto JSON valido'] };
+    return { valid: false, errors: ['O arquivo não contém um objeto JSON válido'] };
   }
 
   if (!data.title || typeof data.title !== 'string') {
-    errors.push('Titulo obrigatorio');
+    errors.push('Título obrigatório');
   }
 
   if (!Array.isArray(data.questions) || data.questions.length === 0) {
-    errors.push('Precisa ter pelo menos 1 questao');
+    errors.push('Precisa ter pelo menos 1 questão');
     return { valid: false, errors };
   }
 

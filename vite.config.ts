@@ -13,7 +13,7 @@ export default defineConfig({
       manifest: {
         name: 'Questify',
         short_name: 'Questify',
-        description: 'App de treino para concursos, residencia e provas. Crie bancos de questoes, estude e acompanhe sua evolucao.',
+        description: 'App de treino para concursos, residência e provas. Crie bancos de questões, estude e acompanhe sua evolução.',
         theme_color: '#6366f1',
         background_color: '#0f172a',
         display: 'standalone',

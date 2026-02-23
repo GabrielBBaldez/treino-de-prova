@@ -27,7 +27,7 @@ export function HomePage() {
   return (
     <div>
       <div className={styles.header}>
-        <h1 className={styles.title}>Meus Bancos de Questoes</h1>
+        <h1 className={styles.title}>Meus Bancos de Questões</h1>
         <div className={styles.headerActions}>
           <ImportButton onImport={handleImport} />
           <Link to="/create" className={styles.createBtn}>
@@ -39,8 +39,8 @@ export function HomePage() {
 
       {quizzes.length === 0 ? (
         <EmptyState
-          title="Nenhum banco de questoes"
-          description="Crie um novo banco de questoes ou importe um arquivo JSON para comecar a treinar."
+          title="Nenhum banco de questões"
+          description="Crie um novo banco de questões ou importe um arquivo JSON para começar a treinar."
         />
       ) : (
         <div className={styles.grid}>
@@ -57,7 +57,7 @@ export function HomePage() {
       {deleteId && (
         <ConfirmDialog
           title="Excluir banco"
-          message="Tem certeza que deseja excluir este banco de questoes? Essa acao nao pode ser desfeita."
+          message="Tem certeza que deseja excluir este banco de questões? Essa ação não pode ser desfeita."
           confirmLabel="Excluir"
           onConfirm={handleDelete}
           onCancel={() => setDeleteId(null)}

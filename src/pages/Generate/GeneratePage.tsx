@@ -2,28 +2,28 @@ import { useState } from 'react';
 import { Sparkles, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react';
 import styles from './GeneratePage.module.css';
 
-const PROMPT_TEMPLATE = `Voce e um assistente especializado em criar bancos de questoes para o app Questify.
+const PROMPT_TEMPLATE = `Você é um assistente especializado em criar bancos de questões para o app Questify.
 
 Sua tarefa: receber o texto de uma prova (copiado de um PDF) e um gabarito, e gerar um JSON no formato exato do Questify.
 
-## FORMATO JSON OBRIGATORIO
+## FORMATO JSON OBRIGATÓRIO
 
 {
   "id": "gere um UUID v4",
   "title": "Nome da prova",
-  "description": "Descricao breve",
-  "subject": "Area/materia",
+  "description": "Descrição breve",
+  "subject": "Área/matéria",
   "questions": [ ... ],
   "createdAt": "data ISO atual"
 }
 
-## TIPOS DE QUESTAO
+## TIPOS DE QUESTÃO
 
-### 1. Multipla Escolha (multiple_choice)
+### 1. Múltipla Escolha (multiple_choice)
 {
   "id": "UUID",
   "type": "multiple_choice",
-  "text": "Enunciado da questao",
+  "text": "Enunciado da questão",
   "alternatives": [
     { "id": "A", "text": "Texto da alternativa A", "explanation": "Por que esta certa/errada (opcional)" },
     { "id": "B", "text": "Texto da alternativa B" },
@@ -32,8 +32,8 @@ Sua tarefa: receber o texto de uma prova (copiado de um PDF) e um gabarito, e ge
     { "id": "E", "text": "Texto da alternativa E" }
   ],
   "correctAnswer": "C",
-  "explanation": "Explicacao geral da questao (opcional)",
-  "tags": ["Topico1", "Topico2"]
+  "explanation": "Explicação geral da questão (opcional)",
+  "tags": ["Tópico1", "Tópico2"]
 }
 
 ### 2. Verdadeiro ou Falso (true_false)
@@ -46,7 +46,7 @@ Sua tarefa: receber o texto de uma prova (copiado de um PDF) e um gabarito, e ge
     { "id": "F", "text": "Falso" }
   ],
   "correctAnswer": "V",
-  "tags": ["Topico"]
+  "tags": ["Tópico"]
 }
 
 ### 3. Assertivas (assertion)
@@ -66,21 +66,21 @@ Sua tarefa: receber o texto de uma prova (copiado de um PDF) e um gabarito, e ge
     { "id": "D", "text": "I, II e III" }
   ],
   "correctAnswer": "B",
-  "tags": ["Topico"]
+  "tags": ["Tópico"]
 }
 
 ## REGRAS IMPORTANTES
 
-1. Cada questao DEVE ter um "id" unico (UUID v4)
+1. Cada questão DEVE ter um "id" único (UUID v4)
 2. "correctAnswer" deve ser o "id" de uma das alternativas (ex: "A", "B", "C", "D", "E", "V", "F")
-3. Para questoes de assertiva, o campo "correct" de cada assertiva deve ser true/false baseado no gabarito
-4. Se uma questao foi ANULADA no gabarito, NAO inclua ela
-5. Tags sao opcionais mas recomendadas — use o topico/especialidade da questao
-6. O campo "explanation" em cada alternativa e opcional mas muito util para estudo
-7. Gere o JSON completo e valido, sem cortar no meio
-8. NAO use acentos nos campos id/type, apenas nos textos
+3. Para questões de assertiva, o campo "correct" de cada assertiva deve ser true/false baseado no gabarito
+4. Se uma questão foi ANULADA no gabarito, NÃO inclua ela
+5. Tags são opcionais mas recomendadas — use o tópico/especialidade da questão
+6. O campo "explanation" em cada alternativa é opcional mas muito útil para estudo
+7. Gere o JSON completo e válido, sem cortar no meio
+8. NÃO use acentos nos campos id/type, apenas nos textos
 
-## INSTRUCOES
+## INSTRUÇÕES
 
 Agora vou colar o texto da prova e o gabarito abaixo. Gere o JSON completo:
 
@@ -93,7 +93,7 @@ const STEPS = [
     number: 1,
     title: 'Copie o prompt',
     description:
-      'Clique no botao "Copiar Prompt" acima. Ele ja contem o formato JSON completo do Questify e todas as instrucoes pra IA.',
+      'Clique no botão "Copiar Prompt" acima. Ele já contém o formato JSON completo do Questify e todas as instruções pra IA.',
   },
   {
     number: 2,
@@ -111,23 +111,23 @@ const STEPS = [
     number: 4,
     title: 'Copie o JSON gerado',
     description:
-      'A IA vai devolver um JSON grande. Copie todo o conteudo (do primeiro { ate o ultimo }).',
+      'A IA vai devolver um JSON grande. Copie todo o conteúdo (do primeiro { até o último }).',
   },
   {
     number: 5,
     title: 'Importe no Questify',
     description:
-      'Volte ao Questify, va na pagina inicial e clique em "Importar JSON". Selecione o arquivo ou cole o conteudo. Pronto!',
+      'Volte ao Questify, vá na página inicial e clique em "Importar JSON". Selecione o arquivo ou cole o conteúdo. Pronto!',
   },
 ];
 
 const TIPS = [
-  'Se a prova for muito grande (100+ questoes), divida em partes e peca pra IA gerar em blocos',
+  'Se a prova for muito grande (100+ questões), divida em partes e peça pra IA gerar em blocos',
   'Revise o JSON gerado antes de importar — a IA pode errar o gabarito',
-  'Para provas com imagens, voce precisara adicionar as imagens manualmente depois',
+  'Para provas com imagens, você precisará adicionar as imagens manualmente depois',
   'Se a IA cortar o JSON no meio, peca "continue de onde parou"',
   'Modelos maiores (GPT-4, Claude 3.5) geram JSONs mais precisos que modelos menores',
-  'Voce pode pedir pra IA adicionar explicacoes por alternativa dizendo "explique cada alternativa"',
+  'Você pode pedir pra IA adicionar explicações por alternativa dizendo "explique cada alternativa"',
 ];
 
 export default function GeneratePage() {
@@ -160,7 +160,7 @@ export default function GeneratePage() {
           <h1>Gerar Banco com IA</h1>
           <p>
             Use o ChatGPT, Claude ou qualquer IA para transformar uma prova em
-            banco de questoes automaticamente
+            banco de questões automaticamente
           </p>
         </div>
       </div>
