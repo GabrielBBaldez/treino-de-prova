@@ -50,10 +50,10 @@ export function Header() {
         <ThemeToggle />
         {isAuthenticated ? (
           <div className={styles.userMenu}>
-            <span className={styles.userName}>
+            <NavLink to="/profile" className={styles.userName} title="Meu Perfil">
               <User size={16} />
               <span>{user?.name}</span>
-            </span>
+            </NavLink>
             <button onClick={handleLogout} className={styles.authButton} title="Sair">
               <LogOut size={18} />
               <span>Sair</span>

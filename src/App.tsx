@@ -9,6 +9,7 @@ import { HistoryPage } from './pages/History/HistoryPage';
 import HelpPage from './pages/Help/HelpPage';
 import GeneratePage from './pages/Generate/GeneratePage';
 import { AuthPage } from './pages/Auth/AuthPage';
+import { ProfilePage } from './pages/Profile/ProfilePage';
 import { NotFoundPage } from './pages/NotFound/NotFoundPage';
 
 export function App() {
@@ -25,6 +26,7 @@ export function App() {
         <Route path="help" element={<HelpPage />} />
         <Route path="generate" element={<GeneratePage />} />
         <Route path="auth" element={<AuthPage />} />
+        <Route path="profile" element={<ProfilePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

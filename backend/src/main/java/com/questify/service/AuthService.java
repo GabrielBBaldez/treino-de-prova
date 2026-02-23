@@ -2,6 +2,7 @@ package com.questify.service;
 
 import com.questify.dto.request.LoginRequest;
 import com.questify.dto.request.RegisterRequest;
+import com.questify.dto.request.UpdateProfileRequest;
 import com.questify.dto.response.AuthResponse;
 import com.questify.exception.EmailAlreadyExistsException;
 import com.questify.exception.InvalidCredentialsException;
@@ -54,6 +55,25 @@ public class AuthService {
     public AuthResponse getCurrentUser(String userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("Usuario nao encontrado"));
+        return new AuthResponse(null, user.getId(), user.getName(), user.getEmail());
+    }
+
+    public AuthResponse updateProfile(String userId, UpdateProfileRequest request) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("Usuario nao encontrado"));
+
+        if (request.getName() != null) {
+            user.setName(request.getName());
+        }
+
+        if (request.getEmail() != null && !request.getEmail().equals(user.getEmail())) {
+            if (userRepository.existsByEmail(request.getEmail())) {
+                throw new EmailAlreadyExistsException("Email ja cadastrado: " + request.getEmail());
+            }
+            user.setEmail(request.getEmail());
+        }
+
+        user = userRepository.save(user);
         return new AuthResponse(null, user.getId(), user.getName(), user.getEmail());
     }
 }

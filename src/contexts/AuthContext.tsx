@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useCallback, type PropsWithChildren } from 'react';
 import { authApi, type AuthResponse } from '../services/api';
+import { migrateLocalData } from '../services/migration';
 
 interface User {
   userId: string;
@@ -14,6 +15,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
   logout: () => void;
+  updateUser: (data: { name?: string; email?: string }) => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextType | null>(null);
@@ -65,17 +67,30 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const login = useCallback(async (email: string, password: string) => {
     const res = await authApi.login(email, password);
     handleAuthResponse(res);
+    migrateLocalData().catch((err) =>
+      console.warn('Erro na migracao de dados locais:', err)
+    );
   }, [handleAuthResponse]);
 
   const register = useCallback(async (name: string, email: string, password: string) => {
     const res = await authApi.register(name, email, password);
     handleAuthResponse(res);
+    migrateLocalData().catch((err) =>
+      console.warn('Erro na migracao de dados locais:', err)
+    );
   }, [handleAuthResponse]);
 
   const logout = useCallback(() => {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USER_KEY);
     setUser(null);
+  }, []);
+
+  const updateUser = useCallback(async (data: { name?: string; email?: string }) => {
+    const res = await authApi.updateProfile(data);
+    const u = { userId: res.userId, name: res.name, email: res.email };
+    localStorage.setItem(USER_KEY, JSON.stringify(u));
+    setUser(u);
   }, []);
 
   return (
@@ -86,6 +101,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       login,
       register,
       logout,
+      updateUser,
     }}>
       {children}
     </AuthContext.Provider>

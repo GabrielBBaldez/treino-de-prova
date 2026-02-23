@@ -382,6 +382,89 @@
       font-size: 0.85rem;
     }
 
+    /* ========== DATA MODE ========== */
+    .data-mode {
+      padding: 6rem 2rem;
+    }
+
+    .data-mode-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .data-mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .data-mode-card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .data-mode-card.highlight {
+      border-color: rgba(99,102,241,0.3);
+      box-shadow: 0 0 20px rgba(99,102,241,0.08);
+    }
+
+    .data-mode-card .card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .data-mode-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .data-mode-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .data-mode-card li {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .data-mode-card li::before {
+      content: '\2713';
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .data-mode-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .data-mode-badge.free {
+      background: rgba(52,211,153,0.15);
+      color: #34d399;
+    }
+
+    .data-mode-badge.account {
+      background: rgba(99,102,241,0.15);
+      color: #818cf8;
+    }
+
+    @media (max-width: 640px) {
+      .data-mode-grid { grid-template-columns: 1fr; }
+    }
+
     /* ========== CTA ========== */
     .cta {
       padding: 6rem 2rem;
@@ -690,20 +773,58 @@
     </div>
   </section>
 
+  <!-- DATA MODE -->
+  <section class="data-mode">
+    <div class="data-mode-inner">
+      <div class="section-title">
+        <h2>Seus dados, do seu jeito</h2>
+        <p>Escolha como quer usar o Questify</p>
+      </div>
+      <div class="data-mode-grid">
+        <div class="data-mode-card">
+          <div class="card-icon">&#128187;</div>
+          <span class="data-mode-badge free">Sem cadastro</span>
+          <h3>Use na hora</h3>
+          <ul>
+            <li>Funciona imediatamente, sem cadastro</li>
+            <li>Dados salvos no seu navegador</li>
+            <li>Privacidade total</li>
+            <li>Ideal para uso rapido</li>
+          </ul>
+        </div>
+        <div class="data-mode-card highlight">
+          <div class="card-icon">&#9729;&#65039;</div>
+          <span class="data-mode-badge account">Conta gratuita</span>
+          <h3>Sincronize tudo</h3>
+          <ul>
+            <li>Acesse de qualquer dispositivo</li>
+            <li>Bancos e historico sempre disponiveis</li>
+            <li>Backup automatico no servidor</li>
+            <li>Mesma experiencia, mais liberdade</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <div class="cta-box">
       <h2>Pronto para começar?</h2>
-      <p>100% gratuito, sem cadastro, sem anúncios. Seus dados ficam no seu dispositivo.</p>
+      <p>100% gratuito, sem anuncios. Use sem conta ou crie uma gratis para sincronizar seus dados entre dispositivos.</p>
       <div class="cta-features">
         <span>&#10003; Gratuito</span>
-        <span>&#10003; Sem login</span>
-
+        <span>&#10003; Conta opcional</span>
         <span>&#10003; Privado</span>
       </div>
-      <a href="https://gabrielbbaldez.github.io/questify/" class="btn btn-primary">
-        Abrir o app &#8594;
-      </a>
+      <div class="hero-buttons" style="justify-content: center;">
+        <a href="https://gabrielbbaldez.github.io/questify/" class="btn btn-primary">
+          Abrir o app &#8594;
+        </a>
+        <a href="https://gabrielbbaldez.github.io/questify/#/auth" class="btn btn-secondary">
+          Criar conta gratis
+        </a>
+      </div>
     </div>
   </section>
 

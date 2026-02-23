@@ -95,6 +95,13 @@ export const authApi = {
   me(): Promise<AuthResponse> {
     return request('/api/auth/me');
   },
+
+  updateProfile(data: { name?: string; email?: string }): Promise<AuthResponse> {
+    return request('/api/auth/me', {
+      method: 'PUT',
+      body: JSON.stringify(data),
+    });
+  },
 };
 
 // Quizzes

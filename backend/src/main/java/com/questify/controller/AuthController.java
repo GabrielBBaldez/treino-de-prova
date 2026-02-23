@@ -2,6 +2,7 @@ package com.questify.controller;
 
 import com.questify.dto.request.LoginRequest;
 import com.questify.dto.request.RegisterRequest;
+import com.questify.dto.request.UpdateProfileRequest;
 import com.questify.dto.response.AuthResponse;
 import com.questify.service.AuthService;
 import jakarta.validation.Valid;
@@ -33,6 +34,14 @@ public class AuthController {
     @GetMapping("/me")
     public ResponseEntity<AuthResponse> getCurrentUser(Authentication authentication) {
         AuthResponse response = authService.getCurrentUser(authentication.getName());
+        return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/me")
+    public ResponseEntity<AuthResponse> updateProfile(
+            @Valid @RequestBody UpdateProfileRequest request,
+            Authentication authentication) {
+        AuthResponse response = authService.updateProfile(authentication.getName(), request);
         return ResponseEntity.ok(response);
     }
 }
