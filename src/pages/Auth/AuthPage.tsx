@@ -52,8 +52,8 @@ export function AuthPage() {
           <h1>{isLogin ? 'Entrar' : 'Criar Conta'}</h1>
           <p className={styles.subtitle}>
             {isLogin
-              ? 'Acesse sua conta para sincronizar seus dados'
-              : 'Crie uma conta para salvar seus quizzes no servidor'}
+              ? 'Acesse sua conta Questify Pro'
+              : 'Crie sua conta Questify Pro e sincronize seus dados'}
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export function AuthPage() {
           onClick={() => navigate('/')}
           className={styles.skipButton}
         >
-          Continuar sem conta (dados locais)
+          Continuar gratis (dados locais)
         </button>
       </div>
     </div>
