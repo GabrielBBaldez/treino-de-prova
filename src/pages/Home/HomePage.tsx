@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { PlusCircle } from 'lucide-react';
+import { PlusCircle, FlaskConical } from 'lucide-react';
 import { useQuizStorage } from '../../hooks/useQuizStorage';
 import { QuizCard } from '../../components/QuizCard/QuizCard';
 import { ImportButton } from '../../components/ImportExport/ImportButton';
 import { EmptyState } from '../../components/EmptyState/EmptyState';
 import { ConfirmDialog } from '../../components/ConfirmDialog/ConfirmDialog';
+import { validateQuiz } from '../../utils/quizValidator';
+import { sampleQuizData } from '../../data/sampleQuiz';
 import type { Quiz } from '../../types/quiz';
 import styles from './HomePage.module.css';
 
@@ -16,6 +18,15 @@ export function HomePage() {
   const handleImport = (quiz: Quiz) => {
     addQuiz(quiz);
   };
+
+  const handleLoadSample = () => {
+    const result = validateQuiz(sampleQuizData);
+    if (result.valid && result.quiz) {
+      addQuiz(result.quiz);
+    }
+  };
+
+  const hasSample = quizzes.some((q) => q.title === sampleQuizData.title);
 
   const handleDelete = () => {
     if (deleteId) {
@@ -29,6 +40,12 @@ export function HomePage() {
       <div className={styles.header}>
         <h1 className={styles.title}>Meus Bancos de Questões</h1>
         <div className={styles.headerActions}>
+          {!hasSample && (
+            <button className={styles.sampleBtn} onClick={handleLoadSample}>
+              <FlaskConical size={18} />
+              Banco Teste
+            </button>
+          )}
           <ImportButton onImport={handleImport} />
           <Link to="/create" className={styles.createBtn}>
             <PlusCircle size={18} />

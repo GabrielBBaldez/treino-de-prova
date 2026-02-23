@@ -18,6 +18,25 @@
   gap: var(--spacing-sm);
 }
 
+.sampleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-card);
+  border: 1px dashed var(--color-success);
+  color: var(--color-success);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sampleBtn:hover {
+  background-color: var(--color-bg-card-hover);
+}
+
 .createBtn {
   display: inline-flex;
   align-items: center;

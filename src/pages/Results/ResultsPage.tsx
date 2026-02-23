@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { RotateCcw, Home } from 'lucide-react';
 import { useResultsStorage } from '../../hooks/useResultsStorage';
@@ -15,7 +15,7 @@ interface ResultsState {
 export function ResultsPage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { addResult } = useResultsStorage();
+  const { results, addResult } = useResultsStorage();
 
   const state = location.state as ResultsState | null;
 
@@ -24,6 +24,21 @@ export function ResultsPage() {
       addResult(state.result);
     }
   }, []);
+
+  const isPerfect = state?.result?.percentage === 100;
+
+  const timeRecord = useMemo(() => {
+    if (!state?.result) return null;
+    const previous = results.filter(
+      (r) => r.quizId === state.result.quizId && r.id !== state.result.id
+    );
+    if (previous.length === 0) return null;
+    const previousBest = Math.min(...previous.map((r) => r.timeTakenSeconds));
+    if (state.result.timeTakenSeconds < previousBest) {
+      return { isNew: true, previousBest };
+    }
+    return null;
+  }, [state, results]);
 
   if (!state?.result || !state?.questions) {
     return (
@@ -41,7 +56,7 @@ export function ResultsPage() {
 
   return (
     <div>
-      <ResultsSummary result={result} />
+      <ResultsSummary result={result} isPerfect={isPerfect} timeRecord={timeRecord} />
 
       <div className={styles.actions}>
         <button className={`${styles.actionBtn} ${styles.retakeBtn}`} onClick={() => navigate(`/play/${result.quizId}`)}>

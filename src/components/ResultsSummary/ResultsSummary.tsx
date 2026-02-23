@@ -1,9 +1,18 @@
+import { Trophy, Zap } from 'lucide-react';
 import type { QuizResult } from '../../types/quiz';
 import { formatTime } from '../../utils/formatTime';
+import { Confetti } from '../Confetti/Confetti';
 import styles from './ResultsSummary.module.css';
+
+interface TimeRecord {
+  isNew: boolean;
+  previousBest: number;
+}
 
 interface ResultsSummaryProps {
   result: QuizResult;
+  isPerfect?: boolean;
+  timeRecord?: TimeRecord | null;
 }
 
 const MODE_NAMES: Record<string, string> = {
@@ -12,7 +21,7 @@ const MODE_NAMES: Record<string, string> = {
   revisao: 'Revisão',
 };
 
-export function ResultsSummary({ result }: ResultsSummaryProps) {
+export function ResultsSummary({ result, isPerfect, timeRecord }: ResultsSummaryProps) {
   const scoreClass =
     result.percentage >= 70
       ? styles.scoreGood
@@ -22,6 +31,7 @@ export function ResultsSummary({ result }: ResultsSummaryProps) {
 
   return (
     <div className={styles.container}>
+      {isPerfect && <Confetti />}
       <h2 className={styles.title}>Resultado</h2>
       <span className={styles.modeBadge}>{MODE_NAMES[result.mode] || result.mode}</span>
       <div className={`${styles.score} ${scoreClass}`}>
@@ -30,6 +40,21 @@ export function ResultsSummary({ result }: ResultsSummaryProps) {
       <div className={`${styles.percentage} ${scoreClass}`}>
         {result.percentage}%
       </div>
+
+      {isPerfect && (
+        <div className={styles.perfectBadge}>
+          <Trophy size={18} />
+          Perfeito! 100% de acertos!
+        </div>
+      )}
+
+      {timeRecord?.isNew && (
+        <div className={styles.recordBadge}>
+          <Zap size={18} />
+          Novo recorde! {formatTime(result.timeTakenSeconds)} (anterior: {formatTime(timeRecord.previousBest)})
+        </div>
+      )}
+
       <div className={styles.stats}>
         <div className={styles.stat}>
           <span className={styles.statValue}>{formatTime(result.timeTakenSeconds)}</span>
