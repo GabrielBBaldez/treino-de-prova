@@ -1,11 +1,20 @@
-import { NavLink } from 'react-router';
-import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle, Sparkles } from 'lucide-react';
+import { NavLink, useNavigate } from 'react-router';
+import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle, Sparkles, LogIn, LogOut, User } from 'lucide-react';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
+import { useAuth } from '../../hooks/useAuth';
 import styles from './Header.module.css';
 
 export function Header() {
+  const { user, isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`;
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <header className={styles.header}>
@@ -39,6 +48,23 @@ export function Header() {
 
       <div className={styles.actions}>
         <ThemeToggle />
+        {isAuthenticated ? (
+          <div className={styles.userMenu}>
+            <span className={styles.userName}>
+              <User size={16} />
+              <span>{user?.name}</span>
+            </span>
+            <button onClick={handleLogout} className={styles.authButton} title="Sair">
+              <LogOut size={18} />
+              <span>Sair</span>
+            </button>
+          </div>
+        ) : (
+          <NavLink to="/auth" className={styles.authButton}>
+            <LogIn size={18} />
+            <span>Entrar</span>
+          </NavLink>
+        )}
       </div>
     </header>
   );

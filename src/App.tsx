@@ -8,6 +8,7 @@ import { ConsultPage } from './pages/Consult/ConsultPage';
 import { HistoryPage } from './pages/History/HistoryPage';
 import HelpPage from './pages/Help/HelpPage';
 import GeneratePage from './pages/Generate/GeneratePage';
+import { AuthPage } from './pages/Auth/AuthPage';
 import { NotFoundPage } from './pages/NotFound/NotFoundPage';
 
 export function App() {
@@ -23,6 +24,7 @@ export function App() {
         <Route path="history" element={<HistoryPage />} />
         <Route path="help" element={<HelpPage />} />
         <Route path="generate" element={<GeneratePage />} />
+        <Route path="auth" element={<AuthPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
