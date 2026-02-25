@@ -1,0 +1,894 @@
+{
+  "title": "Java 11+ / Spring / Fundamentos",
+  "description": "Banco completo para estudar Java moderno (11+), Spring Framework, Streams, Lambdas, equals vs ==, e conceitos fundamentais. Ideal para preparação para entrevistas e certificações.",
+  "subject": "Java & Spring",
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "text": "Qual é a diferença entre == e .equals() em Java?",
+      "alternatives": [
+        { "id": "A", "text": "== compara conteúdo e .equals() compara referência" },
+        { "id": "B", "text": "== compara referência de memória e .equals() compara conteúdo (quando sobrescrito)" },
+        { "id": "C", "text": "Não há diferença, ambos comparam conteúdo" },
+        { "id": "D", "text": "== só funciona com primitivos e .equals() só com objetos" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "O operador == compara referências (se apontam para o mesmo objeto na memória). O método .equals(), quando sobrescrito (como em String), compara o conteúdo. Por padrão, .equals() em Object também compara referência, mas classes como String, Integer, etc. sobrescrevem esse comportamento.",
+      "tags": ["Fundamentos", "equals"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que será impresso?\n\nString a = new String(\"hello\");\nString b = new String(\"hello\");\nSystem.out.println(a == b);\nSystem.out.println(a.equals(b));",
+      "alternatives": [
+        { "id": "A", "text": "true / true" },
+        { "id": "B", "text": "false / false" },
+        { "id": "C", "text": "false / true" },
+        { "id": "D", "text": "true / false" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "Usando 'new String()' cria dois objetos diferentes na memória, então == retorna false (referências diferentes). Porém .equals() compara o conteúdo da String, que é igual ('hello'), então retorna true.",
+      "tags": ["Fundamentos", "equals", "String"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que será impresso?\n\nString a = \"hello\";\nString b = \"hello\";\nSystem.out.println(a == b);",
+      "alternatives": [
+        { "id": "A", "text": "true" },
+        { "id": "B", "text": "false" },
+        { "id": "C", "text": "Erro de compilação" },
+        { "id": "D", "text": "Depende da JVM" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Quando usamos String literals (sem 'new'), o Java usa o String Pool. Como ambas apontam para o mesmo literal \"hello\" no pool, a == b retorna true pois referenciam o mesmo objeto.",
+      "tags": ["Fundamentos", "String Pool"]
+    },
+    {
+      "type": "true_false",
+      "text": "Em Java, ao sobrescrever .equals(), é necessário também sobrescrever .hashCode() para que coleções como HashMap e HashSet funcionem corretamente.",
+      "alternatives": [
+        { "id": "V", "text": "Verdadeiro" },
+        { "id": "F", "text": "Falso" }
+      ],
+      "correctAnswer": "V",
+      "explanation": "O contrato de equals/hashCode exige que: se a.equals(b) == true, então a.hashCode() == b.hashCode(). Se você sobrescreve apenas equals sem hashCode, coleções como HashMap e HashSet não funcionarão corretamente.",
+      "tags": ["Fundamentos", "equals", "hashCode"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é uma Stream em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Uma coleção que armazena dados de forma sequencial" },
+        { "id": "B", "text": "Uma sequência de elementos que suporta operações de agregação de forma declarativa, sem modificar a fonte" },
+        { "id": "C", "text": "Um tipo de List otimizada para performance" },
+        { "id": "D", "text": "Uma thread que processa dados em paralelo" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Stream é um pipeline de operações sobre dados. Ela NÃO armazena dados (não é uma coleção), não modifica a fonte original, e pode ser processada de forma lazy. Suporta operações como filter, map, reduce, collect, etc.",
+      "tags": ["Streams"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre operações intermediárias e terminais em Streams?",
+      "alternatives": [
+        { "id": "A", "text": "Intermediárias executam imediatamente, terminais são lazy" },
+        { "id": "B", "text": "Intermediárias retornam uma nova Stream (lazy), terminais disparam o processamento e retornam um resultado" },
+        { "id": "C", "text": "Não há diferença, ambas retornam Stream" },
+        { "id": "D", "text": "Terminais retornam Stream e intermediárias retornam valores" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Operações intermediárias (filter, map, sorted) são lazy — só executam quando uma operação terminal é chamada. Operações terminais (collect, forEach, count, reduce) disparam todo o pipeline e produzem um resultado ou efeito colateral.",
+      "tags": ["Streams"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual o resultado deste código?\n\nList<Integer> nums = List.of(1, 2, 3, 4, 5);\nlong count = nums.stream()\n    .filter(n -> n > 2)\n    .count();\nSystem.out.println(count);",
+      "alternatives": [
+        { "id": "A", "text": "2" },
+        { "id": "B", "text": "3" },
+        { "id": "C", "text": "5" },
+        { "id": "D", "text": "Erro de compilação" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "filter(n -> n > 2) mantém apenas os elementos 3, 4 e 5. count() retorna a quantidade de elementos restantes, que é 3.",
+      "tags": ["Streams", "filter"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual método de Stream transforma cada elemento em outro?",
+      "alternatives": [
+        { "id": "A", "text": "filter()" },
+        { "id": "B", "text": "map()" },
+        { "id": "C", "text": "reduce()" },
+        { "id": "D", "text": "forEach()" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "map() aplica uma função a cada elemento e retorna uma nova Stream com os resultados. filter() filtra elementos, reduce() agrega em um único valor, e forEach() é uma operação terminal que executa uma ação para cada elemento.",
+      "tags": ["Streams", "map"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que faz o Collectors.toList()?",
+      "alternatives": [
+        { "id": "A", "text": "Converte uma Stream em um array" },
+        { "id": "B", "text": "Coleta os elementos da Stream em uma nova List" },
+        { "id": "C", "text": "Ordena os elementos da Stream" },
+        { "id": "D", "text": "Remove duplicatas da Stream" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Collectors.toList() é um Collector usado com .collect() para materializar os elementos de uma Stream em uma nova List. A partir do Java 16, você pode usar .toList() diretamente na Stream.",
+      "tags": ["Streams", "Collectors"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre .map() e .flatMap() em Streams?",
+      "alternatives": [
+        { "id": "A", "text": "map() transforma elementos 1:1, flatMap() achata estruturas aninhadas (Stream de Streams) em uma única Stream" },
+        { "id": "B", "text": "map() é para objetos e flatMap() é para primitivos" },
+        { "id": "C", "text": "flatMap() é mais rápido que map()" },
+        { "id": "D", "text": "Não há diferença, são sinônimos" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "map() transforma cada elemento em outro (1 para 1). flatMap() transforma cada elemento em uma Stream e depois achata todas essas Streams em uma só. Útil quando cada elemento gera múltiplos resultados, ex: lista de listas.",
+      "tags": ["Streams", "flatMap"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é uma expressão lambda em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Um novo tipo de classe" },
+        { "id": "B", "text": "Uma forma concisa de representar uma implementação de interface funcional (interface com um único método abstrato)" },
+        { "id": "C", "text": "Um método estático especial" },
+        { "id": "D", "text": "Uma annotation do Spring" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lambdas são funções anônimas que implementam o método abstrato de uma interface funcional. Sintaxe: (parâmetros) -> expressão. Ex: (a, b) -> a + b implementa uma BiFunction.",
+      "tags": ["Lambda", "Fundamentos"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é uma interface funcional em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Qualquer interface que contenha métodos" },
+        { "id": "B", "text": "Uma interface com exatamente um método abstrato, podendo ter métodos default e static" },
+        { "id": "C", "text": "Uma interface anotada com @Override" },
+        { "id": "D", "text": "Uma interface que estende Function" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Interface funcional tem exatamente 1 método abstrato (SAM - Single Abstract Method). Pode ter vários métodos default e static. A annotation @FunctionalInterface é opcional, mas ajuda o compilador a validar. Exemplos: Runnable, Predicate, Function, Consumer, Supplier.",
+      "tags": ["Lambda", "Interface Funcional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual interface funcional recebe um argumento e retorna um booleano?",
+      "alternatives": [
+        { "id": "A", "text": "Function<T, Boolean>" },
+        { "id": "B", "text": "Predicate<T>" },
+        { "id": "C", "text": "Consumer<T>" },
+        { "id": "D", "text": "Supplier<T>" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Predicate<T> tem o método test(T t) que retorna boolean. É muito usado em filter() de Streams. Function<T, R> recebe T e retorna R, Consumer<T> recebe T e não retorna nada (void), Supplier<T> não recebe nada e retorna T.",
+      "tags": ["Lambda", "Interface Funcional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre Consumer, Supplier, Function e Predicate?",
+      "alternatives": [
+        { "id": "A", "text": "Consumer: recebe e não retorna | Supplier: não recebe e retorna | Function: recebe e retorna | Predicate: recebe e retorna boolean" },
+        { "id": "B", "text": "Todos fazem a mesma coisa com nomes diferentes" },
+        { "id": "C", "text": "Consumer: retorna | Supplier: recebe | Function: boolean | Predicate: void" },
+        { "id": "D", "text": "São todas classes abstratas do java.util" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Consumer<T>: accept(T) → void | Supplier<T>: get() → T | Function<T,R>: apply(T) → R | Predicate<T>: test(T) → boolean. Todas estão em java.util.function.",
+      "tags": ["Lambda", "Interface Funcional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é Optional em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Um tipo de coleção que pode ter 0 ou 1 elemento" },
+        { "id": "B", "text": "Um container que pode ou não conter um valor não-nulo, usado para evitar NullPointerException" },
+        { "id": "C", "text": "Uma annotation para parâmetros opcionais" },
+        { "id": "D", "text": "Um tipo primitivo do Java" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Optional<T> é um container que encapsula um valor que pode ser nulo. Força o desenvolvedor a lidar explicitamente com a ausência de valor usando métodos como isPresent(), orElse(), map(), etc. Evita NullPointerException.",
+      "tags": ["Optional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a forma correta de criar um Optional vazio?",
+      "alternatives": [
+        { "id": "A", "text": "new Optional()" },
+        { "id": "B", "text": "Optional.empty()" },
+        { "id": "C", "text": "Optional.of(null)" },
+        { "id": "D", "text": "Optional.nullable()" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Optional.empty() cria um Optional sem valor. Optional.of(null) lança NullPointerException! Para valores que podem ser null, use Optional.ofNullable(valor). O construtor de Optional é privado, então 'new Optional()' não compila.",
+      "tags": ["Optional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre Optional.of() e Optional.ofNullable()?",
+      "alternatives": [
+        { "id": "A", "text": "of() aceita null e ofNullable() não" },
+        { "id": "B", "text": "of() lança NullPointerException se o valor for null, ofNullable() retorna Optional.empty() se for null" },
+        { "id": "C", "text": "Não há diferença" },
+        { "id": "D", "text": "ofNullable() é deprecated" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Optional.of(valor) exige que o valor NÃO seja null — lança NPE se for. Optional.ofNullable(valor) aceita null e retorna Optional.empty() nesse caso. Use of() quando tem certeza que não é null, e ofNullable() quando pode ser.",
+      "tags": ["Optional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que a keyword 'var' introduzida no Java 10 faz?",
+      "alternatives": [
+        { "id": "A", "text": "Torna o Java dinamicamente tipado" },
+        { "id": "B", "text": "Permite inferência de tipo em variáveis locais, mantendo tipagem estática" },
+        { "id": "C", "text": "Cria variáveis que podem mudar de tipo em runtime" },
+        { "id": "D", "text": "É equivalente ao Object" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "var permite que o compilador infira o tipo da variável local a partir do valor atribuído. O tipo é definido em tempo de compilação (tipagem estática). var x = \"hello\" é o mesmo que String x = \"hello\". Não pode ser usado em parâmetros de método, retorno, ou campos de classe.",
+      "tags": ["Java 11+", "var"]
+    },
+    {
+      "type": "true_false",
+      "text": "A keyword 'var' pode ser usada em parâmetros de métodos em Java.",
+      "alternatives": [
+        { "id": "V", "text": "Verdadeiro" },
+        { "id": "F", "text": "Falso" }
+      ],
+      "correctAnswer": "F",
+      "explanation": "var só pode ser usada em variáveis locais (dentro de métodos, loops, etc.). Não pode ser usada em parâmetros de métodos, campos de classe, ou tipos de retorno. Exceção: a partir do Java 11, var pode ser usado em parâmetros de lambdas: (var x, var y) -> x + y.",
+      "tags": ["Java 11+", "var"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual método de String foi adicionado no Java 11?",
+      "alternatives": [
+        { "id": "A", "text": "length()" },
+        { "id": "B", "text": "isBlank()" },
+        { "id": "C", "text": "equals()" },
+        { "id": "D", "text": "charAt()" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Java 11 adicionou isBlank() (verifica se é vazio ou só espaços), strip() (remove espaços unicode), lines() (divide em Stream de linhas), e repeat(n) (repete a string n vezes). isEmpty() já existia mas verifica apenas length == 0.",
+      "tags": ["Java 11+", "String"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre String.trim() e String.strip() do Java 11?",
+      "alternatives": [
+        { "id": "A", "text": "Não há diferença" },
+        { "id": "B", "text": "strip() remove espaços Unicode (como \\u2000), trim() remove apenas caracteres <= \\u0020" },
+        { "id": "C", "text": "trim() é mais completo que strip()" },
+        { "id": "D", "text": "strip() é deprecated" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "trim() usa a definição antiga de espaço (char <= U+0020). strip() usa Character.isWhitespace() que reconhece todos os caracteres Unicode de espaço em branco. Para a maioria dos casos o resultado é igual, mas strip() é mais correto para texto internacionalizado.",
+      "tags": ["Java 11+", "String"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que são Text Blocks no Java (introduzidos no Java 13, estáveis no Java 15)?",
+      "alternatives": [
+        { "id": "A", "text": "Strings com aspas simples" },
+        { "id": "B", "text": "Strings multilinha delimitadas por aspas triplas (\"\"\"), que preservam formatação" },
+        { "id": "C", "text": "Comentários de múltiplas linhas" },
+        { "id": "D", "text": "Templates de string como em JavaScript" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Text Blocks usam \"\"\" para delimitar strings multilinha. Preservam quebras de linha e indentação relativa. Eliminam a necessidade de \\n e concatenação para strings longas como JSON, SQL, HTML.",
+      "tags": ["Java 11+", "Text Blocks"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que são Records no Java (introduzidos no Java 14, estáveis no Java 16)?",
+      "alternatives": [
+        { "id": "A", "text": "Um novo tipo de banco de dados" },
+        { "id": "B", "text": "Classes imutáveis que geram automaticamente construtor, getters, equals(), hashCode() e toString()" },
+        { "id": "C", "text": "Interfaces com implementação padrão" },
+        { "id": "D", "text": "Enums com campos customizados" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "record Point(int x, int y) {} gera automaticamente: construtor, getters (x(), y()), equals(), hashCode() e toString(). São imutáveis (campos são final). Ideais para DTOs e value objects. Reduzem muito o boilerplate.",
+      "tags": ["Java 11+", "Records"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que são Sealed Classes no Java (estáveis no Java 17)?",
+      "alternatives": [
+        { "id": "A", "text": "Classes que não podem ser instanciadas" },
+        { "id": "B", "text": "Classes que restringem quais outras classes podem estendê-las, usando a keyword 'permits'" },
+        { "id": "C", "text": "Classes que não podem ter métodos" },
+        { "id": "D", "text": "Classes que são automaticamente final" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "sealed class Shape permits Circle, Rectangle {} restringe a hierarquia: apenas Circle e Rectangle podem estender Shape. As subclasses devem ser final, sealed ou non-sealed. Útil para modelar domínios fechados e pattern matching.",
+      "tags": ["Java 11+", "Sealed Classes"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é Pattern Matching para instanceof (Java 16)?",
+      "alternatives": [
+        { "id": "A", "text": "Um novo tipo de regex" },
+        { "id": "B", "text": "Permite fazer instanceof e cast ao mesmo tempo, criando uma variável tipada automaticamente" },
+        { "id": "C", "text": "Uma forma de criar padrões de design" },
+        { "id": "D", "text": "Um recurso do Spring Framework" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Antes: if (obj instanceof String) { String s = (String) obj; }\nDepois: if (obj instanceof String s) { // usa s diretamente }\nElimina o cast manual e torna o código mais limpo e seguro.",
+      "tags": ["Java 11+", "Pattern Matching"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre List.of() e Arrays.asList()?",
+      "alternatives": [
+        { "id": "A", "text": "List.of() retorna uma lista imutável, Arrays.asList() retorna uma lista de tamanho fixo mas com elementos mutáveis" },
+        { "id": "B", "text": "São idênticos" },
+        { "id": "C", "text": "Arrays.asList() é imutável e List.of() é mutável" },
+        { "id": "D", "text": "List.of() aceita null e Arrays.asList() não" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "List.of() (Java 9+) cria uma lista completamente imutável (não aceita add, set, remove, nem null). Arrays.asList() cria uma lista de tamanho fixo: permite set() mas não add() ou remove(). E aceita null.",
+      "tags": ["Collections", "Fundamentos"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre ArrayList e LinkedList?",
+      "alternatives": [
+        { "id": "A", "text": "ArrayList usa array internamente (acesso O(1)), LinkedList usa nós encadeados (inserção O(1) no início/fim)" },
+        { "id": "B", "text": "LinkedList é sempre mais rápida" },
+        { "id": "C", "text": "ArrayList não implementa List" },
+        { "id": "D", "text": "Não há diferença de performance" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "ArrayList: acesso por índice O(1), inserção/remoção no meio O(n). LinkedList: acesso por índice O(n), inserção/remoção no início/fim O(1). Na prática, ArrayList é mais rápida na maioria dos casos por causa do cache de CPU (dados contíguos na memória).",
+      "tags": ["Collections", "Fundamentos"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre HashMap e TreeMap?",
+      "alternatives": [
+        { "id": "A", "text": "HashMap mantém ordem de inserção, TreeMap não" },
+        { "id": "B", "text": "HashMap não garante ordem (O(1)), TreeMap mantém chaves ordenadas (O(log n))" },
+        { "id": "C", "text": "TreeMap é mais rápido que HashMap" },
+        { "id": "D", "text": "HashMap usa árvore e TreeMap usa hash" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "HashMap: usa tabela hash, operações O(1) em média, sem ordem. TreeMap: usa árvore rubro-negra, operações O(log n), chaves sempre ordenadas. LinkedHashMap mantém ordem de inserção. Use HashMap quando não precisa de ordem (mais rápido).",
+      "tags": ["Collections", "Fundamentos"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre HashSet e TreeSet?",
+      "alternatives": [
+        { "id": "A", "text": "HashSet mantém ordem, TreeSet não" },
+        { "id": "B", "text": "HashSet não garante ordem (O(1)), TreeSet mantém elementos ordenados (O(log n))" },
+        { "id": "C", "text": "HashSet permite duplicatas" },
+        { "id": "D", "text": "TreeSet permite null" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "HashSet: usa HashMap internamente, O(1) para add/remove/contains, sem ordem. TreeSet: usa TreeMap internamente, O(log n), elementos sempre ordenados. Nenhum Set permite duplicatas. TreeSet não permite null (precisa comparar).",
+      "tags": ["Collections", "Fundamentos"]
+    },
+    {
+      "type": "true_false",
+      "text": "Uma Stream em Java pode ser reutilizada após uma operação terminal.",
+      "alternatives": [
+        { "id": "V", "text": "Verdadeiro" },
+        { "id": "F", "text": "Falso" }
+      ],
+      "correctAnswer": "F",
+      "explanation": "Após uma operação terminal (collect, forEach, count, etc.), a Stream é consumida e não pode ser reutilizada. Tentar usar uma Stream já consumida lança IllegalStateException. Você precisa criar uma nova Stream a partir da fonte.",
+      "tags": ["Streams"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que faz o método .reduce() em Streams?",
+      "alternatives": [
+        { "id": "A", "text": "Remove elementos da Stream" },
+        { "id": "B", "text": "Reduz o tamanho da coleção original" },
+        { "id": "C", "text": "Combina todos os elementos da Stream em um único valor usando uma operação acumuladora" },
+        { "id": "D", "text": "Filtra elementos duplicados" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "reduce() aplica uma operação binária acumulativa. Ex: nums.stream().reduce(0, Integer::sum) soma todos os elementos. O primeiro argumento é o valor identidade (inicial), o segundo é a função de acumulação.",
+      "tags": ["Streams", "reduce"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é method reference em Java? Ex: String::toUpperCase",
+      "alternatives": [
+        { "id": "A", "text": "Uma forma de chamar métodos estáticos" },
+        { "id": "B", "text": "Uma sintaxe abreviada para lambdas que apenas chamam um método existente" },
+        { "id": "C", "text": "Um ponteiro para um método como em C" },
+        { "id": "D", "text": "Um import especial" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Method reference é um atalho para lambdas simples. list.stream().map(s -> s.toUpperCase()) pode ser escrito como list.stream().map(String::toUpperCase). Tipos: Classe::métodoEstático, objeto::métodoInstância, Classe::métodoInstância, Classe::new.",
+      "tags": ["Lambda", "Method Reference"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é o Spring Framework?",
+      "alternatives": [
+        { "id": "A", "text": "Uma linguagem de programação" },
+        { "id": "B", "text": "Um framework Java para construção de aplicações enterprise, baseado em IoC e DI" },
+        { "id": "C", "text": "Um banco de dados NoSQL" },
+        { "id": "D", "text": "Uma IDE para Java" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Spring é um framework Java que facilita o desenvolvimento de aplicações corporativas. Seus pilares são IoC (Inversão de Controle) e DI (Injeção de Dependência). O ecossistema inclui Spring Boot, Spring MVC, Spring Data, Spring Security, etc.",
+      "tags": ["Spring"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é Inversão de Controle (IoC) no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "O programador controla manualmente a criação de todos os objetos" },
+        { "id": "B", "text": "O container Spring assume a responsabilidade de criar, configurar e gerenciar o ciclo de vida dos objetos (beans)" },
+        { "id": "C", "text": "O código roda de baixo para cima" },
+        { "id": "D", "text": "Um padrão para inverter a ordem de execução dos métodos" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "IoC inverte o controle: em vez de você instanciar dependências com 'new', o container Spring cria e injeta. Você declara o que precisa, o Spring resolve. Isso torna o código mais desacoplado e testável.",
+      "tags": ["Spring", "IoC"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é Injeção de Dependência (DI) no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Importar bibliotecas externas no pom.xml" },
+        { "id": "B", "text": "O container fornece automaticamente as dependências que um objeto precisa, em vez do objeto criá-las" },
+        { "id": "C", "text": "Injetar SQL no banco de dados" },
+        { "id": "D", "text": "Adicionar annotations no código" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "DI é a implementação prática do IoC. O Spring injeta automaticamente as dependências nos beans. Pode ser feita via construtor (@Autowired no construtor, recomendado), setter, ou campo. O bean não conhece a implementação concreta, apenas a interface.",
+      "tags": ["Spring", "DI"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a forma recomendada de injeção de dependência no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Injeção por campo (@Autowired no atributo)" },
+        { "id": "B", "text": "Injeção por construtor" },
+        { "id": "C", "text": "Injeção por setter" },
+        { "id": "D", "text": "Usar new diretamente" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Injeção por construtor é a recomendada porque: permite campos final (imutabilidade), facilita testes unitários, garante que o objeto é criado com todas as dependências, e não precisa de @Autowired se houver um único construtor.",
+      "tags": ["Spring", "DI"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é um Bean no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Qualquer classe Java" },
+        { "id": "B", "text": "Um objeto gerenciado pelo container IoC do Spring" },
+        { "id": "C", "text": "Um arquivo de configuração XML" },
+        { "id": "D", "text": "Um tipo de banco de dados" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bean é um objeto cuja criação, configuração e ciclo de vida são gerenciados pelo container Spring. Pode ser declarado com @Component, @Service, @Repository, @Controller, ou @Bean em @Configuration.",
+      "tags": ["Spring", "Bean"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre @Component, @Service, @Repository e @Controller?",
+      "alternatives": [
+        { "id": "A", "text": "Fazem coisas completamente diferentes" },
+        { "id": "B", "text": "Todos registram beans no Spring, mas indicam diferentes camadas da aplicação (semântica)" },
+        { "id": "C", "text": "@Component é o único que funciona, os outros são deprecated" },
+        { "id": "D", "text": "@Service cria serviços REST automaticamente" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@Component é genérico. @Service indica camada de negócio. @Repository indica camada de dados (adiciona tradução de exceções). @Controller indica camada web. Todos são @Component por baixo, mas a semântica ajuda na organização e em funcionalidades específicas.",
+      "tags": ["Spring", "Annotations"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual o escopo padrão de um Bean no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Prototype (nova instância a cada injeção)" },
+        { "id": "B", "text": "Singleton (uma única instância no container)" },
+        { "id": "C", "text": "Request (uma instância por requisição HTTP)" },
+        { "id": "D", "text": "Session (uma instância por sessão)" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "O escopo padrão é Singleton: o Spring cria uma única instância do bean e a reutiliza em todas as injeções. Pode ser alterado com @Scope(\"prototype\"), @RequestScope, @SessionScope, etc.",
+      "tags": ["Spring", "Bean"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é Spring Boot?",
+      "alternatives": [
+        { "id": "A", "text": "Uma versão mais leve do Java" },
+        { "id": "B", "text": "Um projeto que simplifica a configuração do Spring com auto-configuration, servidor embutido e opinião sobre convenções" },
+        { "id": "C", "text": "Um framework frontend" },
+        { "id": "D", "text": "Um plugin do Maven" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Spring Boot elimina a maior parte da configuração manual do Spring. Oferece: auto-configuration (configura automaticamente com base nas dependências), servidor embutido (Tomcat/Jetty), starters (dependências agrupadas), e application.properties/yml para configuração.",
+      "tags": ["Spring Boot"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que a annotation @SpringBootApplication faz?",
+      "alternatives": [
+        { "id": "A", "text": "Apenas marca a classe como principal" },
+        { "id": "B", "text": "Combina @Configuration, @EnableAutoConfiguration e @ComponentScan" },
+        { "id": "C", "text": "Inicia o servidor Tomcat" },
+        { "id": "D", "text": "Cria o banco de dados automaticamente" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@SpringBootApplication é uma meta-annotation que combina: @Configuration (classe de configuração), @EnableAutoConfiguration (configuração automática baseada no classpath), e @ComponentScan (escaneia componentes no pacote e sub-pacotes).",
+      "tags": ["Spring Boot"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual annotation define um endpoint REST que retorna JSON no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "@Controller" },
+        { "id": "B", "text": "@RestController" },
+        { "id": "C", "text": "@Service" },
+        { "id": "D", "text": "@JsonController" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@RestController combina @Controller + @ResponseBody. Todos os métodos retornam dados diretamente (JSON por padrão) em vez de view/template. @Controller sozinho é usado com templates (Thymeleaf, JSP).",
+      "tags": ["Spring", "REST"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual annotation mapeia uma requisição HTTP GET para um método no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "@RequestMapping(method = GET)" },
+        { "id": "B", "text": "@GetMapping" },
+        { "id": "C", "text": "Ambas A e B estão corretas" },
+        { "id": "D", "text": "@Get" }
+      ],
+      "correctAnswer": "C",
+      "explanation": "@GetMapping é um atalho para @RequestMapping(method = RequestMethod.GET). Ambos funcionam. Existem também @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping. Os atalhos são mais limpos e recomendados.",
+      "tags": ["Spring", "REST"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre @RequestParam e @PathVariable no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "@RequestParam captura query params (?chave=valor), @PathVariable captura variáveis da URL (/users/{id})" },
+        { "id": "B", "text": "São idênticos" },
+        { "id": "C", "text": "@PathVariable é para POST e @RequestParam é para GET" },
+        { "id": "D", "text": "@RequestParam captura o body e @PathVariable captura headers" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "@PathVariable: /users/{id} → @PathVariable Long id. @RequestParam: /users?name=João → @RequestParam String name. PathVariable faz parte da URL, RequestParam é parâmetro de query string.",
+      "tags": ["Spring", "REST"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que @RequestBody faz no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Define o corpo da resposta HTTP" },
+        { "id": "B", "text": "Deserializa o corpo da requisição HTTP (JSON) para um objeto Java" },
+        { "id": "C", "text": "Valida o corpo da requisição" },
+        { "id": "D", "text": "Criptografa o corpo da requisição" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@RequestBody pega o corpo da requisição HTTP (geralmente JSON) e converte automaticamente para o objeto Java usando Jackson (serialização/deserialização padrão do Spring Boot). Muito usado em endpoints POST e PUT.",
+      "tags": ["Spring", "REST"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre @Autowired e @Qualifier?",
+      "alternatives": [
+        { "id": "A", "text": "@Autowired injeta por tipo, @Qualifier especifica qual bean injetar quando há múltiplas implementações" },
+        { "id": "B", "text": "@Qualifier substitui @Autowired" },
+        { "id": "C", "text": "@Autowired é para construtores e @Qualifier para campos" },
+        { "id": "D", "text": "São a mesma coisa" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Quando há duas implementações da mesma interface (ex: dois beans do tipo NotificationService), @Autowired sozinho dá erro de ambiguidade. @Qualifier(\"emailService\") especifica qual bean usar. Alternativa: @Primary no bean preferido.",
+      "tags": ["Spring", "DI"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é o application.properties (ou application.yml) no Spring Boot?",
+      "alternatives": [
+        { "id": "A", "text": "Um arquivo de log" },
+        { "id": "B", "text": "O arquivo central de configuração da aplicação (porta, banco, perfis, etc.)" },
+        { "id": "C", "text": "Um arquivo de tradução i18n" },
+        { "id": "D", "text": "Um script de build" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "application.properties (ou .yml) configura a aplicação: server.port, spring.datasource.url, spring.profiles.active, etc. Valores podem ser injetados com @Value(\"${chave}\") ou @ConfigurationProperties. Suporta perfis: application-dev.properties, application-prod.properties.",
+      "tags": ["Spring Boot"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que são Profiles no Spring Boot?",
+      "alternatives": [
+        { "id": "A", "text": "Perfis de usuário da aplicação" },
+        { "id": "B", "text": "Mecanismo para ter configurações diferentes por ambiente (dev, staging, prod)" },
+        { "id": "C", "text": "Tipos de banco de dados" },
+        { "id": "D", "text": "Níveis de log" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Profiles permitem ter configurações por ambiente. Ativado com spring.profiles.active=dev. Cada perfil pode ter seu arquivo (application-dev.yml). Beans podem ser condicionais: @Profile(\"dev\") faz o bean existir apenas naquele perfil.",
+      "tags": ["Spring Boot"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é Spring Data JPA?",
+      "alternatives": [
+        { "id": "A", "text": "Um banco de dados" },
+        { "id": "B", "text": "Um módulo que simplifica o acesso a dados com JPA, gerando queries automaticamente a partir de nomes de métodos" },
+        { "id": "C", "text": "Um ORM alternativo ao Hibernate" },
+        { "id": "D", "text": "Um driver JDBC" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Spring Data JPA abstrai o JPA/Hibernate. Ao criar uma interface extends JpaRepository<Entity, ID>, você ganha CRUD pronto. Métodos como findByName(String name) geram queries automaticamente pelo nome. Suporta @Query para queries customizadas.",
+      "tags": ["Spring", "JPA"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que a annotation @Entity do JPA indica?",
+      "alternatives": [
+        { "id": "A", "text": "Que a classe é um REST controller" },
+        { "id": "B", "text": "Que a classe é mapeada para uma tabela do banco de dados" },
+        { "id": "C", "text": "Que a classe é um serviço" },
+        { "id": "D", "text": "Que a classe é imutável" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@Entity marca uma classe como entidade JPA, mapeada para uma tabela. Cada instância corresponde a uma linha. @Id define a chave primária, @Column mapeia colunas (opcional se o nome for igual), @Table define o nome da tabela.",
+      "tags": ["Spring", "JPA"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre checked e unchecked exceptions em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Checked devem ser tratadas ou declaradas (extends Exception), unchecked não precisam (extends RuntimeException)" },
+        { "id": "B", "text": "Checked são mais graves que unchecked" },
+        { "id": "C", "text": "Unchecked devem ser tratadas obrigatoriamente" },
+        { "id": "D", "text": "Não há diferença prática" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Checked exceptions (extends Exception) obrigam try-catch ou throws na assinatura. Ex: IOException, SQLException. Unchecked (extends RuntimeException) não obrigam tratamento. Ex: NullPointerException, IllegalArgumentException. Unchecked indicam erros de programação.",
+      "tags": ["Fundamentos", "Exceptions"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre final, finally e finalize?",
+      "alternatives": [
+        { "id": "A", "text": "final: constante/não-sobrescrevível | finally: bloco que sempre executa após try | finalize: método chamado pelo GC antes de remover objeto (deprecated)" },
+        { "id": "B", "text": "São sinônimos" },
+        { "id": "C", "text": "Todos são usados em tratamento de exceções" },
+        { "id": "D", "text": "final e finally são iguais, finalize é diferente" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "final: modificador (variável constante, método não-sobrescrevível, classe não-herdável). finally: bloco após try-catch que SEMPRE executa (limpeza). finalize(): método de Object chamado pelo Garbage Collector (deprecated desde Java 9, removido no 18).",
+      "tags": ["Fundamentos"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é o Garbage Collector (GC) no Java?",
+      "alternatives": [
+        { "id": "A", "text": "Um programa para limpar o disco" },
+        { "id": "B", "text": "Um mecanismo automático que libera memória de objetos que não são mais referenciados" },
+        { "id": "C", "text": "Um debugger do Java" },
+        { "id": "D", "text": "Um coletor de logs" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "O GC automaticamente identifica objetos que não possuem mais referências alcançáveis e libera a memória heap. O desenvolvedor não precisa (e não deve) liberar memória manualmente. Pode ser sugerido com System.gc() mas não é garantido.",
+      "tags": ["Fundamentos", "JVM"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre Stack e Heap na JVM?",
+      "alternatives": [
+        { "id": "A", "text": "Stack: variáveis locais e chamadas de método (por thread) | Heap: objetos e instâncias (compartilhado)" },
+        { "id": "B", "text": "Stack armazena objetos e Heap armazena primitivos" },
+        { "id": "C", "text": "São a mesma coisa" },
+        { "id": "D", "text": "Stack é para classes e Heap é para interfaces" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Stack: cada thread tem sua própria stack, armazena variáveis locais, referências e frames de chamadas de método. É LIFO e mais rápida. Heap: memória compartilhada entre threads, armazena todos os objetos. O GC atua na Heap.",
+      "tags": ["Fundamentos", "JVM"]
+    },
+    {
+      "type": "true_false",
+      "text": "Em Java, Strings são imutáveis.",
+      "alternatives": [
+        { "id": "V", "text": "Verdadeiro" },
+        { "id": "F", "text": "Falso" }
+      ],
+      "correctAnswer": "V",
+      "explanation": "Strings em Java são imutáveis. Qualquer operação que 'modifica' uma String (concat, replace, toUpperCase) cria um novo objeto. Isso permite o String Pool e torna Strings thread-safe. Para strings mutáveis, use StringBuilder (não thread-safe) ou StringBuffer (thread-safe).",
+      "tags": ["Fundamentos", "String"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre StringBuilder e StringBuffer?",
+      "alternatives": [
+        { "id": "A", "text": "StringBuilder é thread-safe, StringBuffer não" },
+        { "id": "B", "text": "StringBuilder NÃO é thread-safe (mais rápido), StringBuffer É thread-safe (synchronized)" },
+        { "id": "C", "text": "São idênticos" },
+        { "id": "D", "text": "StringBuffer é deprecated" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "StringBuilder: métodos NÃO são synchronized, mais rápido, use em contextos single-thread (a maioria dos casos). StringBuffer: métodos synchronized, thread-safe, mais lento. Na prática, StringBuilder é quase sempre a escolha certa.",
+      "tags": ["Fundamentos", "String"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é o @Transactional no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Uma annotation para logging" },
+        { "id": "B", "text": "Define que um método ou classe deve ser executado dentro de uma transação de banco de dados" },
+        { "id": "C", "text": "Uma annotation para cache" },
+        { "id": "D", "text": "Uma annotation para segurança" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@Transactional garante que todas as operações de banco dentro do método sejam atômicas: ou todas commitam, ou todas fazem rollback em caso de exceção. Por padrão, faz rollback em unchecked exceptions (RuntimeException).",
+      "tags": ["Spring", "JPA"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é ResponseEntity no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Uma entidade JPA" },
+        { "id": "B", "text": "Uma classe que representa a resposta HTTP completa (status code, headers e body)" },
+        { "id": "C", "text": "Um tipo de exception" },
+        { "id": "D", "text": "Uma annotation" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "ResponseEntity<T> permite controlar a resposta HTTP completa. Ex: return ResponseEntity.ok(user) (200), ResponseEntity.notFound().build() (404), ResponseEntity.status(201).body(user) (201 com body). Mais flexível que retornar o objeto diretamente.",
+      "tags": ["Spring", "REST"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que são os HTTP status codes 200, 201, 400, 404 e 500?",
+      "alternatives": [
+        { "id": "A", "text": "200: OK | 201: Created | 400: Bad Request | 404: Not Found | 500: Internal Server Error" },
+        { "id": "B", "text": "São todos códigos de erro" },
+        { "id": "C", "text": "200: Error | 404: OK | 500: Created" },
+        { "id": "D", "text": "São códigos do Spring, não do HTTP" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "2xx = Sucesso (200 OK, 201 Created, 204 No Content). 4xx = Erro do cliente (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found). 5xx = Erro do servidor (500 Internal Server Error, 503 Service Unavailable).",
+      "tags": ["Spring", "REST", "HTTP"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual o resultado?\n\nint[] arr = {1, 2, 3};\nint sum = Arrays.stream(arr)\n    .filter(n -> n % 2 != 0)\n    .sum();\nSystem.out.println(sum);",
+      "alternatives": [
+        { "id": "A", "text": "2" },
+        { "id": "B", "text": "4" },
+        { "id": "C", "text": "6" },
+        { "id": "D", "text": "3" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "filter(n -> n % 2 != 0) mantém apenas ímpares: 1 e 3. sum() retorna 1 + 3 = 4. Note que Arrays.stream(int[]) retorna IntStream, que tem o método sum() diretamente.",
+      "tags": ["Streams", "filter"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é o @ExceptionHandler no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Uma annotation para lançar exceções" },
+        { "id": "B", "text": "Uma annotation que define um método para tratar exceções específicas em um controller" },
+        { "id": "C", "text": "Uma annotation para logging de erros" },
+        { "id": "D", "text": "Uma annotation para retry automático" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@ExceptionHandler(NomeException.class) em um método do controller trata aquela exceção e retorna uma resposta customizada. Combinado com @ControllerAdvice/@RestControllerAdvice, trata exceções globalmente em todos os controllers.",
+      "tags": ["Spring", "REST"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que são Generics em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Tipos que aceitam qualquer valor sem verificação" },
+        { "id": "B", "text": "Um mecanismo que permite parametrizar classes e métodos por tipo, garantindo type safety em tempo de compilação" },
+        { "id": "C", "text": "Classes genéricas que não podem ser instanciadas" },
+        { "id": "D", "text": "Uma funcionalidade apenas de coleções" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Generics permitem criar classes/métodos que operam sobre tipos parametrizados. List<String> garante que só strings entram na lista, detectando erros em compilação. Sem generics, seria List e exigiria casts manuais. Usa Type Erasure em runtime.",
+      "tags": ["Fundamentos", "Generics"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre interface e classe abstrata em Java?",
+      "alternatives": [
+        { "id": "A", "text": "Interface: contrato (métodos abstratos, default, static, sem estado) e múltipla implementação. Classe abstrata: pode ter estado (campos) e só herança simples" },
+        { "id": "B", "text": "São idênticas desde o Java 8" },
+        { "id": "C", "text": "Classe abstrata não pode ter métodos concretos" },
+        { "id": "D", "text": "Interface pode ter construtores" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "Interface: 100% contrato, pode ter métodos default (Java 8+) e static, sem campos de instância, uma classe pode implementar várias. Classe abstrata: pode ter campos, construtores, métodos concretos e abstratos, mas só herança simples (extends 1).",
+      "tags": ["Fundamentos", "OOP"]
+    },
+    {
+      "type": "true_false",
+      "text": "Java suporta herança múltipla de classes.",
+      "alternatives": [
+        { "id": "V", "text": "Verdadeiro" },
+        { "id": "F", "text": "Falso" }
+      ],
+      "correctAnswer": "F",
+      "explanation": "Java NÃO suporta herança múltipla de classes (evita o Diamond Problem). Uma classe só pode extends uma classe. Porém, uma classe pode implements múltiplas interfaces. Interfaces com métodos default resolvem conflitos obrigando a classe a sobrescrever.",
+      "tags": ["Fundamentos", "OOP"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que é o princípio SOLID - Single Responsibility (S)?",
+      "alternatives": [
+        { "id": "A", "text": "Uma classe deve fazer tudo sozinha" },
+        { "id": "B", "text": "Uma classe deve ter apenas um motivo para mudar (uma única responsabilidade)" },
+        { "id": "C", "text": "Cada método deve ter uma única linha" },
+        { "id": "D", "text": "Singleton é obrigatório" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "SRP: uma classe deve ter apenas uma razão para mudar. Ex: UserService não deve enviar emails E salvar no banco. Separe em UserService e EmailService. Isso torna o código mais coeso, testável e fácil de manter.",
+      "tags": ["SOLID", "Fundamentos"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre @Component e @Bean no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "@Component é annotation de classe (auto-detectada pelo scan), @Bean é annotation de método em @Configuration (criação manual do bean)" },
+        { "id": "B", "text": "São idênticos" },
+        { "id": "C", "text": "@Bean é deprecated" },
+        { "id": "D", "text": "@Component é para testes e @Bean para produção" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "@Component vai na classe e o Spring detecta automaticamente via component scan. @Bean vai em um método dentro de @Configuration e permite criar beans de classes que você não controla (libs externas), ou quando precisa de lógica customizada na criação.",
+      "tags": ["Spring", "Bean"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que o método .orElseThrow() do Optional faz?",
+      "alternatives": [
+        { "id": "A", "text": "Retorna null se o valor não existir" },
+        { "id": "B", "text": "Retorna o valor se presente, ou lança uma exceção se vazio" },
+        { "id": "C", "text": "Sempre lança uma exceção" },
+        { "id": "D", "text": "Cria um novo Optional" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "orElseThrow() retorna o valor se presente. Se vazio, lança NoSuchElementException (sem argumento) ou a exceção especificada: optional.orElseThrow(() -> new RuntimeException(\"Não encontrado\")). Muito usado em services com JPA: findById().orElseThrow(...).",
+      "tags": ["Optional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "Qual a diferença entre .orElse() e .orElseGet() no Optional?",
+      "alternatives": [
+        { "id": "A", "text": "Não há diferença" },
+        { "id": "B", "text": "orElse() sempre avalia o valor default, orElseGet() só avalia o Supplier se o Optional for vazio (lazy)" },
+        { "id": "C", "text": "orElseGet() é deprecated" },
+        { "id": "D", "text": "orElse() aceita null e orElseGet() não" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "orElse(valorDefault) SEMPRE executa/avalia o argumento, mesmo se o Optional tem valor. orElseGet(() -> calcularDefault()) só executa o Supplier se o Optional estiver vazio. Use orElseGet() quando o default é custoso (ex: query ao banco).",
+      "tags": ["Optional"]
+    },
+    {
+      "type": "multiple_choice",
+      "text": "O que a annotation @Valid faz no Spring?",
+      "alternatives": [
+        { "id": "A", "text": "Valida o token JWT" },
+        { "id": "B", "text": "Ativa a validação de Bean Validation (@NotNull, @Size, @Email, etc.) no objeto anotado" },
+        { "id": "C", "text": "Verifica se o banco está conectado" },
+        { "id": "D", "text": "Valida o formato JSON" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "@Valid em um @RequestBody ativa a validação das annotations do Jakarta Bean Validation (javax.validation): @NotNull, @NotBlank, @Size, @Email, @Min, @Max, etc. Se a validação falhar, retorna 400 Bad Request com os erros.",
+      "tags": ["Spring", "Validation"]
+    }
+  ]
+}
