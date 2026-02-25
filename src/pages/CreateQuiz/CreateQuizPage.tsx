@@ -63,16 +63,18 @@ export function CreateQuizPage() {
     if (index === 0) return;
     setQuestions((prev) => {
       const arr = [...prev];
-      [arr[index - 1], arr[index]] = [arr[index], arr[index - 1]];
+      const [item] = arr.splice(index, 1);
+      arr.splice(index - 1, 0, item);
       return arr;
     });
   };
 
   const handleMoveDown = (index: number) => {
-    if (index === questions.length - 1) return;
     setQuestions((prev) => {
+      if (index >= prev.length - 1) return prev;
       const arr = [...prev];
-      [arr[index], arr[index + 1]] = [arr[index + 1], arr[index]];
+      const [item] = arr.splice(index, 1);
+      arr.splice(index + 1, 0, item);
       return arr;
     });
   };

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import type { TrainSettings as TrainSettingsType } from '../../types/quiz';
 import styles from './TrainSettings.module.css';
 
@@ -11,6 +12,28 @@ interface TrainSettingsProps {
 export function TrainSettings({ settings, totalQuestions, onChange, onStart }: TrainSettingsProps) {
   const update = (partial: Partial<TrainSettingsType>) => {
     onChange({ ...settings, ...partial });
+  };
+
+  const [limitInput, setLimitInput] = useState(
+    String(settings.questionLimit ?? totalQuestions)
+  );
+
+  useEffect(() => {
+    setLimitInput(String(settings.questionLimit ?? totalQuestions));
+  }, [settings.questionLimit, totalQuestions]);
+
+  const commitLimit = () => {
+    const val = parseInt(limitInput);
+    if (isNaN(val) || val <= 0) {
+      setLimitInput(String(totalQuestions));
+      update({ questionLimit: null });
+    } else if (val >= totalQuestions) {
+      setLimitInput(String(totalQuestions));
+      update({ questionLimit: null });
+    } else {
+      setLimitInput(String(val));
+      update({ questionLimit: val });
+    }
   };
 
   return (
@@ -54,13 +77,12 @@ export function TrainSettings({ settings, totalQuestions, onChange, onStart }: T
           <input
             type="number"
             className={styles.limitInput}
-            value={settings.questionLimit ?? totalQuestions}
+            value={limitInput}
             min={1}
             max={totalQuestions}
-            onChange={(e) => {
-              const val = parseInt(e.target.value);
-              update({ questionLimit: val > 0 && val < totalQuestions ? val : null });
-            }}
+            onChange={(e) => setLimitInput(e.target.value)}
+            onBlur={commitLimit}
+            onKeyDown={(e) => { if (e.key === 'Enter') commitLimit(); }}
           />
           <span className={styles.limitLabel}>de {totalQuestions}</span>
         </div>
