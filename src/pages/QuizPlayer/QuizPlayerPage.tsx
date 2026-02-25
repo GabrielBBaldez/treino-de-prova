@@ -14,10 +14,24 @@ import styles from './QuizPlayerPage.module.css';
 
 type Phase = 'mode' | 'settings' | 'playing';
 
+const LETTERS = 'ABCDEFGHIJ';
+
 function shuffleAlternatives(question: Question): Question {
   if (question.type === 'true_false') return question;
+
   const shuffled = shuffle(question.alternatives);
-  return { ...question, alternatives: shuffled };
+
+  // Find which shuffled position now holds the original correct answer
+  const correctIndex = shuffled.findIndex((alt) => alt.id === question.correctAnswer);
+  const newCorrectId = LETTERS[correctIndex] || shuffled[correctIndex].id;
+
+  // Re-label alternatives: A, B, C, D... in the new shuffled order
+  const relabeled = shuffled.map((alt, i) => ({
+    ...alt,
+    id: LETTERS[i] || alt.id,
+  }));
+
+  return { ...question, alternatives: relabeled, correctAnswer: newCorrectId };
 }
 
 export function QuizPlayerPage() {
