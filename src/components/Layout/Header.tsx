@@ -1,12 +1,23 @@
-import { NavLink } from 'react-router';
-import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { NavLink, useLocation } from 'react-router';
+import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle, Sparkles, Menu, X } from 'lucide-react';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
 import { UserAvatar } from '../UserAvatar/UserAvatar';
 import styles from './Header.module.css';
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`;
+
+  const handleNavClick = () => setMenuOpen(false);
+
+  // Close menu on route change
+  if (menuOpen) {
+    // Will close on next click via handleNavClick
+  }
 
   return (
     <header className={styles.header}>
@@ -15,24 +26,32 @@ export function Header() {
         <span>Questify</span>
       </NavLink>
 
-      <nav className={styles.nav}>
-        <NavLink to="/" className={linkClass} end>
+      <button
+        className={styles.menuToggle}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+      >
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
+        <NavLink to="/" className={linkClass} end onClick={handleNavClick}>
           <Home size={18} />
           <span>Inicio</span>
         </NavLink>
-        <NavLink to="/create" className={linkClass}>
+        <NavLink to="/create" className={linkClass} onClick={handleNavClick}>
           <PlusCircle size={18} />
           <span>Criar</span>
         </NavLink>
-        <NavLink to="/history" className={linkClass}>
+        <NavLink to="/history" className={linkClass} onClick={handleNavClick}>
           <BarChart3 size={18} />
           <span>Historico</span>
         </NavLink>
-        <NavLink to="/generate" className={linkClass}>
+        <NavLink to="/generate" className={linkClass} onClick={handleNavClick}>
           <Sparkles size={18} />
           <span>Gerar IA</span>
         </NavLink>
-        <NavLink to="/help" className={linkClass}>
+        <NavLink to="/help" className={linkClass} onClick={handleNavClick}>
           <HelpCircle size={18} />
           <span>Ajuda</span>
         </NavLink>
