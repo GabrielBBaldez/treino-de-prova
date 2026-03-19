@@ -58,10 +58,11 @@ export function AuthProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
+        const alreadyMerged = localStorage.getItem(STORAGE_KEYS.MERGED) === 'true';
         const { quizzes, results } = readLocalData();
         const hasLocalData = quizzes.length > 0 || results.length > 0;
 
-        if (hasLocalData) {
+        if (hasLocalData && !alreadyMerged) {
           setPendingUser(firebaseUser);
           setLocalCounts({ quizzes: quizzes.length, results: results.length });
           setShowMerge(true);
@@ -117,6 +118,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
       console.error('Failed to merge local data to cloud:', err);
     }
 
+    localStorage.setItem(STORAGE_KEYS.MERGED, 'true');
     setShowMerge(false);
     setPendingUser(null);
     setUser(pendingUser);
@@ -125,6 +127,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const handleSkipMerge = async () => {
     if (!pendingUser) return;
 
+    localStorage.setItem(STORAGE_KEYS.MERGED, 'true');
     setShowMerge(false);
     setPendingUser(null);
 
@@ -136,6 +139,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
   };
 
   const logout = async () => {
+    localStorage.removeItem(STORAGE_KEYS.MERGED);
     await signOut(auth);
   };
 
