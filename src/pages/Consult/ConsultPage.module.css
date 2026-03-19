@@ -214,3 +214,53 @@
   border-radius: var(--radius-md);
   font-weight: 500;
 }
+
+.favFilterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.favFilterBtn:hover {
+  color: #f5b942;
+  border-color: #f5b942;
+}
+
+.favFilterBtnActive {
+  color: #f5b942;
+  border-color: #f5b942;
+  background-color: rgba(245, 185, 66, 0.1);
+}
+
+.favCount {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.favoriteBtn {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+.favoriteBtn:hover {
+  color: #f5b942;
+  transform: scale(1.15);
+}
+
+.favoriteBtnActive {
+  color: #f5b942;
+}

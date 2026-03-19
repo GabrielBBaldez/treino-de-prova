@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, Check, X, SkipForward } from 'lucide-react';
+import { ChevronDown, Check, X, SkipForward, Star } from 'lucide-react';
 import type { Question, AssertionQuestion } from '../../types/quiz';
 import { SKIPPED_ANSWER } from '../../constants/quiz';
 import styles from './QuestionReview.module.css';
@@ -8,9 +8,11 @@ interface QuestionReviewProps {
   question: Question;
   questionNumber: number;
   userAnswer: string | undefined;
+  isFavorite?: boolean;
+  onToggleFavorite?: () => void;
 }
 
-export function QuestionReview({ question, questionNumber, userAnswer }: QuestionReviewProps) {
+export function QuestionReview({ question, questionNumber, userAnswer, isFavorite, onToggleFavorite }: QuestionReviewProps) {
   const [open, setOpen] = useState(false);
   const isSkipped = userAnswer === SKIPPED_ANSWER;
   const isUnanswered = userAnswer === undefined;
@@ -51,6 +53,15 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
         <div className={styles.headerLeft}>
           <span className={styles.questionNum}>Questão {questionNumber}</span>
           {getBadge()}
+          {onToggleFavorite && (
+            <button
+              className={`${styles.favoriteBtn} ${isFavorite ? styles.favoriteBtnActive : ''}`}
+              onClick={(e) => { e.stopPropagation(); onToggleFavorite(); }}
+              aria-label={isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+            >
+              <Star size={16} fill={isFavorite ? '#f5b942' : 'none'} />
+            </button>
+          )}
         </div>
         <ChevronDown size={18} className={`${styles.chevron} ${open ? styles.chevronOpen : ''}`} />
       </div>

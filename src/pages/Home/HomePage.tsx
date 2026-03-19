@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { PlusCircle, FlaskConical } from 'lucide-react';
 import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { useFavoritesStorage } from '../../hooks/useFavoritesStorage';
 import { QuizCard } from '../../components/QuizCard/QuizCard';
 import { ImportButton } from '../../components/ImportExport/ImportButton';
 import { EmptyState } from '../../components/EmptyState/EmptyState';
@@ -13,6 +14,7 @@ import styles from './HomePage.module.css';
 
 export function HomePage() {
   const { quizzes, addQuiz, deleteQuiz } = useQuizStorage();
+  const { clearFavoritesForQuiz } = useFavoritesStorage();
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
   const handleImport = (quiz: Quiz) => {
@@ -31,6 +33,7 @@ export function HomePage() {
   const handleDelete = () => {
     if (deleteId) {
       deleteQuiz(deleteId);
+      clearFavoritesForQuiz(deleteId);
       setDeleteId(null);
     }
   };

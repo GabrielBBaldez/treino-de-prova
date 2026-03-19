@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router';
-import { Search, Home, Check, X, Hash } from 'lucide-react';
+import { Search, Home, Check, X, Hash, Star } from 'lucide-react';
 import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { useFavoritesStorage } from '../../hooks/useFavoritesStorage';
 import type { AssertionQuestion } from '../../types/quiz';
 import styles from './ConsultPage.module.css';
 
@@ -14,16 +15,24 @@ const TYPE_LABELS: Record<string, string> = {
 export function ConsultPage() {
   const { quizId } = useParams();
   const { getQuiz } = useQuizStorage();
+  const { isFavorite, toggleFavorite, getFavoriteCount } = useFavoritesStorage();
   const [search, setSearch] = useState('');
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   const quiz = getQuiz(quizId || '');
 
   const filteredQuestions = useMemo(() => {
     if (!quiz) return [];
-    if (!search.trim()) return quiz.questions;
+    let questions = quiz.questions;
+
+    if (showOnlyFavorites) {
+      questions = questions.filter((q) => isFavorite(quiz.id, q.id));
+    }
+
+    if (!search.trim()) return questions;
 
     const term = search.toLowerCase();
-    return quiz.questions.filter((q) => {
+    return questions.filter((q) => {
       if (q.text.toLowerCase().includes(term)) return true;
       if (q.explanation?.toLowerCase().includes(term)) return true;
       if (q.alternatives.some((a) => a.text.toLowerCase().includes(term))) return true;
@@ -34,7 +43,7 @@ export function ConsultPage() {
       }
       return false;
     });
-  }, [quiz, search]);
+  }, [quiz, search, showOnlyFavorites, isFavorite]);
 
   if (!quiz) {
     return (
@@ -64,6 +73,16 @@ export function ConsultPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+        <button
+          className={`${styles.favFilterBtn} ${showOnlyFavorites ? styles.favFilterBtnActive : ''}`}
+          onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+          title={showOnlyFavorites ? 'Mostrar todas' : 'Mostrar só favoritas'}
+        >
+          <Star size={16} fill={showOnlyFavorites ? '#f5b942' : 'none'} />
+          {getFavoriteCount(quiz.id) > 0 && (
+            <span className={styles.favCount}>{getFavoriteCount(quiz.id)}</span>
+          )}
+        </button>
       </div>
 
       <p className={styles.resultCount}>
@@ -78,6 +97,13 @@ export function ConsultPage() {
             <div className={styles.questionHeader}>
               <span className={styles.questionNum}>#{originalIndex + 1}</span>
               <span className={styles.questionType}>{TYPE_LABELS[q.type] || q.type}</span>
+              <button
+                className={`${styles.favoriteBtn} ${isFavorite(quiz.id, q.id) ? styles.favoriteBtnActive : ''}`}
+                onClick={() => toggleFavorite(quiz.id, q.id)}
+                aria-label={isFavorite(quiz.id, q.id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+              >
+                <Star size={16} fill={isFavorite(quiz.id, q.id) ? '#f5b942' : 'none'} />
+              </button>
               {q.tags && q.tags.length > 0 && (
                 <div className={styles.tagsList}>
                   {q.tags.map((tag) => (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { Home } from 'lucide-react';
 import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { useFavoritesStorage } from '../../hooks/useFavoritesStorage';
 import { useTimer } from '../../hooks/useTimer';
 import { ModeSelector } from '../../components/ModeSelector/ModeSelector';
 import { TrainSettings } from '../../components/TrainSettings/TrainSettings';
@@ -39,6 +40,7 @@ export function QuizPlayerPage() {
   const { quizId } = useParams();
   const navigate = useNavigate();
   const { getQuiz } = useQuizStorage();
+  const { isFavorite, toggleFavorite } = useFavoritesStorage();
   const { seconds, start, stop } = useTimer();
 
   const quiz = getQuiz(quizId || '');
@@ -193,6 +195,8 @@ export function QuizPlayerPage() {
             onFinish={handleFinish}
             canGoPrev={canGoPrev}
             isLast={currentIndex === preparedQuestions.length - 1}
+            isFavorite={isFavorite(quiz.id, currentQuestion.id)}
+            onToggleFavorite={() => toggleFavorite(quiz.id, currentQuestion.id)}
           />
         </>
       )}

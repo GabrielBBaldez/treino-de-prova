@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, CheckCircle, SkipForward } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle, SkipForward, Star } from 'lucide-react';
 import type { Question, QuizMode, AssertionQuestion } from '../../types/quiz';
 import { SKIPPED_ANSWER } from '../../constants/quiz';
 import { AlternativeButton } from '../AlternativeButton/AlternativeButton';
@@ -16,6 +16,8 @@ interface QuestionDisplayProps {
   onFinish: () => void;
   canGoPrev: boolean;
   isLast: boolean;
+  isFavorite?: boolean;
+  onToggleFavorite?: () => void;
 }
 
 export function QuestionDisplay({
@@ -30,6 +32,8 @@ export function QuestionDisplay({
   onFinish,
   canGoPrev,
   isLast,
+  isFavorite,
+  onToggleFavorite,
 }: QuestionDisplayProps) {
   const isSkipped = selectedAnswer === SKIPPED_ANSWER;
   const hasAnswered = selectedAnswer !== null && !isSkipped;
@@ -41,9 +45,20 @@ export function QuestionDisplay({
 
   return (
     <div className={styles.container}>
-      <p className={styles.questionText}>
-        <strong>Questão {questionNumber}.</strong> {question.text}
-      </p>
+      <div className={styles.questionHeader}>
+        <p className={styles.questionText}>
+          <strong>Questão {questionNumber}.</strong> {question.text}
+        </p>
+        {onToggleFavorite && (
+          <button
+            className={`${styles.favoriteBtn} ${isFavorite ? styles.favoriteBtnActive : ''}`}
+            onClick={onToggleFavorite}
+            aria-label={isFavorite ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+          >
+            <Star size={20} fill={isFavorite ? '#f5b942' : 'none'} />
+          </button>
+        )}
+      </div>
 
       {question.image && (
         <img src={question.image} alt="Imagem da questão" className={styles.questionImage} />

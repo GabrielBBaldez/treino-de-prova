@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { RotateCcw, Home } from 'lucide-react';
 import { useResultsStorage } from '../../hooks/useResultsStorage';
+import { useFavoritesStorage } from '../../hooks/useFavoritesStorage';
 import { ResultsSummary } from '../../components/ResultsSummary/ResultsSummary';
 import { QuestionReview } from '../../components/QuestionReview/QuestionReview';
 import type { QuizResult, Question } from '../../types/quiz';
@@ -16,6 +17,7 @@ export function ResultsPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const { results, addResult } = useResultsStorage();
+  const { isFavorite, toggleFavorite } = useFavoritesStorage();
 
   const state = location.state as ResultsState | null;
 
@@ -76,6 +78,8 @@ export function ResultsPage() {
           question={q}
           questionNumber={i + 1}
           userAnswer={result.answers[q.id]}
+          isFavorite={isFavorite(result.quizId, q.id)}
+          onToggleFavorite={() => toggleFavorite(result.quizId, q.id)}
         />
       ))}
     </div>

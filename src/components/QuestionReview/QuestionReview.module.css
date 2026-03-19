@@ -138,3 +138,23 @@
   background-color: var(--color-warning-light);
   color: var(--color-warning);
 }
+
+.favoriteBtn {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+}
+
+.favoriteBtn:hover {
+  color: #f5b942;
+  transform: scale(1.15);
+}
+
+.favoriteBtnActive {
+  color: #f5b942;
+}
