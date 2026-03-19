@@ -27,7 +27,7 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
     if (isUnanswered) {
       return (
         <span className={`${styles.badge} ${styles.badgeSkipped}`}>
-          Não respondida
+          <SkipForward size={12} /> Pulada
         </span>
       );
     }
