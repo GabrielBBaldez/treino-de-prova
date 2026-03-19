@@ -9,6 +9,7 @@ import { QuestionDisplay } from '../../components/QuestionDisplay/QuestionDispla
 import { ProgressBar } from '../../components/ProgressBar/ProgressBar';
 import { shuffle } from '../../utils/shuffle';
 import { generateId } from '../../utils/generateId';
+import { SKIPPED_ANSWER } from '../../constants/quiz';
 import type { QuizMode, TrainSettings as TrainSettingsType, Question, QuizResult } from '../../types/quiz';
 import styles from './QuizPlayerPage.module.css';
 
@@ -109,15 +110,28 @@ export function QuizPlayerPage() {
     }
   };
 
+  const handleSkip = () => {
+    const qId = preparedQuestions[currentIndex].id;
+    setAnswers((prev) => ({ ...prev, [qId]: SKIPPED_ANSWER }));
+    if (currentIndex < preparedQuestions.length - 1) {
+      setCurrentIndex((i) => i + 1);
+    }
+  };
+
   const handleFinish = () => {
     stop();
 
     let correctCount = 0;
+    let skippedCount = 0;
     preparedQuestions.forEach((q) => {
-      if (answers[q.id] === q.correctAnswer) {
+      if (answers[q.id] === SKIPPED_ANSWER) {
+        skippedCount++;
+      } else if (answers[q.id] === q.correctAnswer) {
         correctCount++;
       }
     });
+
+    const answeredCount = preparedQuestions.length - skippedCount;
 
     const result: QuizResult = {
       id: generateId(),
@@ -126,8 +140,9 @@ export function QuizPlayerPage() {
       mode: settings.mode,
       answers,
       correctCount,
+      skippedCount,
       totalQuestions: preparedQuestions.length,
-      percentage: Math.round((correctCount / preparedQuestions.length) * 100),
+      percentage: answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0,
       timeTakenSeconds: seconds,
       completedAt: new Date().toISOString(),
     };
@@ -158,13 +173,14 @@ export function QuizPlayerPage() {
 
       {phase === 'playing' && currentQuestion && (
         <>
-          <ProgressBar current={currentIndex} total={preparedQuestions.length} seconds={seconds} />
+          <ProgressBar current={currentIndex} total={preparedQuestions.length} seconds={seconds} answers={answers} questions={preparedQuestions} />
           <QuestionDisplay
             question={currentQuestion}
             questionNumber={currentIndex + 1}
             selectedAnswer={answers[currentQuestion.id] || null}
             mode={settings.mode}
             onSelectAnswer={handleSelectAnswer}
+            onSkip={handleSkip}
             onPrev={handlePrev}
             onNext={handleNext}
             onFinish={handleFinish}

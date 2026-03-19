@@ -62,6 +62,7 @@ export interface QuizResult {
   mode: QuizMode;
   answers: Record<string, string>;
   correctCount: number;
+  skippedCount?: number;
   totalQuestions: number;
   percentage: number;
   timeTakenSeconds: number;
