@@ -21,18 +21,20 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <NavLink to="/" className={styles.logo}>
-        <BookOpen size={24} className={styles.logoIcon} />
-        <span>Questify</span>
-      </NavLink>
+      <div className={styles.logoArea}>
+        <NavLink to="/" className={styles.logo}>
+          <BookOpen size={24} className={styles.logoIcon} />
+          <span>Questify</span>
+        </NavLink>
 
-      <button
-        className={styles.menuToggle}
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
-      >
-        {menuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
+        <button
+          className={styles.menuToggle}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
       <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
         <NavLink to="/" className={linkClass} end onClick={handleNavClick}>
