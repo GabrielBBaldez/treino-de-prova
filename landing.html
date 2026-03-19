@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Questify - App gratuito para estudar para concursos, residência, ENEM e qualquer prova. Crie bancos de questões, treine e acompanhe sua evolução." />
   <title>Questify - Seu app de estudo para concursos</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -16,11 +18,12 @@
       --accent: #6366f1;
       --accent-light: #818cf8;
       --success: #34d399;
+      --warning: #fbbf24;
       --gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -64,12 +67,12 @@
     }
 
     .hero-logo {
-      width: 280px;
-      height: 280px;
-      border-radius: 50px;
-      margin: 0 auto 2rem;
+      width: 200px;
+      height: 200px;
+      border-radius: 40px;
+      margin: 0 auto 1.5rem;
       display: block;
-      box-shadow: 0 0 40px rgba(99,102,241,0.4), 0 0 80px rgba(99,102,241,0.25), 0 20px 60px rgba(99,102,241,0.3);
+      box-shadow: 0 0 40px rgba(99,102,241,0.4), 0 0 80px rgba(99,102,241,0.2), 0 20px 60px rgba(99,102,241,0.3);
     }
 
     .hero h1 {
@@ -83,10 +86,37 @@
     }
 
     .hero p {
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
       color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto 2.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
     }
 
     .hero-buttons {
@@ -147,16 +177,10 @@
       50% { transform: translateX(-50%) translateY(8px); }
     }
 
-    /* ========== FEATURES ========== */
-    .features {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    /* ========== SECTIONS ========== */
     .section-title {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
     }
 
     .section-title h2 {
@@ -170,16 +194,23 @@
       font-size: 1.1rem;
     }
 
+    /* ========== FEATURES ========== */
+    .features {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
 
     .feature-card {
       background: var(--bg-card);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 1.75rem;
       border: 1px solid rgba(255,255,255,0.05);
       transition: all 0.3s;
     }
@@ -191,14 +222,14 @@
     }
 
     .feature-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .feature-icon.purple { background: rgba(99,102,241,0.15); }
@@ -207,16 +238,20 @@
     .feature-icon.orange { background: rgba(251,191,36,0.15); }
     .feature-icon.pink { background: rgba(244,114,182,0.15); }
     .feature-icon.cyan { background: rgba(34,211,238,0.15); }
+    .feature-icon.yellow { background: rgba(250,204,21,0.15); }
+    .feature-icon.red { background: rgba(248,113,113,0.15); }
+    .feature-icon.indigo { background: rgba(129,140,248,0.15); }
 
     .feature-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .feature-card p {
       color: var(--text-secondary);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
     /* ========== MODES ========== */
@@ -226,14 +261,14 @@
     }
 
     .modes-inner {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .modes-list {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .mode-item {
@@ -244,6 +279,11 @@
       border-radius: 16px;
       padding: 2rem;
       border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.3s;
+    }
+
+    .mode-item:hover {
+      border-color: rgba(99,102,241,0.15);
     }
 
     .mode-number {
@@ -294,7 +334,6 @@
     .steps {
       display: flex;
       flex-direction: column;
-      gap: 0;
       position: relative;
     }
 
@@ -350,7 +389,7 @@
 
     .platforms-grid {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       justify-content: center;
       flex-wrap: wrap;
       max-width: 800px;
@@ -364,10 +403,15 @@
       border: 1px solid rgba(255,255,255,0.05);
       flex: 1;
       min-width: 200px;
+      transition: all 0.3s;
     }
 
-    .platform-card .emoji {
-      font-size: 2.5rem;
+    .platform-card:hover {
+      border-color: rgba(99,102,241,0.15);
+      transform: translateY(-2px);
+    }
+
+    .platform-icon {
       margin-bottom: 0.8rem;
     }
 
@@ -403,7 +447,7 @@
       margin-bottom: 0.8rem;
     }
 
-    .cta-box p {
+    .cta-box > p {
       color: var(--text-secondary);
       margin-bottom: 2rem;
     }
@@ -424,18 +468,8 @@
       gap: 0.3rem;
     }
 
-    /* ========== FOOTER ========== */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    footer a {
-      color: var(--accent-light);
-      text-decoration: none;
+    .cta-features .check {
+      color: var(--success);
     }
 
     /* ========== COFFEE ========== */
@@ -514,21 +548,36 @@
       transition: all 0.2s;
     }
 
-    .pix-copy-btn:hover {
-      opacity: 0.9;
+    .pix-copy-btn:hover { opacity: 0.9; }
+    .pix-copy-btn.copied { background: var(--success); }
+
+    /* ========== FOOTER ========== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    .pix-copy-btn.copied {
-      background: #34d399;
+    footer a {
+      color: var(--accent-light);
+      text-decoration: none;
     }
+
+    footer a:hover { text-decoration: underline; }
 
     /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 640px) {
       .features-grid { grid-template-columns: 1fr; }
       .mode-item { flex-direction: column; gap: 1rem; }
       .step { gap: 1rem; }
       .cta-box { padding: 2rem 1.5rem; }
-
+      .hero-logo { width: 150px; height: 150px; border-radius: 30px; }
     }
   </style>
 </head>
@@ -538,10 +587,17 @@
   <section class="hero">
     <div class="hero-content">
       <img src="icon-512.png" alt="Questify" class="hero-logo" />
-      <p>Estude para concursos, residência, ENEM e qualquer prova do seu jeito. Crie bancos de questões, treine e acompanhe sua evolução — 100% grátis.</p>
+      <h1>Questify</h1>
+      <p>Estude para concursos, residência, ENEM e qualquer prova do seu jeito. Crie bancos de questões, treine e acompanhe sua evolução.</p>
+      <div class="hero-badges">
+        <span class="hero-badge"><span class="dot"></span> 100% Gratuito</span>
+        <span class="hero-badge"><span class="dot"></span> Sem cadastro</span>
+        <span class="hero-badge"><span class="dot"></span> Funciona offline</span>
+        <span class="hero-badge"><span class="dot"></span> Sem anuncios</span>
+      </div>
       <div class="hero-buttons">
         <a href="https://gabrielbbaldez.github.io/questify/" class="btn btn-primary">
-          Começar agora &#8594;
+          Comecar agora &#8594;
         </a>
         <a href="#funcionalidades" class="btn btn-secondary">
           Conhecer mais
@@ -554,39 +610,54 @@
   <!-- FEATURES -->
   <section class="features" id="funcionalidades">
     <div class="section-title">
-      <h2>Tudo que você precisa para estudar</h2>
-      <p>Funcionalidades pensadas para quem leva estudo a sério</p>
+      <h2>Tudo que voce precisa para estudar</h2>
+      <p>Funcionalidades pensadas para quem leva estudo a serio</p>
     </div>
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon purple">&#128221;</div>
-        <h3>3 Tipos de Questão</h3>
-        <p>Múltipla escolha, Verdadeiro/Falso e Assertivas com combinações — os formatos mais usados em concursos e provas.</p>
+        <h3>3 Tipos de Questao</h3>
+        <p>Multipla escolha, Verdadeiro/Falso e Assertivas com combinacoes. Os formatos mais usados em concursos.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon green">&#9989;</div>
-        <h3>Explicação por Alternativa</h3>
-        <p>Cada alternativa pode ter sua própria explicação, mostrando por que está certa ou errada. Ideal para revisão profunda.</p>
+        <h3>Explicacao por Alternativa</h3>
+        <p>Cada alternativa pode ter sua propria explicacao. Entenda por que cada opcao esta certa ou errada.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon blue">&#128256;</div>
         <h3>Embaralhar Tudo</h3>
-        <p>Embaralhe questões e alternativas aleatoriamente para não viciar na ordem. Cada treino é diferente.</p>
+        <p>Embaralhe questoes e alternativas aleatoriamente. Cada treino e diferente, sem viciar na ordem.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon orange">&#128681;</div>
         <h3>Tags e Filtros</h3>
-        <p>Organize questões por tópico com tags. Filtre e busque facilmente por assunto, enunciado ou alternativa.</p>
+        <p>Organize questoes por topico com tags. Busque por assunto, enunciado ou alternativa na consulta.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon pink">&#128202;</div>
-        <h3>Histórico e Evolução</h3>
-        <p>Acompanhe seu desempenho ao longo do tempo com gráficos, estatísticas e filtros por prova e modo.</p>
+        <h3>Historico e Evolucao</h3>
+        <p>Acompanhe seu desempenho com graficos, estatisticas e filtros por prova e modo de treino.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon cyan">&#128228;</div>
         <h3>Importar e Exportar</h3>
-        <p>Compartilhe bancos de questões com colegas via arquivo JSON. Importe provas prontas com um clique.</p>
+        <p>Compartilhe bancos com colegas via JSON. Importe provas prontas ou exporte para backup.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon yellow">&#11088;</div>
+        <h3>Favoritar Questoes</h3>
+        <p>Marque questoes importantes com estrela durante o treino ou consulta. Filtre depois so as favoritas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon red">&#9197;</div>
+        <h3>Pular Questoes</h3>
+        <p>Nao sabe a resposta? Pule sem comprometer sua nota. Questoes puladas nao contam no resultado.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon indigo">&#10024;</div>
+        <h3>Gerar com IA</h3>
+        <p>Use ChatGPT, Claude ou qualquer IA para transformar provas em PDF em bancos de questoes automaticamente.</p>
       </div>
     </div>
   </section>
@@ -603,7 +674,7 @@
           <div class="mode-number">1</div>
           <div class="mode-info">
             <h3>Simulado</h3>
-            <p>Simule a prova real: responda todas as questões e veja o resultado só no final. Pode voltar e mudar respostas. Perfeito para testar seu nível.</p>
+            <p>Simule a prova real: responda todas e veja o resultado so no final. Pode voltar e mudar respostas. Perfeito para testar seu nivel.</p>
             <span class="mode-tag sim">Resultado no final</span>
           </div>
         </div>
@@ -611,16 +682,16 @@
           <div class="mode-number">2</div>
           <div class="mode-info">
             <h3>Estudo</h3>
-            <p>Feedback instantâneo após cada questão: veja na hora se acertou ou errou. Ótimo para fixar conteúdo no dia a dia.</p>
+            <p>Feedback instantaneo apos cada questao: veja na hora se acertou ou errou. Otimo para fixar conteudo no dia a dia.</p>
             <span class="mode-tag est">Feedback imediato</span>
           </div>
         </div>
         <div class="mode-item">
           <div class="mode-number">3</div>
           <div class="mode-info">
-            <h3>Revisão</h3>
-            <p>Além do feedback, mostra a explicação de cada alternativa. Entenda por que errou e aprenda com cada questão.</p>
-            <span class="mode-tag rev">Feedback + explicação</span>
+            <h3>Revisao</h3>
+            <p>Alem do feedback, mostra a explicacao de cada alternativa. Entenda por que errou e aprenda com cada questao.</p>
+            <span class="mode-tag rev">Feedback + explicacao</span>
           </div>
         </div>
       </div>
@@ -637,29 +708,29 @@
       <div class="step">
         <div class="step-dot">&#128203;</div>
         <div class="step-text">
-          <h3>Crie ou importe um banco de questões</h3>
-          <p>Monte suas questões manualmente ou importe um arquivo JSON pronto com centenas de questões.</p>
+          <h3>Crie ou importe um banco de questoes</h3>
+          <p>Monte suas questoes manualmente, importe um JSON pronto ou gere automaticamente com IA.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-dot">&#9881;</div>
         <div class="step-text">
           <h3>Configure seu treino</h3>
-          <p>Escolha o modo (simulado, estudo ou revisão), ative o embaralhamento e defina quantas questões quer fazer.</p>
+          <p>Escolha o modo (simulado, estudo ou revisao), ative o embaralhamento e defina quantas questoes quer fazer.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-dot">&#9997;</div>
         <div class="step-text">
-          <h3>Responda as questões</h3>
-          <p>Interface limpa e focada. Sem distração, só você e as questões.</p>
+          <h3>Responda as questoes</h3>
+          <p>Interface limpa e focada. Favorite as questoes importantes e pule as que nao souber.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-dot">&#128200;</div>
         <div class="step-text">
-          <h3>Acompanhe sua evolução</h3>
-          <p>Veja seu resultado, revise os erros e acompanhe seu progresso no histórico com gráficos.</p>
+          <h3>Acompanhe sua evolucao</h3>
+          <p>Veja seu resultado, revise os erros e acompanhe seu progresso no historico com graficos.</p>
         </div>
       </div>
     </div>
@@ -673,19 +744,19 @@
     </div>
     <div class="platforms-grid">
       <div class="platform-card">
-        <div class="emoji"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="platform-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3>Computador</h3>
         <p>Abra no navegador ou instale como app no desktop</p>
       </div>
       <div class="platform-card">
-        <div class="emoji"><svg width="36" height="48" viewBox="0 0 18 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="14" height="22" rx="2.5" ry="2.5"/><line x1="9" y1="19" x2="9" y2="19.01"/></svg></div>
+        <div class="platform-icon"><svg width="36" height="48" viewBox="0 0 18 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="14" height="22" rx="2.5" ry="2.5"/><line x1="9" y1="19" x2="9" y2="19.01"/></svg></div>
         <h3>Celular</h3>
         <p>Instale no Android ou iPhone e estude em qualquer lugar</p>
       </div>
       <div class="platform-card">
-        <div class="emoji"><svg width="56" height="44" viewBox="0 0 28 22" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="24" height="20" rx="2.5" ry="2.5"/><line x1="14" y1="17" x2="14" y2="17.01"/></svg></div>
+        <div class="platform-icon"><svg width="56" height="44" viewBox="0 0 28 22" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="1" width="24" height="20" rx="2.5" ry="2.5"/><line x1="14" y1="17" x2="14" y2="17.01"/></svg></div>
         <h3>Tablet</h3>
-        <p>Tela maior para estudar com conforto. Instale e use</p>
+        <p>Tela maior para estudar com conforto</p>
       </div>
     </div>
   </section>
@@ -693,16 +764,17 @@
   <!-- CTA -->
   <section class="cta">
     <div class="cta-box">
-      <h2>Pronto para começar?</h2>
-      <p>100% gratuito, sem cadastro, sem anúncios. Seus dados ficam no seu dispositivo.</p>
+      <h2>Pronto para comecar?</h2>
+      <p>Seus dados ficam no seu dispositivo. Nenhuma informacao e enviada para servidores.</p>
       <div class="cta-features">
-        <span>&#10003; Gratuito</span>
-        <span>&#10003; Sem login</span>
-
-        <span>&#10003; Privado</span>
+        <span><span class="check">&#10003;</span> Gratuito</span>
+        <span><span class="check">&#10003;</span> Sem login</span>
+        <span><span class="check">&#10003;</span> Offline</span>
+        <span><span class="check">&#10003;</span> Sem anuncios</span>
+        <span><span class="check">&#10003;</span> Privado</span>
       </div>
       <a href="https://gabrielbbaldez.github.io/questify/" class="btn btn-primary">
-        Abrir o app &#8594;
+        Abrir o Questify &#8594;
       </a>
     </div>
   </section>
@@ -711,8 +783,8 @@
   <section class="coffee">
     <div class="coffee-box">
       <div class="coffee-emoji">&#9749;</div>
-      <h2>Gostou? Me compre um café!</h2>
-      <p>O Questify é 100% gratuito e sem anúncios. Se ele te ajudou nos estudos, qualquer valor via PIX é muito bem-vindo.</p>
+      <h2>Gostou? Me compre um cafe!</h2>
+      <p>O Questify e 100% gratuito e sem anuncios. Se ele te ajudou nos estudos, qualquer valor via PIX e muito bem-vindo.</p>
       <div class="pix-container">
         <div class="pix-label">Chave PIX (email)</div>
         <div class="pix-key">
@@ -725,7 +797,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Questify &mdash; Feito por <a href="https://github.com/GabrielBBaldez" target="_blank">Gabriel Baldez</a></p>
+    <p>Questify &mdash; Feito por <a href="https://github.com/GabrielBBaldez" target="_blank" rel="noopener">Gabriel Baldez</a></p>
   </footer>
 
   <script>
@@ -741,6 +813,15 @@
         }, 2500);
       });
     }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
 
 </body>
