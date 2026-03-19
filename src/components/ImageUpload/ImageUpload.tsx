@@ -14,6 +14,11 @@ export function ImageUpload({ image, onChange }: ImageUploadProps) {
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+    const MAX_SIZE = 500 * 1024; // 500KB
+    if (file.size > MAX_SIZE) {
+      alert('Imagem muito grande. Máximo: 500 KB.');
+      return;
+    }
     const base64 = await fileToBase64(file);
     onChange(base64);
     if (inputRef.current) inputRef.current.value = '';

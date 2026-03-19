@@ -10,39 +10,39 @@
   gap: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header h1 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
 }
 
 .header p {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   margin-top: 0.2rem;
 }
 
 .header svg {
-  color: var(--accent);
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
 /* Table of Contents */
 .toc {
-  background: var(--bg-card);
+  background: var(--color-bg-card);
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
 }
 
 .toc h2 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.8rem;
@@ -60,7 +60,7 @@
   display: block;
   width: 100%;
   padding: 0.4rem 0.6rem;
-  color: var(--accent);
+  color: var(--color-accent);
   background: none;
   border: none;
   font-size: 0.9rem;
@@ -85,10 +85,10 @@
 .section {
   display: flex;
   gap: 1rem;
-  background: var(--bg-card);
+  background: var(--color-bg-card);
   border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   scroll-margin-top: 5rem;
   transition: border-color 0.3s;
 }
@@ -98,8 +98,8 @@
 }
 
 .section:target {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
 }
 
 .sectionIcon {
@@ -111,7 +111,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent);
+  color: var(--color-accent);
 }
 
 .sectionContent {
@@ -122,12 +122,12 @@
 .sectionContent h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   margin-bottom: 0.4rem;
 }
 
 .sectionContent p {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -144,7 +144,7 @@
 .tips li {
   position: relative;
   padding-left: 1.4rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -157,7 +157,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--color-accent);
   opacity: 0.6;
 }
 

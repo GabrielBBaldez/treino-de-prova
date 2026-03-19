@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { RotateCcw, Home } from 'lucide-react';
 import { useResultsStorage } from '../../hooks/useResultsStorage';
@@ -21,8 +21,10 @@ export function ResultsPage() {
 
   const state = location.state as ResultsState | null;
 
+  const saved = useRef(false);
   useEffect(() => {
-    if (state?.result) {
+    if (state?.result && !saved.current) {
+      saved.current = true;
       addResult(state.result);
     }
   }, []);

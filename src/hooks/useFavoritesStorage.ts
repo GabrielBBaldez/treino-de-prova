@@ -12,7 +12,9 @@ export function useFavoritesStorage() {
 
   const syncFavorites = useCallback((quizId: string, questionIds: string[]) => {
     if (user) {
-      pushFavorites(user.uid, quizId, questionIds).catch(console.error);
+      pushFavorites(user.uid, quizId, questionIds).catch((err) => {
+        console.warn('[Questify] Falha ao sincronizar favoritos na nuvem:', err);
+      });
     }
   }, [user]);
 

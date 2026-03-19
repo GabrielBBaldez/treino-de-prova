@@ -49,7 +49,14 @@ export function QuestionReview({ question, questionNumber, userAnswer, isFavorit
 
   return (
     <div className={styles.card}>
-      <div className={styles.header} onClick={() => setOpen(!open)}>
+      <div
+        className={styles.header}
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={() => setOpen(!open)}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setOpen(!open); } }}
+      >
         <div className={styles.headerLeft}>
           <span className={styles.questionNum}>Questão {questionNumber}</span>
           {getBadge()}

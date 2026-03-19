@@ -72,6 +72,7 @@ export function ConsultPage() {
           placeholder="Buscar por palavra-chave (ex: cardiologia, infarto, herança)..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          aria-label="Buscar questões"
         />
         <button
           className={`${styles.favFilterBtn} ${showOnlyFavorites ? styles.favFilterBtnActive : ''}`}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router';
 import { BookOpen, Home, PlusCircle, BarChart3, HelpCircle, Sparkles, Menu, X } from 'lucide-react';
 import { ThemeToggle } from '../ThemeToggle/ThemeToggle';
@@ -15,9 +15,9 @@ export function Header() {
   const handleNavClick = () => setMenuOpen(false);
 
   // Close menu on route change
-  if (menuOpen) {
-    // Will close on next click via handleNavClick
-  }
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className={styles.header}>
@@ -31,12 +31,13 @@ export function Header() {
           className={styles.menuToggle}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
+      <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Navegação principal">
         <NavLink to="/" className={linkClass} end onClick={handleNavClick}>
           <Home size={18} />
           <span>Inicio</span>

@@ -93,6 +93,11 @@ export function QuizPlayerPage() {
         });
       });
       questions = questions.filter((q) => wrongIds.has(q.id));
+
+      if (questions.length === 0) {
+        alert('Nenhum erro para revisar! Você acertou todas.');
+        return;
+      }
     }
 
     if (settings.shuffleQuestions) {

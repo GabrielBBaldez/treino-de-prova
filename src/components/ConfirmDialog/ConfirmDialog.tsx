@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import styles from './ConfirmDialog.module.css';
 
 interface ConfirmDialogProps {
@@ -9,10 +10,31 @@ interface ConfirmDialogProps {
 }
 
 export function ConfirmDialog({ title, message, confirmLabel = 'Confirmar', onConfirm, onCancel }: ConfirmDialogProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    dialogRef.current?.focus();
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onCancel();
+    }
+  };
+
   return (
     <div className={styles.overlay} onClick={onCancel}>
-      <div className={styles.dialog} onClick={(e) => e.stopPropagation()}>
-        <h3 className={styles.title}>{title}</h3>
+      <div
+        ref={dialogRef}
+        className={styles.dialog}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirm-dialog-title"
+        tabIndex={-1}
+        onKeyDown={handleKeyDown}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3 id="confirm-dialog-title" className={styles.title}>{title}</h3>
         <p className={styles.message}>{message}</p>
         <div className={styles.actions}>
           <button className={styles.cancelBtn} onClick={onCancel}>Cancelar</button>

@@ -44,7 +44,7 @@ function buildProfile(firebaseUser: User) {
     displayName: firebaseUser.displayName || '',
     email: firebaseUser.email || '',
     photoURL: firebaseUser.photoURL || '',
-    createdAt: new Date().toISOString(),
+    createdAt: firebaseUser.metadata.creationTime || new Date().toISOString(),
   };
 }
 
@@ -54,6 +54,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const [showMerge, setShowMerge] = useState(false);
   const [pendingUser, setPendingUser] = useState<User | null>(null);
   const [localCounts, setLocalCounts] = useState({ quizzes: 0, results: 0 });
+  const [mergeError, setMergeError] = useState<string | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
@@ -93,21 +94,18 @@ export function AuthProvider({ children }: PropsWithChildren) {
       await saveProfile(firebaseUser.uid, buildProfile(firebaseUser));
     } catch (err) {
       console.error('Failed to pull cloud data:', err);
+      // On network failure, fall back gracefully with existing local data
     }
 
     setUser(firebaseUser);
     setLoading(false);
-
-    // Reload so hooks pick up new localStorage data
-    if (window.location) {
-      window.location.reload();
-    }
   };
 
   const handleMerge = async () => {
     if (!pendingUser) return;
 
     const { quizzes, results, favorites } = readLocalData();
+    setMergeError(null);
 
     try {
       await Promise.all([
@@ -116,6 +114,8 @@ export function AuthProvider({ children }: PropsWithChildren) {
       ]);
     } catch (err) {
       console.error('Failed to merge local data to cloud:', err);
+      setMergeError('Falha ao enviar dados para a nuvem. Tente novamente.');
+      return;
     }
 
     localStorage.setItem(STORAGE_KEYS.MERGED, 'true');
@@ -152,6 +152,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
           resultCount={localCounts.results}
           onMerge={handleMerge}
           onSkip={handleSkipMerge}
+          error={mergeError}
         />
       )}
     </AuthContext.Provider>

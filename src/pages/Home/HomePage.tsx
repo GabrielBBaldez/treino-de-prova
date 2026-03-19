@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { PlusCircle, FlaskConical } from 'lucide-react';
 import { useQuizStorage } from '../../hooks/useQuizStorage';
+import { useResultsStorage } from '../../hooks/useResultsStorage';
 import { useFavoritesStorage } from '../../hooks/useFavoritesStorage';
 import { QuizCard } from '../../components/QuizCard/QuizCard';
 import { ImportButton } from '../../components/ImportExport/ImportButton';
 import { EmptyState } from '../../components/EmptyState/EmptyState';
 import { ConfirmDialog } from '../../components/ConfirmDialog/ConfirmDialog';
+import { useAuth } from '../../hooks/useAuth';
+import { deleteResultsForQuiz } from '../../services/firestoreSync';
 import { validateQuiz } from '../../utils/quizValidator';
 import { sampleQuizData } from '../../data/sampleQuiz';
 import type { Quiz } from '../../types/quiz';
@@ -14,7 +17,9 @@ import styles from './HomePage.module.css';
 
 export function HomePage() {
   const { quizzes, addQuiz, deleteQuiz } = useQuizStorage();
+  const { clearResults } = useResultsStorage();
   const { clearFavoritesForQuiz } = useFavoritesStorage();
+  const { user } = useAuth();
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
   const handleImport = (quiz: Quiz) => {
@@ -34,6 +39,11 @@ export function HomePage() {
     if (deleteId) {
       deleteQuiz(deleteId);
       clearFavoritesForQuiz(deleteId);
+      if (user) {
+        deleteResultsForQuiz(user.uid, deleteId).catch((err) => {
+          console.warn('[Questify] Falha ao excluir resultados do quiz na nuvem:', err);
+        });
+      }
       setDeleteId(null);
     }
   };

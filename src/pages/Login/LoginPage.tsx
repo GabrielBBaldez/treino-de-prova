@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router';
 import { BookOpen } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
@@ -16,11 +16,16 @@ export function LoginPage() {
 
   if (loading) return null;
 
+  const [error, setError] = useState('');
+
   const handleGoogleLogin = async () => {
+    setError('');
     try {
       await loginWithGoogle();
-    } catch {
-      // User closed popup or error occurred
+    } catch (err: any) {
+      if (err?.code !== 'auth/popup-closed-by-user') {
+        setError('Falha ao fazer login. Tente novamente.');
+      }
     }
   };
 
@@ -45,6 +50,12 @@ export function LoginPage() {
           </svg>
           Entrar com Google
         </button>
+
+        {error && (
+          <p style={{ color: '#e74c3c', marginTop: '0.75rem', fontSize: '0.9rem', textAlign: 'center' }}>
+            {error}
+          </p>
+        )}
 
         <Link to="/" className={styles.skipLink}>
           Continuar sem conta

@@ -42,6 +42,15 @@ export async function clearAllResults(userId: string): Promise<void> {
   await batch.commit();
 }
 
+export async function deleteResultsForQuiz(userId: string, quizId: string) {
+  const snap = await getDocs(collection(db, 'users', userId, 'results'));
+  const batch = writeBatch(db);
+  snap.docs.forEach((d) => {
+    if (d.data().quizId === quizId) batch.delete(d.ref);
+  });
+  await batch.commit();
+}
+
 // Favorites
 
 export async function fetchFavorites(
@@ -76,23 +85,31 @@ export async function mergeLocalToCloud(
   results: QuizResult[],
   favorites: Record<string, string[]>,
 ): Promise<void> {
-  const batch = writeBatch(db);
+  const MAX_OPS_PER_BATCH = 450;
+
+  type BatchOp = { ref: ReturnType<typeof doc>; data: unknown };
+  const ops: BatchOp[] = [];
 
   quizzes.forEach((quiz) => {
-    batch.set(doc(db, 'users', userId, 'quizzes', quiz.id), quiz);
+    ops.push({ ref: doc(db, 'users', userId, 'quizzes', quiz.id), data: quiz });
   });
 
   results.forEach((result) => {
-    batch.set(doc(db, 'users', userId, 'results', result.id), result);
+    ops.push({ ref: doc(db, 'users', userId, 'results', result.id), data: result });
   });
 
   Object.entries(favorites).forEach(([quizId, questionIds]) => {
     if (questionIds.length > 0) {
-      batch.set(doc(db, 'users', userId, 'favorites', quizId), { questionIds });
+      ops.push({ ref: doc(db, 'users', userId, 'favorites', quizId), data: { questionIds } });
     }
   });
 
-  await batch.commit();
+  for (let i = 0; i < ops.length; i += MAX_OPS_PER_BATCH) {
+    const chunk = ops.slice(i, i + MAX_OPS_PER_BATCH);
+    const batch = writeBatch(db);
+    chunk.forEach((op) => batch.set(op.ref, op.data));
+    await batch.commit();
+  }
 }
 
 // Profile

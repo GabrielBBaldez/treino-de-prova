@@ -10,33 +10,33 @@
   gap: 1rem;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header h1 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
 }
 
 .header p {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   margin-top: 0.2rem;
 }
 
 .header svg {
-  color: var(--accent);
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
 /* Prompt Section */
 .promptSection {
-  background: var(--bg-card);
+  background: var(--color-bg-card);
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
 }
 
 .promptHeader {
@@ -51,7 +51,7 @@
 .promptHeader h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
 }
 
 .copyBtn {
@@ -59,7 +59,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1.2rem;
-  background: var(--accent);
+  background: var(--color-accent);
   color: white;
   border: none;
   border-radius: 8px;
@@ -76,7 +76,7 @@
 }
 
 .copyBtnSuccess {
-  background: var(--success);
+  background: var(--color-success);
 }
 
 .promptPreview {
@@ -84,13 +84,13 @@
 }
 
 .promptPreview pre {
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 1rem;
   font-size: 0.8rem;
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   overflow-x: auto;
   white-space: pre-wrap;
   word-break: break-word;
@@ -105,9 +105,9 @@
   margin-top: 0.8rem;
   padding: 0.4rem 0.8rem;
   background: none;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
-  color: var(--accent);
+  color: var(--color-accent);
   font-size: 0.85rem;
   font-family: inherit;
   cursor: pointer;
@@ -126,7 +126,7 @@
 .stepsSection h2 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
@@ -140,10 +140,10 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  background: var(--bg-card);
+  background: var(--color-bg-card);
   border-radius: 12px;
   padding: 1.2rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
 }
 
 .stepNumber {
@@ -151,7 +151,7 @@
   height: 36px;
   min-width: 36px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--color-accent);
   color: white;
   display: flex;
   align-items: center;
@@ -163,28 +163,28 @@
 .stepContent h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   margin-bottom: 0.2rem;
 }
 
 .stepContent p {
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
 /* Tips */
 .tipsSection {
-  background: var(--bg-card);
+  background: var(--color-bg-card);
   border-radius: 12px;
   padding: 1.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--color-border);
 }
 
 .tipsSection h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
@@ -199,7 +199,7 @@
 .tipsList li {
   position: relative;
   padding-left: 1.4rem;
-  color: var(--text-secondary);
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -212,7 +212,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--color-accent);
   opacity: 0.6;
 }
 

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { CloudUpload, RefreshCw } from 'lucide-react';
 import styles from './MergeDialog.module.css';
 
@@ -6,13 +7,34 @@ interface MergeDialogProps {
   resultCount: number;
   onMerge: () => void;
   onSkip: () => void;
+  error?: string | null;
 }
 
-export function MergeDialog({ quizCount, resultCount, onMerge, onSkip }: MergeDialogProps) {
+export function MergeDialog({ quizCount, resultCount, onMerge, onSkip, error }: MergeDialogProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    dialogRef.current?.focus();
+  }, []);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onSkip();
+    }
+  };
+
   return (
     <div className={styles.overlay}>
-      <div className={styles.dialog}>
-        <h3 className={styles.title}>Dados locais encontrados</h3>
+      <div
+        ref={dialogRef}
+        className={styles.dialog}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="merge-dialog-title"
+        tabIndex={-1}
+        onKeyDown={handleKeyDown}
+      >
+        <h3 id="merge-dialog-title" className={styles.title}>Dados locais encontrados</h3>
         <p className={styles.message}>
           Voce possui dados salvos neste navegador. Deseja enviar para a nuvem ou comecar do zero com os dados da sua conta?
         </p>
@@ -20,6 +42,7 @@ export function MergeDialog({ quizCount, resultCount, onMerge, onSkip }: MergeDi
           <span className={styles.countBadge}>{quizCount} quiz{quizCount !== 1 ? 'zes' : ''}</span>
           <span className={styles.countBadge}>{resultCount} resultado{resultCount !== 1 ? 's' : ''}</span>
         </div>
+        {error && <p style={{ color: 'var(--color-danger, #e53e3e)', marginTop: '0.5rem', fontSize: '0.875rem' }}>{error}</p>}
         <div className={styles.actions}>
           <button className={styles.mergeBtn} onClick={onMerge}>
             <CloudUpload size={18} />

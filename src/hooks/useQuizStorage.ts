@@ -12,21 +12,27 @@ export function useQuizStorage() {
   const addQuiz = useCallback((quiz: Quiz) => {
     setQuizzes((prev) => [...prev, quiz]);
     if (user) {
-      pushQuiz(user.uid, quiz).catch(console.error);
+      pushQuiz(user.uid, quiz).catch((err) => {
+        console.warn('[Questify] Falha ao salvar quiz na nuvem:', err);
+      });
     }
   }, [setQuizzes, user]);
 
   const updateQuiz = useCallback((quiz: Quiz) => {
     setQuizzes((prev) => prev.map((q) => (q.id === quiz.id ? quiz : q)));
     if (user) {
-      pushQuiz(user.uid, quiz).catch(console.error);
+      pushQuiz(user.uid, quiz).catch((err) => {
+        console.warn('[Questify] Falha ao atualizar quiz na nuvem:', err);
+      });
     }
   }, [setQuizzes, user]);
 
   const deleteQuiz = useCallback((id: string) => {
     setQuizzes((prev) => prev.filter((q) => q.id !== id));
     if (user) {
-      removeQuiz(user.uid, id).catch(console.error);
+      removeQuiz(user.uid, id).catch((err) => {
+        console.warn('[Questify] Falha ao excluir quiz na nuvem:', err);
+      });
     }
   }, [setQuizzes, user]);
 

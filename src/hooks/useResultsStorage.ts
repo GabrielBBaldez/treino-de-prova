@@ -10,9 +10,14 @@ export function useResultsStorage() {
   const { user } = useAuth();
 
   const addResult = useCallback((result: QuizResult) => {
-    setResults((prev) => [...prev, result]);
+    setResults((prev) => {
+      if (prev.some((r) => r.id === result.id)) return prev;
+      return [...prev, result];
+    });
     if (user) {
-      pushResult(user.uid, result).catch(console.error);
+      pushResult(user.uid, result).catch((err) => {
+        console.warn('[Questify] Falha ao salvar resultado na nuvem:', err);
+      });
     }
   }, [setResults, user]);
 
@@ -23,7 +28,9 @@ export function useResultsStorage() {
   const clearResults = useCallback(() => {
     setResults([]);
     if (user) {
-      clearAllResults(user.uid).catch(console.error);
+      clearAllResults(user.uid).catch((err) => {
+        console.warn('[Questify] Falha ao limpar resultados na nuvem:', err);
+      });
     }
   }, [setResults, user]);
 

@@ -23,10 +23,17 @@ dist-ssr
 *.sln
 *.sw?
 
+# Environment files
+.env
+.env.local
+
 # Generated temp files
 prova_raw.txt
 gabarito_raw.txt
 generate_quiz.mjs
+
+# Copyrighted exam files
+prova_acesso_direto_2024.json
 
 # Backend (Java/Maven)
 backend/target/

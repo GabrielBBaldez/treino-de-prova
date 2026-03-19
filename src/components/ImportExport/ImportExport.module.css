@@ -34,7 +34,8 @@
   transform: translateX(-50%);
   margin-top: var(--spacing-xs);
   font-size: var(--font-size-sm);
-  white-space: nowrap;
+  max-width: 100%;
+  text-align: center;
 }
 
 .error {

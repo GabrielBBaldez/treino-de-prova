@@ -39,6 +39,7 @@ export function ModeSelector({ selected, onSelect }: ModeSelectorProps) {
             key={mode.id}
             className={`${styles.modeCard} ${selected === mode.id ? styles.modeCardActive : ''}`}
             onClick={() => onSelect(mode.id)}
+            aria-pressed={selected === mode.id}
           >
             <mode.icon size={32} className={styles.modeIcon} />
             <span className={styles.modeName}>{mode.name}</span>
