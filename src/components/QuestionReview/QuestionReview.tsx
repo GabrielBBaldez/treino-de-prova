@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { ChevronDown, Check, X } from 'lucide-react';
+import { ChevronDown, Check, X, SkipForward } from 'lucide-react';
 import type { Question } from '../../types/quiz';
+import { SKIPPED_ANSWER } from '../../constants/quiz';
 import styles from './QuestionReview.module.css';
 
 interface QuestionReviewProps {
@@ -11,16 +12,45 @@ interface QuestionReviewProps {
 
 export function QuestionReview({ question, questionNumber, userAnswer }: QuestionReviewProps) {
   const [open, setOpen] = useState(false);
-  const isCorrect = userAnswer === question.correctAnswer;
+  const isSkipped = userAnswer === SKIPPED_ANSWER;
+  const isUnanswered = userAnswer === undefined;
+  const isCorrect = !isSkipped && !isUnanswered && userAnswer === question.correctAnswer;
+
+  const getBadge = () => {
+    if (isSkipped) {
+      return (
+        <span className={`${styles.badge} ${styles.badgeSkipped}`}>
+          <SkipForward size={12} /> Pulada
+        </span>
+      );
+    }
+    if (isUnanswered) {
+      return (
+        <span className={`${styles.badge} ${styles.badgeSkipped}`}>
+          Não respondida
+        </span>
+      );
+    }
+    if (isCorrect) {
+      return (
+        <span className={`${styles.badge} ${styles.badgeCorrect}`}>
+          <Check size={12} /> Correta
+        </span>
+      );
+    }
+    return (
+      <span className={`${styles.badge} ${styles.badgeWrong}`}>
+        <X size={12} /> Errada
+      </span>
+    );
+  };
 
   return (
     <div className={styles.card}>
       <div className={styles.header} onClick={() => setOpen(!open)}>
         <div className={styles.headerLeft}>
           <span className={styles.questionNum}>Questão {questionNumber}</span>
-          <span className={`${styles.badge} ${isCorrect ? styles.badgeCorrect : styles.badgeWrong}`}>
-            {isCorrect ? <><Check size={12} /> Correta</> : <><X size={12} /> Errada</>}
-          </span>
+          {getBadge()}
         </div>
         <ChevronDown size={18} className={`${styles.chevron} ${open ? styles.chevronOpen : ''}`} />
       </div>
@@ -38,7 +68,7 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
               let altClass = styles.altNeutral;
               if (alt.id === question.correctAnswer) {
                 altClass = styles.altCorrect;
-              } else if (alt.id === userAnswer && !isCorrect) {
+              } else if (!isSkipped && !isUnanswered && alt.id === userAnswer && !isCorrect) {
                 altClass = styles.altWrong;
               }
 
@@ -48,7 +78,7 @@ export function QuestionReview({ question, questionNumber, userAnswer }: Questio
                     <span className={styles.altLetter}>{alt.id})</span>
                     <span>{alt.text}</span>
                     {alt.id === question.correctAnswer && <Check size={14} />}
-                    {alt.id === userAnswer && !isCorrect && <X size={14} />}
+                    {!isSkipped && !isUnanswered && alt.id === userAnswer && !isCorrect && <X size={14} />}
                   </div>
                   {alt.explanation && (
                     <div className={styles.altExplanation}>{alt.explanation}</div>

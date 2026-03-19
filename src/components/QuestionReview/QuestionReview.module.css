@@ -133,3 +133,8 @@
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
 }
+
+.badgeSkipped {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning);
+}
