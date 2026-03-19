@@ -78,6 +78,20 @@
   transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
+@media (max-width: 480px) {
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .actionBtn {
+    justify-content: center;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+}
+
 .playBtn {
   background-color: var(--color-accent);
   color: white;
