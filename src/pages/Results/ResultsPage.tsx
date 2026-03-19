@@ -25,7 +25,7 @@ export function ResultsPage() {
     }
   }, []);
 
-  const isPerfect = state?.result?.percentage === 100;
+  const isPerfect = state?.result?.percentage === 100 && (state?.result?.skippedCount ?? 0) === 0;
 
   const timeRecord = useMemo(() => {
     if (!state?.result) return null;
