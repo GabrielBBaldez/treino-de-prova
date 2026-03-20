@@ -1,10 +1,12 @@
 <div align="center">
 
-# :book: Questify
+<img src="https://gabrielbbaldez.github.io/questify/icon-512.png" alt="Questify" width="120" />
+
+# Questify
 
 **Plataforma de estudo e treinamento com bancos de questões para preparação de entrevistas técnicas e concursos.**
 
-[:arrow_right: **Acessar o Questify**](https://gabrielbbaldez.github.io/questify/)
+[:arrow_right: **Acessar o Questify**](https://gabrielbbaldez.github.io/questify/landing.html)
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
