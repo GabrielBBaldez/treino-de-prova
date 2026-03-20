@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Questify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma de estudo e treinamento com bancos de questões para preparação de entrevistas técnicas e concursos.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Bancos de questões** — Crie, importe e gerencie seus próprios bancos de questões
+- **Modos de treino** — Simulado (navegação livre) e Estudo (feedback imediato)
+- **Revisão de erros** — Retransforme suas questões erradas em acertos treinando apenas o que errou
+- **Geração com IA** — Gere questões automaticamente com inteligência artificial
+- **Histórico completo** — Acompanhe seus resultados, percentual de acerto e tempo por prova
+- **Favoritos** — Marque questões importantes para revisar depois
+- **Sync na nuvem** — Login com Google e sincronização automática via Firebase
+- **Tema escuro/claro** — Interface adaptável com troca de tema
+- **Responsivo** — Funciona em desktop, tablet e celular
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 19 + TypeScript + Vite
+- **Estilização:** CSS Modules com design system (variáveis CSS)
+- **Backend:** Firebase (Authentication + Firestore)
+- **Deploy:** GitHub Pages com GitHub Actions
+- **Ícones:** Lucide React
 
-## Expanding the ESLint configuration
+## Rodando localmente
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Clone o repositório
+git clone https://github.com/GabrielBBaldez/questify.git
+cd questify
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Instale as dependências
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Configure as variáveis de ambiente
+cp .env.example .env.local
+# Preencha com suas credenciais do Firebase
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estrutura do projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/     # Componentes reutilizáveis (QuizCard, ProgressBar, etc.)
+├── contexts/       # Context API (Auth, Theme)
+├── hooks/          # Custom hooks (useQuizStorage, useTimer, etc.)
+├── pages/          # Páginas da aplicação
+├── services/       # Integração com Firebase/Firestore
+├── types/          # Tipos TypeScript
+├── utils/          # Funções utilitárias
+└── constants/      # Constantes da aplicação
+```
+
+## Importar bancos de questões
+
+O Questify aceita arquivos JSON no formato padrão. Para importar, clique no botão **Importar** na página inicial e selecione seu arquivo `.json`.
+
+## Licença
+
+MIT
