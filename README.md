@@ -1,6 +1,19 @@
-# Questify
+<div align="center">
 
-Plataforma de estudo e treinamento com bancos de questões para preparação de entrevistas técnicas e concursos.
+# :book: Questify
+
+**Plataforma de estudo e treinamento com bancos de questões para preparação de entrevistas técnicas e concursos.**
+
+[:arrow_right: **Acessar o Questify**](https://gabrielbbaldez.github.io/questify/)
+
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-Auth%20%2B%20Firestore-FFCA28?logo=firebase&logoColor=black)
+
+</div>
+
+---
 
 ## Funcionalidades
 
